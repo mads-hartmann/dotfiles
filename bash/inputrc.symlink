@@ -1,0 +1,3 @@
+# Show potential completions instantly. No need to ring the bell
+# first.
+set show-all-if-ambiguous on
