@@ -15,7 +15,7 @@ set -e
     --exclude=tmp \
     --exclude=lib \
     --recurse \
-    --options=/Users/hartmann/dev/personal/dotfiles/ctags \
+    --options=/Users/hartmann/dev/personal/dotfiles/ctags/config \
     "$@"
 
 FILE="tags"

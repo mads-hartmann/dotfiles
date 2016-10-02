@@ -1,0 +1,7 @@
+tern
+eslint
+bower
+webpack
+cordova
+ember-cli
+yarn

@@ -1,0 +1,15 @@
+export DOTFILES_HOME=$HOME/dev/personal/dotfiles
+
+# Add the homebrew installed emacs to the path.
+export PATH="$(brew --prefix emacs)/bin:$PATH"
+
+# Make sure the hombrew installed PHP comes before the pre-installed
+# PHP version.
+export PATH="$(brew --prefix php70)/bin:$PATH"
+
+# Add my scripts to the PATH
+export PATH="$DOTFILES_HOME/bin:$PATH"
+
+# Change the directory where gems are stored. I don't want to use
+# sudo when installing gems.
+export GEM_HOME=~/.gems

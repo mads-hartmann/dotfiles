@@ -1,0 +1,33 @@
+cask_args appdir: '/Applications'
+
+tap 'homebrew/bundle'
+
+brew 'jq'
+brew 'postgresql'
+brew 'mysql'
+brew 'coreutils'
+brew 'nginx'
+brew 'redis'
+brew 'git'
+brew 'ispell'
+brew 'fish'
+brew 'node'
+
+cask 'emacs'
+cask 'sequel-pro'
+cask 'iterm2'
+cask '1password'
+cask 'atom'
+cask 'google-chrome'
+cask 'slack'
+cask 'transmission'
+cask 'spotify'
+
+
+# Used at Famly.
+brew 'homebrew/php/composer'
+brew 'php70'
+brew 'php70-mcrypt'
+brew 'php70-redis'
+brew 'ios-deploy'
+cask 'phpstorm'

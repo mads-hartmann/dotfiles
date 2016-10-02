@@ -1,28 +1,38 @@
 # hartmann's dotfiles
 
-This is my attempt at getting my dotfiles in order. I'm still figuring
-out how I'd like to structure everything.
+These are my [dotfiles][dotfiles]. They are nothing out of the
+extraordinary, but I like them nonetheless.
 
-Almost everything you see here has been stolen from various other
-repositories I found [dotfiles][dotfiles].
+In case you want to browse around, here's the general structure
+I've tried to follow.
 
+    .
+    ├── bin
+    │   └── Executable scripts go into this directory. Various small
+    │       scripts that I've found over the years.
+    ├── home
+    │   ├── bash_profile
+    │   │   └── Simple loads .bashrc.
+    │   ├── bashrc
+    │   │   └── Configuration of bash. Almost nothing in it. Hoping to
+    │   │       be able to kill it at some point.
+    │   ├── config
+    │   │   └── fish
+    │   │       └── Configuration of my fish shell environment. Fish is
+    │   │           currently my shell of choice.
+    │   ├── ctags
+    │   │   └── Sometimes, ctags is still a very useful way to navigate
+    │   │       a large project.
+    │   ├── gitconfig
+    │   │   └── Configuration of git, as you might have expected.
+    └── requirements
+        └── Files that lists various kinds of dependencies. Such as
+            global NPM packages, Homebrew packages, etc.
 
+Everything inside of `home` is prefixed with `.` and symlinked to
+`$HOME`.
 
-
-## TODO
-Move the following into a .gitconfig file.
-
-    git config --global alias.co checkout
-    git config --global alias.stats "diff --stat"
-    git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
-
-~/Library/Keybindings/DefaultKeyBinding.dict -- This actually didn't seem to work
-
-    {
-        "~d" = "deleteWordForward:";
-        "^w" = "deleteWordBackward:";
-        "~f" = "moveWordForward:";
-        "~b" = "moveWordBackward:";
-    }
+The installation of packages, creation of symlinks etc. are taken care
+of my the Makefile. I love Makefiles.
 
 [dotfiles]: https://dotfiles.github.io/

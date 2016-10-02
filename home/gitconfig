@@ -1,0 +1,10 @@
+# Local/private config goes in the include
+[include]
+        path = ~/.gitconfig.local
+[alias]
+        co = checkout
+        st = status -s
+        stats = diff --stat
+        count = !git shortlog -sn
+[core]
+        pager = diff-so-fancy | less --tabs=4 -RFX
