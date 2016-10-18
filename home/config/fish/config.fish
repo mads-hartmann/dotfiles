@@ -6,10 +6,6 @@ set -Ux DEFAULT_PR_BRANCH "staging"
 # running with the name 'shell-emacs'.
 set -Ux EDITOR "emacsclient -c --socket-name=shell-emacs"
 
-# Change the directory where gems are stored. I don't want to use
-# sudo when installing gems.
-set -Ux GEM_HOME "~/.gems"
-
 # Path.
 #   For many of these path updates it would've been nicer to use
 #   (brew --prefix <package>) to find the path, however, it's rather
@@ -26,3 +22,6 @@ set -x PATH /usr/local/opt/emacs/bin $PATH
 # PHP version. Couldn've used (brew --prefix php70)/bin to get the path
 # but it's rather slow.
 set -x PATH /usr/local/opt/php70/bin $PATH
+
+# I want to use the brew-installed version of ruby
+set -x PATH /usr/local/Cellar/ruby/2.3.1_2/bin $PATH

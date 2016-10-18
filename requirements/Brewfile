@@ -12,6 +12,7 @@ brew 'git'
 brew 'ispell'
 brew 'fish'
 brew 'node'
+brew 'ruby'
 
 cask 'emacs'
 cask 'sequel-pro'

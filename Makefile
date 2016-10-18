@@ -44,7 +44,7 @@ $(build.dir)/npm.installed: requirements/npm-packages.txt
 # Installs global gems.
 $(build.dir)/gems.installed: requirements/gems.txt
 	$(call print,Installing global gems)
-	$(QUIET)apm install $(shell cat $<)
+	$(QUIET)gem install $(shell cat $<)
 	$(call touch, $@)
 
 # Installs atom packages.
