@@ -1,5 +1,7 @@
 set -Ux DOTFILES_HOME "$HOME/dev/personal/dotfiles"
 
+set -Ux DEFAULT_PR_BRANCH "staging"
+
 # Use emacs as the default editor. It expects that an emacs daemon is
 # running with the name 'shell-emacs'.
 set -Ux EDITOR "emacsclient -c --socket-name=shell-emacs"
