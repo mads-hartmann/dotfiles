@@ -2,9 +2,11 @@
 [include]
         path = ~/.gitconfig.local
 [alias]
+        b = branch
         co = checkout
         st = status -s
         stats = diff --stat
         count = !git shortlog -sn
+        recap = diff --stat origin/staging...HEAD
 [core]
         pager = diff-so-fancy | less --tabs=4 -RFX
