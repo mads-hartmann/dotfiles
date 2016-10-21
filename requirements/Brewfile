@@ -13,6 +13,7 @@ brew 'ispell'
 brew 'fish'
 brew 'node'
 brew 'ruby'
+brew 'yarn'
 
 cask 'emacs'
 cask 'sequel-pro'
