@@ -18,6 +18,21 @@ if [[ $? != 0 ]]; then
   exit 1
 fi
 
-# Open the compare view.
+# get the branch
 branch=$(git symbolic-ref -q --short HEAD)
-open "https://github.com/famly/app/compare/$DEFAULT_PR_BRANCH...$branch?expand=1"
+
+# get the repo name
+
+remote_url="remote.origin.url"
+
+giturl=$(git config --get "$remote_url")
+if [ -z "$giturl" ]; then
+  echo "$remote_url not set." 1>&2
+  exit 1
+fi
+
+giturl=${giturl/git\@github\.com\:/https://github.com/}
+giturl=${giturl%\.git}
+
+# Open the compare view.
+open "$giturl/compare/$DEFAULT_PR_BRANCH...$branch?expand=1"
