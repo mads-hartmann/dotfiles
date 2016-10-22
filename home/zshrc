@@ -14,7 +14,7 @@ autoload -U colors && colors # force-load.
 
 # Custom functions
 for function_file (~/.zsh-functions/*); do
-  autoload -U ${function_file:t} # :t takes just the name.
+  autoload -Uz ${function_file:t} # :t takes just the name.
 done
 
 ### Oh-my-zsh
@@ -37,6 +37,18 @@ alias eg="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c --no-wait"
 # whenever I use emacs from the terminal.
 alias emacs-daemon="emacs --daemon=shell-emacs"
 
-### Variables
+### Prompt.
 
-PROMPT="%{$fg[magenta]%}%~%{$reset_color%} on %{$fg[green]%}$(git_prompt_info)%{$reset_color%} "
+function promt_part_git {
+    local git_branch
+
+    git rev-parse --is-inside-work-tree &> /dev/null
+
+    if [[ $status == 0 ]]
+    then
+        git_branch=$(git rev-parse --abbrev-ref HEAD)
+        echo " on %{$fg[green]%}$git_branch%{$reset_color%}"
+    fi
+}
+
+PROMPT='%{$fg[magenta]%}%~%{$reset_color%}$(promt_part_git) '
