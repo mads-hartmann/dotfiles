@@ -1,0 +1,42 @@
+# .zshrc is sourced in interactive shells. It should contain
+# commands to set up aliases, functions, options, key bindings, etc.
+
+### Register lazily loaded functions.
+#
+#    This tells zsh that these functions exist but that it shouldn't
+#    load the body of the functions before they're used. The value of
+#    $fpath is used to find the bodies.
+
+fpath=(~/.zsh-functions $fpath)
+
+# Built-in functiosn
+autoload -U colors && colors # force-load.
+
+# Custom functions
+autoload -U reload
+autoload -U ll
+autoload -U select-project
+
+### Oh-my-zsh
+
+plugins=(git docker)
+export ZSH=$HOME/.oh-my-zsh
+export ZSH_THEME=""
+source $ZSH/oh-my-zsh.sh
+
+### Aliases.
+#
+#    various commands that I'm too lazy to type out all the time.
+
+alias pj="select-project"
+alias epoch="date +%s"
+alias e="emacsclient -nw --socket-name=shell-emacs"
+alias eg="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c --no-wait"
+
+# Starts an emacs daemon with a dedicated name. I use this daemon
+# whenever I use emacs from the terminal.
+alias emacs-daemon="emacs --daemon=shell-emacs"
+
+### Variables
+
+PROMPT="%{$fg[magenta]%}%~%{$reset_color%} on %{$fg[green]%}$(git_prompt_info)%{$reset_color%} "

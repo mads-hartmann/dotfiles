@@ -1,0 +1,7 @@
+# A little convenience function that helps me jump between the various
+# projects I'm working on.
+
+function select-project {
+    cd $(find ~/dev/personal ~/dev/famly -maxdepth 1 -type d | selecta)
+    clear
+}

@@ -12,14 +12,14 @@ symlinks := $(addprefix $(HOME)/.,$(shell ls home))
 
 setup_targets := \
 	$(symlinks) \
-	$(HOME)/.config/fish \
 	$(build.dir)/homebrew.installed \
 	$(build.dir)/npm.installed \
 	$(build.dir)/apm.installed \
-	$(build.dir)/gems.installed
+	$(build.dir)/gems.installed \
+	$(build.dir)/oh-my-zsh.installed
 
 setup: $(setup_targets)
-clean: ; rm -rf $(build.dir)
+clean: ; rm -r $(build.dir)
 print-%: ; @echo $* is $($*)
 
 ### Pattern Rules
@@ -28,6 +28,12 @@ print-%: ; @echo $* is $($*)
 $(HOME)/.%: home/%
 	$(call print,Linking $(HOME)/.$* → $(abspath $<))
 	$(QUIET)ln -fs $(abspath $<) $(HOME)/.$*
+
+# Install oh-my-zsh
+$(build.dir)/oh-my-zsh.installed:
+	$(call print,Installing oh-my-zsh)
+	$(QUIET)sh -c "$$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	$(call touch,$@)
 
 # Install all homebrew packages.
 $(build.dir)/homebrew.installed: requirements/Brewfile

@@ -1,0 +1,6 @@
+function ll {
+        gls -gGh \
+           --color \
+           --group-directories-first $argv \
+        | awk 'NR > 1 {print $7 }'
+}

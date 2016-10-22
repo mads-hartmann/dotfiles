@@ -1,0 +1,37 @@
+# .zshenv is sourced on all invocations of the shell, unless the -f
+# option is set. It should contain commands to set the command search
+# path, plus other important environment variables. `.zshenv' should
+# not contain commands that produce output or assume the shell is
+# attached to a tty.
+
+export DOTFILES_HOME="$HOME/dev/personal/dotfiles"
+
+# Used in some of my git-related scripts.
+export DEFAULT_PR_BRANCH="staging"
+
+# Use emacs as the default editor. It expects that an emacs daemon is
+# running with the name 'shell-emacs'.
+export EDITOR="emacsclient -c --socket-name=shell-emacs"
+
+# Path.
+#   For many of these path updates it would've been nicer to use
+#   (brew --prefix <package>) to find the path, however, it's rather
+#   slow so when you have a lot of them your boot time gets slow :(
+
+# Coming from bash, I expect these to be in the PATH.
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Make sure my shell scripts are on on the path
+export PATH="$DOTFILES_HOME/bin:$PATH"
+
+# Make sure that the homebrew installed emacs comes first in the
+# shell.
+export PATH="/usr/local/opt/emacs/bin:$PATH"
+
+# Make sure the hombrew installed PHP comes before the pre-installed
+# PHP version. Couldn've used (brew --prefix php70)/bin to get the path
+# but it's rather slow.
+export PATH="/usr/local/opt/php70/bin:$PATH"
+
+# I want to use the brew-installed version of ruby
+export PATH="/usr/local/Cellar/ruby/2.3.1_2/bin:$PATH"
