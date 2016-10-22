@@ -14,6 +14,7 @@ brew 'fish'
 brew 'node'
 brew 'ruby'
 brew 'yarn'
+brew 'selecta'
 
 cask 'emacs'
 cask 'sequel-pro'
