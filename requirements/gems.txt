@@ -1,1 +1,2 @@
-jekyll -v '3.3.0'
+jekyll
+crowdin-cli
