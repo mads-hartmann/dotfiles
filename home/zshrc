@@ -13,9 +13,9 @@ fpath=(~/.zsh-functions $fpath)
 autoload -U colors && colors # force-load.
 
 # Custom functions
-autoload -U reload
-autoload -U ll
-autoload -U select-project
+for function_file (~/.zsh-functions/*); do
+  autoload -U ${function_file:t} # :t takes just the name.
+done
 
 ### Oh-my-zsh
 
