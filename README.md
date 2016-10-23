@@ -9,7 +9,8 @@ I've tried to follow.
     .
     ├── bin
     │   └── Executable scripts go into this directory. Various small
-    │       scripts that I've found over the years.
+    │       scripts that I've found over the years. Some of them I've
+    │       written myself
     ├── home
     │   └── Everything in this folder is prefixed with . and symlinked
     │       to $HOME
@@ -18,6 +19,6 @@ I've tried to follow.
             global NPM packages, Homebrew packages, etc.
 
 The installation of packages, creation of symlinks etc. are taken care
-of my the Makefile. I love Makefiles.
+of by the Makefile. I love Makefiles.
 
 [dotfiles]: https://dotfiles.github.io/
