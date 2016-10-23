@@ -37,6 +37,9 @@ alias eg="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c --no-wait"
 # whenever I use emacs from the terminal.
 alias emacs-daemon="emacs --daemon=shell-emacs"
 
+alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}'"
+alias dc="docker-compose"
+
 ### Prompt.
 
 function promt_part_git {

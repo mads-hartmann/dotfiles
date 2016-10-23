@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# TODO: Might be fun to extend this to take arguments that enable the
+#       deletion of networks and images as well.
+
+GREEN='\033[0;32m'
+PURPLE='\033[0;35m'
+RED='\033[0;31m'
+YELLOW='\033[1;33m'
+RESET='\033[0m'
+
+# Kill all the running containers
+#
+#    This could achieved easierly using docker rm -f $(docker ps -aq)
+#    but that doesn't handle the case where there are no running
+#    containers nicely. xargs (on macOS at least) won't run if there
+#    are no arguments.
+
+containers=$(docker ps -aq)
+count=$(echo $containers | wc -w | tr -d ' ')
+
+echo -e "${RED}✘${RESET} Removing Containers"
+echo $containers | xargs docker rm -f
+echo -e "${GREEN}✓${RESET} Removed ${PURPLE}$count${RESET} containers"
+
+# Remove all the mounted volumes that are no longer in use.
+volumes=$(docker volume ls -qf dangling=true)
+count=$(echo $volumes | wc -w | tr -d ' ')
+
+echo -e "${RED}✘${RESET} Removing Volumes"
+echo $volumes | xargs docker volume rm
+echo -e "${GREEN}✓${RESET} Removed ${PURPLE}$count${RESET} volumes"
+
+# If there's a problem with the network then you can nuke all of those
+# as well using docker network rm:
+# docker network rm $(docker network ls -q)
+
+# If everything goes crazy, then delete all images as well docker rmi
+# $(docker images -q)
+
+echo -e "${GREEN}✓${RESET} System purged - Feel free to pollute it again"
