@@ -6,7 +6,6 @@
 GREEN='\033[0;32m'
 PURPLE='\033[0;35m'
 RED='\033[0;31m'
-YELLOW='\033[1;33m'
 RESET='\033[0m'
 
 # Kill all the running containers
@@ -17,18 +16,18 @@ RESET='\033[0m'
 #    are no arguments.
 
 containers=$(docker ps -aq)
-count=$(echo $containers | wc -w | tr -d ' ')
+count=$(echo "$containers" | wc -w | tr -d ' ')
 
 echo -e "${RED}✘${RESET} Removing Containers"
-echo $containers | xargs docker rm -f
+echo "$containers" | xargs docker rm -f
 echo -e "${GREEN}✓${RESET} Removed ${PURPLE}$count${RESET} containers"
 
 # Remove all the mounted volumes that are no longer in use.
 volumes=$(docker volume ls -qf dangling=true)
-count=$(echo $volumes | wc -w | tr -d ' ')
+count=$(echo "$volumes" | wc -w | tr -d ' ')
 
 echo -e "${RED}✘${RESET} Removing Volumes"
-echo $volumes | xargs docker volume rm
+echo "$volumes" | xargs docker volume rm
 echo -e "${GREEN}✓${RESET} Removed ${PURPLE}$count${RESET} volumes"
 
 # If there's a problem with the network then you can nuke all of those

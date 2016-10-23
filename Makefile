@@ -18,11 +18,22 @@ setup_targets := \
 	$(build.dir)/gems.installed \
 	$(build.dir)/oh-my-zsh.installed
 
+lint_targets := \
+	$(addprefix $(build.dir)/lint/, $(shell ls ./bin/*))
+
 setup: $(setup_targets)
+lint: setup $(lint_targets)
 clean: ; rm -r $(build.dir)
+
 print-%: ; @echo $* is $($*)
 
 ### Pattern Rules
+
+# Lint bash scripts - zsh isn't supported
+$(build.dir)/lint/%: %
+	$(call print,Linting $<)
+	$(QUIET)shellcheck $<
+	$(call touch,$@)
 
 # Symlink all files ending in .symlink
 $(HOME)/.%: home/%

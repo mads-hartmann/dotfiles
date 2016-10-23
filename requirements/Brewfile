@@ -15,6 +15,7 @@ brew 'node'
 brew 'ruby'
 brew 'yarn'
 brew 'selecta'
+brew 'shellcheck'
 
 cask 'emacs'
 cask 'sequel-pro'

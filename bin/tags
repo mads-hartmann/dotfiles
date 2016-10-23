@@ -20,7 +20,7 @@ set -e
 
 FILE="tags"
 
-while [[ $# > 1 ]]
+while [[ $# -gt 1 ]]
 do
 key="$1"
 
@@ -34,7 +34,7 @@ shift
 done
 
 # Filter out false matches from class method regex
-sed -i '' -E '/^(if|switch|function|module\.exports|it|describe)	.+language:js$/d' $FILE
+sed -i '' -E '/^(if|switch|function|module\.exports|it|describe)	.+language:js$/d' "$FILE"
 
 # Filter out false matches from object definition regex
-sed -i '' -E '/var[ 	]+[a-zA-Z0-9_$]+[ 	]+=[ 	]+require\(.+language:js$/d' $FILE
+sed -i '' -E '/var[ 	]+[a-zA-Z0-9_$]+[ 	]+=[ 	]+require\(.+language:js$/d' "$FILE"

@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # A little convenience function that helps me jump between the various
 # projects I'm working on.
 
