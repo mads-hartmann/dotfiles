@@ -26,6 +26,8 @@ cask 'google-chrome'
 cask 'slack'
 cask 'transmission'
 cask 'spotify'
+cask 'appzapper'
+cask 'flux'
 
 
 # Used at Famly.
