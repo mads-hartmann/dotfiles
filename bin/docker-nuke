@@ -1,40 +1,96 @@
 #!/usr/bin/env bash
 
-# TODO: Might be fun to extend this to take arguments that enable the
-#       deletion of networks and images as well.
+## header ceramony -- sane bash defaults.
 
-GREEN='\033[0;32m'
-PURPLE='\033[0;35m'
-RED='\033[0;31m'
-RESET='\033[0m'
+set -e # fail on errors
+set -u # fail if you use variable that is undefined
+set -o pipefail # break pipes
 
-# Kill all the running containers
-#
-#    This could achieved easierly using docker rm -f $(docker ps -aq)
-#    but that doesn't handle the case where there are no running
-#    containers nicely. xargs (on macOS at least) won't run if there
-#    are no arguments.
+## variables
 
-containers=$(docker ps -aq)
-count=$(echo "$containers" | wc -w | tr -d ' ')
+green='\033[0;32m'
+purple='\033[0;35m'
+red='\033[0;31m'
+reset='\033[0m'
 
-echo -e "${RED}✘${RESET} Removing Containers"
-echo "$containers" | xargs docker rm -f
-echo -e "${GREEN}✓${RESET} Removed ${PURPLE}$count${RESET} containers"
+## functions
 
-# Remove all the mounted volumes that are no longer in use.
-volumes=$(docker volume ls -qf dangling=true)
-count=$(echo "$volumes" | wc -w | tr -d ' ')
+function container-ids {
+    docker ps -aq
+}
 
-echo -e "${RED}✘${RESET} Removing Volumes"
-echo "$volumes" | xargs docker volume rm
-echo -e "${GREEN}✓${RESET} Removed ${PURPLE}$count${RESET} volumes"
+function get-name {
+    docker inspect --format='{{.Name}}' "$1"
+}
 
-# If there's a problem with the network then you can nuke all of those
-# as well using docker network rm:
-# docker network rm $(docker network ls -q)
+function count-words {
+    echo "$1" | wc -w | tr -d ' '
+}
 
-# If everything goes crazy, then delete all images as well docker rmi
-# $(docker images -q)
+function remove-all-containers {
+    local containers
+    local count
 
-echo -e "${GREEN}✓${RESET} System purged - Feel free to pollute it again"
+    containers=$(container-ids)
+    count=$(count-words "$containers")
+
+    if [ "$count" -gt 0 ]; then
+        echo -e "Removing ${purple}$count${reset} containers"
+        echo "$containers" | while read -r id; do
+            local name
+            name=$(get-name "$id")
+            echo -e "${red}✘${reset} $id $name"
+            docker rm --force "$id" > /dev/null
+        done
+        echo -e "${green}✓${reset} Removed ${purple}$count${reset} containers"
+    else
+        echo -e "${green}✓${reset} No containers to remove"
+    fi
+}
+
+function remove-all-volumes {
+    local volumes
+    local count
+
+    volumes=$(docker volume ls -qf dangling=true)
+    count=$(count-words "$volumes")
+
+    if [ "$count" -gt 0 ]; then
+        echo -e "${red}✘${reset} Removing ${purple}$count${reset} volumes"
+        echo "$volumes" | xargs docker volume rm
+        echo -e "${green}✓${reset} Removed ${purple}$count${reset} volumes"
+    else
+        echo -e "${green}✓${reset} No volumes to remove"
+    fi
+}
+
+function remove-all-networks {
+    local networks
+    local count
+
+    networks=$(docker network ls -q)
+    count=$(count-words "$networks")
+
+    echo -e "${red}✘${reset} Removing ${purple}$count${reset} networks"
+    echo "$networks" | xargs docker network rm
+    echo -e "${green}✓${reset} Removed ${purple}$count${reset} networks"
+}
+
+function remove-all-images {
+    local images
+    local count
+
+    images=$(docker images -q)
+    count=$(count-words "$images")
+
+    echo -e "${red}✘${reset} Removing images"
+    echo "$networks" | xargs docker rmi
+    echo -e "${green}✓${reset} Removed ${purple}$count${reset} images"
+}
+
+remove-all-containers
+remove-all-volumes
+# remove-all-networks -- figure out how to filter out networks it can't kill
+# remove-all-images -- put this behind a flag.
+
+echo -e "${green}✓${reset} System purged - Feel free to pollute it again"
