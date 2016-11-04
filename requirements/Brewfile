@@ -16,6 +16,7 @@ brew 'ruby'
 brew 'yarn'
 brew 'selecta'
 brew 'shellcheck'
+brew 'cloc'
 
 cask 'emacs'
 cask 'sequel-pro'
@@ -28,6 +29,8 @@ cask 'transmission'
 cask 'spotify'
 cask 'appzapper'
 cask 'flux'
+cask 'skype'
+cask 'logitech-options'
 
 
 # Used at Famly.
