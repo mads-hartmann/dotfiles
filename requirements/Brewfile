@@ -2,6 +2,7 @@ cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
 
+brew 'sbt'
 brew 'jq'
 brew 'postgresql'
 brew 'mysql'
@@ -17,6 +18,8 @@ brew 'yarn'
 brew 'selecta'
 brew 'shellcheck'
 brew 'cloc'
+brew 'rsync'
+brew 'fswatch'
 
 cask 'emacs'
 cask 'sequel-pro'
@@ -31,12 +34,14 @@ cask 'appzapper'
 cask 'flux'
 cask 'skype'
 cask 'logitech-options'
-
+cask 'cocoarestclient'
+cask 'postman'
 
 # Used at Famly.
 brew 'homebrew/php/composer'
 brew 'php70'
 brew 'php70-mcrypt'
 brew 'php70-redis'
+brew 'php70-xdebug'
 brew 'ios-deploy'
 cask 'phpstorm'
