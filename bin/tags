@@ -6,11 +6,6 @@ set -e
 # TODO: Default to . if not folder was provided.
 ctags \
     -e \
-    --exclude=node_modules \
-    --exclude=bower_components \
-    --exclude=vendor \
-    --exclude=tmp \
-    --exclude=lib \
     --recurse \
     --options="$HOME/.ctags.cnf" \
     "$@"

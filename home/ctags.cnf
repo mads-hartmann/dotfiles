@@ -2,6 +2,11 @@
 --exclude=.hg
 --exclude=log
 --exclude=tmp
+--exclude=node_modules
+--exclude=bower_components
+--exclude=vendor
+--exclude=tmp
+--exclude=lib
 
 --languages=-javascript,sql
 
