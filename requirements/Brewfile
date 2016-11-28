@@ -36,6 +36,9 @@ cask 'skype'
 cask 'logitech-options'
 cask 'cocoarestclient'
 cask 'postman'
+cask 'visual-studio-code'
+cask 'soulver'
+cask 'spectacle'
 
 # Used at Famly.
 brew 'homebrew/php/composer'
