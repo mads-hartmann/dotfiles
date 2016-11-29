@@ -1,6 +1,9 @@
 cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
+tap 'homebrew/php'
+
+cask 'java'
 
 brew 'sbt'
 brew 'jq'

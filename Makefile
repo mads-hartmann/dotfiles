@@ -1,6 +1,11 @@
 # This Makefile takes care of symlinking, installing
 # dependencies and generally configuring everything.
 
+ifeq ($(shell which brew),)
+    $(error Cant find brew in $$PATH. Please install it.)
+endif
+
+
 QUIET := @
 
 build.dir := _build
