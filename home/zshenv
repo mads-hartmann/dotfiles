@@ -19,7 +19,7 @@ export EDITOR="emacsclient -c --socket-name=shell-emacs"
 #   slow so when you have a lot of them your boot time gets slow :(
 
 # Coming from bash, I expect these to be in the PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/usr/local/bin:$HOME/bin:$PATH
 
 # Make sure my shell scripts are on on the path
 export PATH="$DOTFILES_HOME/bin:$PATH"
@@ -27,11 +27,3 @@ export PATH="$DOTFILES_HOME/bin:$PATH"
 # Make sure that the homebrew installed emacs comes first in the
 # shell.
 export PATH="/usr/local/opt/emacs/bin:$PATH"
-
-# Make sure the hombrew installed PHP comes before the pre-installed
-# PHP version. Couldn've used (brew --prefix php70)/bin to get the path
-# but it's rather slow.
-export PATH="/usr/local/opt/php70/bin:$PATH"
-
-# I want to use the brew-installed version of ruby
-export PATH="/usr/local/Cellar/ruby/2.3.1_2/bin:$PATH"
