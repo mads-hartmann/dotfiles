@@ -18,8 +18,8 @@ brew 'yarn'
 brew 'selecta'
 brew 'shellcheck'
 brew 'cloc'
-brew 'rsync'
 brew 'fswatch'
+brew 'mas'
 
 cask 'emacs'
 cask 'sequel-pro'
@@ -36,6 +36,15 @@ cask 'skype'
 cask 'logitech-options'
 cask 'cocoarestclient'
 cask 'postman'
+cask 'taskpaper'
+cask 'docker'
+
+mas 'Tweetbot', id: 557168941
+mas 'iMovie', id: 408981434
+mas 'Keynote', id: 409183694
+mas 'GarageBand', id: 682658836
+mas 'Pages', id: 409201541
+mas 'Numbers', id: 409203825
 
 # Used at Famly.
 brew 'homebrew/php/composer'

@@ -5,3 +5,4 @@ webpack
 cordova
 ember-cli
 yarn
+diff-so-fancy
