@@ -38,6 +38,9 @@ cask 'cocoarestclient'
 cask 'postman'
 cask 'taskpaper'
 cask 'docker'
+cask 'visual-studio-code'
+cask 'soulver'
+cask 'spectacle'
 
 mas 'Tweetbot', id: 557168941
 mas 'iMovie', id: 408981434
