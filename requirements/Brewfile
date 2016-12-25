@@ -45,6 +45,23 @@ cask 'visual-studio-code'
 cask 'soulver'
 cask 'spectacle'
 
+# Quick look plugins
+# Syntax highlighting
+cask 'qlcolorcode'
+# Show files without extensions as plaintext
+cask 'qlstephen'
+# Render markdown rather than showing it as text
+cask 'qlmarkdown'
+# Pretty-printing and highlighting json
+cask 'quicklook-json'
+# Preview .patch files
+cask 'qlprettypatch'
+# Preview csv files
+cask 'quicklook-csv'
+# Preview archive files
+cask 'betterzipql'
+# Show image size and resolution when display images
+cask 'qlimagesize'
 mas 'Tweetbot', id: 557168941
 mas 'iMovie', id: 408981434
 mas 'Keynote', id: 409183694
