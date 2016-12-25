@@ -23,7 +23,9 @@ brew 'shellcheck'
 brew 'cloc'
 brew 'fswatch'
 brew 'mas'
+brew 'awscli'
 
+cask 'alfred'
 cask 'emacs'
 cask 'sequel-pro'
 cask 'iterm2'
@@ -44,6 +46,8 @@ cask 'docker'
 cask 'visual-studio-code'
 cask 'soulver'
 cask 'spectacle'
+cask 'beamer'
+cask 'vlc'
 
 # Quick look plugins
 # Syntax highlighting
@@ -62,6 +66,8 @@ cask 'quicklook-csv'
 cask 'betterzipql'
 # Show image size and resolution when display images
 cask 'qlimagesize'
+
+# Appstore apps
 mas 'Tweetbot', id: 557168941
 mas 'iMovie', id: 408981434
 mas 'Keynote', id: 409183694
