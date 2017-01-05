@@ -1,3 +1,3 @@
 .DS_Store
 _build
-home/config/fish/fishd.*
+home/sbt
