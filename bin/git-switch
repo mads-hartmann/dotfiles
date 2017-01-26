@@ -2,5 +2,5 @@
 
 git branch \
     | cut -c 3- \
-    | selecta \
+    | fzf --reverse \
     | xargs git checkout
