@@ -21,6 +21,7 @@ setup_targets := \
 	$(build.dir)/npm.installed \
 	$(build.dir)/apm.installed \
 	$(build.dir)/gems.installed \
+	$(build.dir)/pips.installed \
 	$(build.dir)/oh-my-zsh.installed
 
 lint_targets := \
@@ -67,6 +68,12 @@ $(build.dir)/npm.installed: requirements/npm-packages.txt
 $(build.dir)/gems.installed: requirements/gems.txt
 	$(call print,Installing global gems)
 	$(QUIET)gem install $(shell cat $<)
+	$(call touch, $@)
+
+# Installs global pip packages.
+$(build.dir)/pips.installed: requirements/pip-packages.txt
+	$(call print,Installing pip packages)
+	$(QUIET)pip install $(shell cat $<)
 	$(call touch, $@)
 
 # Installs atom packages.

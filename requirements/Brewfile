@@ -24,6 +24,7 @@ brew 'cloc'
 brew 'fswatch'
 brew 'mas'
 brew 'awscli'
+brew 'python'
 
 cask 'alfred'
 cask 'emacs'
