@@ -13,6 +13,9 @@ build.dir := _build
 # Find all the files that I'd like to have symlinked
 symlinks := $(addprefix $(HOME)/.,$(shell ls home))
 
+# Find the files that I'd like linked for Visual Studio Code.
+vscode := $(addprefix $(HOME)/Library/Application\ Support/Code/User/, $(shell ls apps/code))
+
 ### Target Rules
 
 setup_targets := \
@@ -22,7 +25,8 @@ setup_targets := \
 	$(build.dir)/apm.installed \
 	$(build.dir)/gems.installed \
 	$(build.dir)/pips.installed \
-	$(build.dir)/oh-my-zsh.installed
+	$(build.dir)/oh-my-zsh.installed \
+	$(vscode)
 
 lint_targets := \
 	$(addprefix $(build.dir)/lint/, $(shell ls ./bin/*))
@@ -81,6 +85,11 @@ $(build.dir)/apm.installed: requirements/atom-packages.txt
 	$(call print,Installing Atom packages)
 	$(QUIET)apm install $(shell grep -v '\#' $<)
 	$(call touch, $@)
+
+# Configure Visual Studio Code
+$(HOME)/Library/Application\ Support/%: apps/code/%
+	$(call print,Linking $(support)/Code/User/$* → $(abspath $<))
+	$(QUIET)ln -fs $(abspath $<) $(support)/Code/User/$*
 
 ### Useful functions
 

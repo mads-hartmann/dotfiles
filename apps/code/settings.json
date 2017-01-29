@@ -1,0 +1,8 @@
+{
+    "workbench.sideBar.location": "left",
+    "workbench.activityBar.visible": false,
+    "workbench.statusBar.visible": false,
+    "editor.cursorStyle": "block",
+
+    "docker.enableLinting": false
+}

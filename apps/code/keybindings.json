@@ -1,0 +1,20 @@
+[
+
+    { "key": "cmd+t", "command": "workbench.action.quickOpen" },
+
+    { "key": "cmd+]", "command": "workbench.action.focusNextGroup", "when": "editorTextFocus" },
+    { "key": "cmd+[", "command": "workbench.action.focusPreviousGroup", "when": "editorTextFocus"},
+    { "key": "shift+cmd+[", "command": "workbench.action.previousEditorInGroup", "when": "editorTextFocus" },
+    { "key": "shift+cmd+]", "command": "workbench.action.nextEditorInGroup", "when": "editorTextFocus" },
+
+    { "key": "ctrl+.", "command": "workbench.action.showCommands" },
+
+    { "key": "ctrl+x 2", "command": "workbench.action.splitEditor" },
+
+    { "key": "ctrl+shift+.", "command": "editor.action.insertCursorBelow", "when": "editorTextFocus"},
+    { "key": "ctrl+shift+,", "command": "editor.action.insertCursorAbove", "when": "editorTextFocus" },
+
+    // I use alt+cmd+f for Spectacle.app
+    { "key": "alt+cmd+f", "command": null },
+    { "key": "cmd+shift+f", "command": "editor.action.startFindReplaceAction" }
+]
