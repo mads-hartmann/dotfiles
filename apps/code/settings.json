@@ -1,8 +1,27 @@
 {
+
+    "editor.fontSize": 13,
+    "window.zoomLevel": -0.4,
+    "window.titleBarStyle": "custom",
+
     "workbench.sideBar.location": "left",
     "workbench.activityBar.visible": false,
     "workbench.statusBar.visible": false,
-    "editor.cursorStyle": "block",
+    "workbench.welcome.enabled": false,
+    "workbench.editor.showTabs": false,
 
-    "docker.enableLinting": false
+    "docker.enableLinting": true,
+
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+
+    // Haky way to enable navigating/deleting part of words when they're camel-cased.
+    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
+    "editor.cursorStyle": "block",
+    "editor.scrollBeyondLastLine": false,
+    "editor.renderWhitespace": "none",
+
+    "explorer.openEditors.visible": 20,
+    "explorer.autoReveal": false,
+    "terminal.external.osxExec": "iTerm.app"
 }

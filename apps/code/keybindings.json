@@ -1,20 +1,124 @@
 [
-
-    { "key": "cmd+t", "command": "workbench.action.quickOpen" },
-
-    { "key": "cmd+]", "command": "workbench.action.focusNextGroup", "when": "editorTextFocus" },
-    { "key": "cmd+[", "command": "workbench.action.focusPreviousGroup", "when": "editorTextFocus"},
-    { "key": "shift+cmd+[", "command": "workbench.action.previousEditorInGroup", "when": "editorTextFocus" },
-    { "key": "shift+cmd+]", "command": "workbench.action.nextEditorInGroup", "when": "editorTextFocus" },
-
-    { "key": "ctrl+.", "command": "workbench.action.showCommands" },
-
-    { "key": "ctrl+x 2", "command": "workbench.action.splitEditor" },
-
-    { "key": "ctrl+shift+.", "command": "editor.action.insertCursorBelow", "when": "editorTextFocus"},
-    { "key": "ctrl+shift+,", "command": "editor.action.insertCursorAbove", "when": "editorTextFocus" },
-
+    {
+        // A bit of a hacky way to get backspace to work on a selection as I've been
+        // usd to in Emacs.
+        "key": "backspace",
+        "command": "emacs.C-w",
+        "when": "editorTextFocus &&  editorHasSelection"
+    },
+    {
+        "key": "alt+tab",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+/",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+t",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "cmd+]",
+        "command": "workbench.action.focusNextGroup",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+[",
+        "command": "workbench.action.focusPreviousGroup",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+cmd+[",
+        "command": "workbench.action.previousEditorInGroup",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+cmd+]",
+        "command": "workbench.action.nextEditorInGroup",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+.",
+        "command": "workbench.action.showCommands"
+    },
+    {
+        "key": "ctrl+x 2",
+        "command": "workbench.action.splitEditor"
+    },
+    {
+        "key": "ctrl+shift+.",
+        "command": "editor.action.insertCursorBelow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+,",
+        "command": "editor.action.insertCursorAbove",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "editor.action.smartSelect.grow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "editor.action.smartSelect.shrink",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+,",
+        "command": "workbench.action.openNextRecentlyUsedEditorInGroup"
+    },
+    {
+        "key": "cmd+r",
+        "command": "editor.action.startFindReplaceAction"
+    },
+    {
+        "key": "cmd+d",
+        "command": "editor.action.copyLinesDownAction"
+    },
+    {
+        "key": "alt+u",
+        "command": "editor.action.transformToUppercase"
+    },
+    {
+        "key": "alt+l",
+        "command": "editor.action.transformToLowercase"
+    },
+    {
+        "key": "alt+.",
+        "command": "editor.action.goToDeclaration",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "alt+,",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "shift+cmd+l",
+        "command": "workbench.files.action.showActiveFileInExplorer",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+n",
+        "command": "editor.action.marker.next",
+        "when": "editorFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+p",
+        "command": "editor.action.marker.prev",
+        "when": "editorFocus && !editorReadonly"
+    },
     // I use alt+cmd+f for Spectacle.app
-    { "key": "alt+cmd+f", "command": null },
-    { "key": "cmd+shift+f", "command": "editor.action.startFindReplaceAction" }
+    {
+        "key": "alt+cmd+f",
+        "command": null
+    },
+    {
+        "key": "cmd+shift+f",
+        "command": "workbench.view.search"
+    }
 ]
