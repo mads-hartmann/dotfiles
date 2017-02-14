@@ -22,7 +22,6 @@ setup_targets := \
 	$(symlinks) \
 	$(build.dir)/homebrew.installed \
 	$(build.dir)/npm.installed \
-	$(build.dir)/apm.installed \
 	$(build.dir)/gems.installed \
 	$(build.dir)/pips.installed \
 	$(build.dir)/oh-my-zsh.installed \
@@ -78,12 +77,6 @@ $(build.dir)/gems.installed: requirements/gems.txt
 $(build.dir)/pips.installed: requirements/pip-packages.txt
 	$(call print,Installing pip packages)
 	$(QUIET)pip install $(shell cat $<)
-	$(call touch, $@)
-
-# Installs atom packages.
-$(build.dir)/apm.installed: requirements/atom-packages.txt
-	$(call print,Installing Atom packages)
-	$(QUIET)apm install $(shell grep -v '\#' $<)
 	$(call touch, $@)
 
 # Configure Visual Studio Code
