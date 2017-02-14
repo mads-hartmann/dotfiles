@@ -25,6 +25,8 @@ brew 'mas'
 brew 'awscli'
 brew 'fzf'
 brew 'python'
+brew 'python3'
+brew 'unrar'
 
 cask 'alfred'
 cask 'emacs'
@@ -49,6 +51,10 @@ cask 'soulver'
 cask 'spectacle'
 cask 'beamer'
 cask 'vlc'
+cask 'google-drive'
+cask 'virtualbox'
+
+cask 'Caskroom/versions/intellij-idea-ce'
 
 # Quick look plugins
 # Syntax highlighting

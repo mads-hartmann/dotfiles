@@ -29,6 +29,7 @@ source $ZSH/oh-my-zsh.sh
 #    various commands that I'm too lazy to type out all the time.
 
 alias pj="select-project"
+alias f="famlydev"
 alias epoch="date +%s"
 alias e="emacsclient -nw --socket-name=shell-emacs"
 alias eg="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c --no-wait"
@@ -64,15 +65,15 @@ bindkey -s '^[s' '^Ugit-switch^M'
 ### Prompt.
 
 function promt_part_git {
-    local git_branch
+  local git_branch
 
-    git rev-parse --is-inside-work-tree &> /dev/null
+  git rev-parse --is-inside-work-tree &> /dev/null
 
-    if [[ $status == 0 ]]
-    then
-        git_branch=$(git rev-parse --abbrev-ref HEAD)
-        echo " on %{$fg[green]%}$git_branch%{$reset_color%}"
-    fi
+  if [[ $status == 0 ]]
+  then
+    git_branch=$(git rev-parse --abbrev-ref HEAD)
+    echo " on %{$fg[green]%}$git_branch%{$reset_color%}"
+  fi
 }
 
 PROMPT='%{$fg[magenta]%}%~%{$reset_color%}$(promt_part_git) '
