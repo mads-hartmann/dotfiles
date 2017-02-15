@@ -1,14 +1,17 @@
 #!/usr/bin/env bash
 
 # Simple script to open the Github compare with the current branch
-# against $DEFAULT_PR_BRANCH.
+# against another.
 #
-# If DEFAULT_PR_BRANCH is not set it will use master.
+# There are two ways to specify which branch to compare against.
+#
+#   1. Set DEFAULT_PR_BRANCH
+#   2. Pass it as an argument to git-pr, e.g. `git pr staging`
 #
 # This will most likely break unless you have very simple branch
 # names.
 
-DEFAULT_PR_BRANCH=${DEFAULT_PR_BRANCH:-master}
+DEFAULT_PR_BRANCH=${1:-${DEFAULT_PR_BRANCH:-master}}
 
 # Make sure we're inside a git repo.
 git rev-parse --is-inside-work-tree &>/dev/null
