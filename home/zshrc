@@ -61,6 +61,7 @@ bindkey '^[l' down-case-word
 bindkey '^[u' up-case-word
 bindkey -s '^[p' '^Uselect-project^M' # Ctrl+u to delete line, select-project, enter.
 bindkey -s '^[s' '^Ugit-switch^M'
+bindkey -s '^[e' '^Uedit^M'
 
 ### Prompt.
 

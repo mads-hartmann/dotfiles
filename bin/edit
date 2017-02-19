@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+function is_git_project() {
+    if [ -d .git ]; then
+        return 0
+    else
+        return 1
+    fi;
+}
+
+if is_git_project
+then
+    file=$(git ls-tree -r --name-only HEAD | fzf )
+else
+    file=$(find . -path "*/\.*" -prune -o -type f -print -o -type l -print | sed s/^..// | fzf)
+fi
+
+
+if [ $? -gt 0 ]
+then
+    echo "Maybe some other time."
+else
+    $EDITOR $file
+fi
