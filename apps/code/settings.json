@@ -6,7 +6,7 @@
 
     "workbench.sideBar.location": "left",
     "workbench.activityBar.visible": false,
-    "workbench.statusBar.visible": false,
+    "workbench.statusBar.visible": true,
     "workbench.welcome.enabled": false,
     "workbench.editor.showTabs": false,
 
@@ -15,13 +15,15 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
 
-    // Haky way to enable navigating/deleting part of words when they're camel-cased.
-    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
     "editor.cursorStyle": "block",
     "editor.scrollBeyondLastLine": false,
     "editor.renderWhitespace": "none",
 
     "explorer.openEditors.visible": 20,
     "explorer.autoReveal": false,
-    "terminal.external.osxExec": "iTerm.app"
+    "terminal.external.osxExec": "iTerm.app",
+
+    "files.associations": {
+        "[a-zA-Z]+": "shellscript"
+    }
 }

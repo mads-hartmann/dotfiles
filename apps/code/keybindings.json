@@ -54,6 +54,11 @@
         "when": "editorTextFocus"
     },
     {
+        "key": "cmd+l",
+        "command": "workbench.action.gotoLine",
+        "when": "editorTextFocus"
+    },
+    {
         "key": "ctrl+shift+,",
         "command": "editor.action.insertCursorAbove",
         "when": "editorTextFocus"
