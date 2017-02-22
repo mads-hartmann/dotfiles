@@ -25,6 +25,7 @@ brew 'fzf'
 brew 'python'
 brew 'python3'
 brew 'unrar'
+brew 'zsh'
 
 cask 'alfred'
 cask 'emacs'
