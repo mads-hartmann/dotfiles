@@ -1,42 +1,46 @@
 # This Makefile takes care of symlinking, installing
 # dependencies and generally configuring everything.
 
-ifeq ($(shell which brew),)
-    $(error Cant find brew in $$PATH. Please install it.)
-endif
-
-
 QUIET := @
+.DEFAULT_GOAL := setup
 
 build.dir := _build
 
 # Find all the files that I'd like to have symlinked
 symlinks := $(addprefix $(HOME)/.,$(shell ls home))
 
-# Find the files that I'd like linked for Visual Studio Code.
-vscode := $(addprefix $(HOME)/Library/Application\ Support/Code/User/, $(shell ls apps/code))
+install_targets =
 
-### Target Rules
-
-setup_targets := \
-	$(symlinks) \
-	$(build.dir)/homebrew.installed \
-	$(build.dir)/npm.installed \
-	$(build.dir)/gems.installed \
-	$(build.dir)/pips.installed \
+setup_targets = \
 	$(build.dir)/oh-my-zsh.installed \
-	$(vscode)
+	$(symlinks)
 
-lint_targets := \
+lint_targets = \
 	$(addprefix $(build.dir)/lint/, $(shell ls ./bin/*))
 
-setup: $(setup_targets)
+#
+# Import the appropriate setup.
+#
+ifeq ($(shell uname),Linux)
+    include Makefile.linux
+else
+    include Makefile.osx
+endif
+
+#
+# Targets
+#
+
+setup: install $(setup_targets)
+install: $(install_targets)
 lint: setup $(lint_targets)
 clean: ; rm -r $(build.dir)
 
 print-%: ; @echo $* is $($*)
 
-### Pattern Rules
+#
+# Rules
+#
 
 # Lint bash scripts - zsh isn't supported
 $(build.dir)/lint/%: %
@@ -55,36 +59,9 @@ $(build.dir)/oh-my-zsh.installed:
 	$(QUIET)sh -c "$$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 	$(call touch,$@)
 
-# Install all homebrew packages.
-$(build.dir)/homebrew.installed: requirements/Brewfile
-	$(call print,Installing Homebrew packages)
-	$(QUIET)cd requirements && brew bundle -v
-	$(call touch, $@)
-
-# Installs global NPM dependencies.
-$(build.dir)/npm.installed: requirements/npm-packages.txt
-	$(call print,Installing global NPM packages)
-	$(QUIET)npm install -g $(shell cat $<)
-	$(call touch, $@)
-
-# Installs global gems.
-$(build.dir)/gems.installed: requirements/gems.txt
-	$(call print,Installing global gems)
-	$(QUIET)gem install $(shell cat $<)
-	$(call touch, $@)
-
-# Installs global pip packages.
-$(build.dir)/pips.installed: requirements/pip-packages.txt
-	$(call print,Installing pip packages)
-	$(QUIET)pip install $(shell cat $<)
-	$(call touch, $@)
-
-# Configure Visual Studio Code
-$(HOME)/Library/Application\ Support/%: apps/code/%
-	$(call print,Linking $(support)/Code/User/$* → $(abspath $<))
-	$(QUIET)ln -fs $(abspath $<) $(support)/Code/User/$*
-
-### Useful functions
+#
+# Useful functions
+#
 
 # $(call touch, file)
 #   Touch a file, making sure to create parent directories first if

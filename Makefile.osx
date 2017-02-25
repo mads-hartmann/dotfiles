@@ -1,0 +1,52 @@
+ifeq ($(shell which brew),)
+    $(error Cant find brew in $$PATH. Please install it.)
+endif
+
+# Find the files that I'd like linked for Visual Studio Code.
+vscode := $(addprefix $(HOME)/Library/Application\ Support/Code/User/, $(shell ls apps/code))
+
+#
+# Targets
+#
+
+install_targets += \
+	$(build.dir)/homebrew.installed \
+	$(build.dir)/npm.installed \
+	$(build.dir)/gems.installed \
+	$(build.dir)/pips.installed
+
+setup_targets += \
+	$(vscode)
+
+#
+# Rules
+#
+
+# Install all homebrew packages.
+$(build.dir)/homebrew.installed: requirements/Brewfile
+	$(call print,Installing Homebrew packages)
+	$(QUIET)cd requirements && brew bundle -v
+	$(call touch, $@)
+
+# Installs global NPM dependencies.
+$(build.dir)/npm.installed: requirements/npm-packages.txt
+	$(call print,Installing global NPM packages)
+	$(QUIET)npm install -g $(shell cat $<)
+	$(call touch, $@)
+
+# Installs global gems.
+$(build.dir)/gems.installed: requirements/gems.txt
+	$(call print,Installing global gems)
+	$(QUIET)gem install $(shell cat $<)
+	$(call touch, $@)
+
+# Installs global pip packages.
+$(build.dir)/pips.installed: requirements/pip-packages.txt
+	$(call print,Installing pip packages)
+	$(QUIET)pip install $(shell cat $<)
+	$(call touch, $@)
+
+# Configure Visual Studio Code
+$(HOME)/Library/Application\ Support/%: apps/code/%
+	$(call print,Linking $(support)/Code/User/$* → $(abspath $<))
+	$(QUIET)ln -fs $(abspath $<) $(support)/Code/User/$*

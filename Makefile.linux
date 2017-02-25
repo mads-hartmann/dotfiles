@@ -1,0 +1,17 @@
+
+#
+# Targets
+#
+
+install_targets += \
+	$(build.dir)/debian-packages.installed
+
+#
+# Rules
+#
+
+# Install all Debian packages.
+$(build.dir)/debian-packages.installed: requirements/debian-packages.txt
+	$(call print,Installing Debian packages)
+	sudo apt-get install -y $(shell cat $<)
+	$(call touch, $@)
