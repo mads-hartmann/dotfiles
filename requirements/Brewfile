@@ -41,7 +41,6 @@ cask 'flux'
 cask 'skype'
 cask 'logitech-options'
 cask 'postman'
-cask 'taskpaper'
 cask 'docker'
 cask 'visual-studio-code'
 cask 'soulver'
@@ -50,8 +49,6 @@ cask 'beamer'
 cask 'vlc'
 cask 'google-drive'
 cask 'virtualbox'
-
-cask 'Caskroom/versions/intellij-idea-ce'
 
 # Quick look plugins
 # Syntax highlighting

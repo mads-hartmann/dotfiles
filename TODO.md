@@ -1,12 +1,12 @@
 # TODO
 
-- Have a look at https://github.com/herrbischoff/awesome-osx-command-line
-- Create an OS X config file
-- Create an iTerm config script (I don't want to use the plist.) It should set the simple things.
+- [ ] Have a look at https://github.com/herrbischoff/awesome-osx-command-line
+- [ ] Create an OS X config file
 - [ ] Enable having extensions in my `bin` folder and strip them when linking.
+- [ ] See if mackup is something for me
+- [ ] Do I need to run `xcode-select  --install` at some point?
 
 
-# xcode-select --install
 https://github.com/jwiegley/git-scripts
 https://github.com/jwiegley/git-all
 
@@ -17,7 +17,6 @@ simply overwite any files in HOME that isn't already a link like the
 one we want.
 
 ## Key-bindings
-
 Figure out how to automate the creation of `~/Library/KeyBindings/DefaultKeyBinding.dict`
 
     {
