@@ -8,12 +8,14 @@ build.dir := _build
 
 # Find all the files that I'd like to have symlinked
 symlinks := $(addprefix $(HOME)/.,$(shell ls home))
+git-pr := /usr/local/share/zsh/site-functions/_git-pr /usr/local/bin/git-pr
 
 install_targets =
 
 setup_targets = \
 	$(build.dir)/oh-my-zsh.installed \
-	$(symlinks)
+	$(symlinks) \
+	$(git-pr)
 
 lint_targets = \
 	$(addprefix $(build.dir)/lint/, $(shell ls ./bin/*))
@@ -52,6 +54,12 @@ $(build.dir)/lint/%: %
 $(HOME)/.%: home/%
 	$(call print,Linking $(HOME)/.$* → $(abspath $<))
 	$(QUIET)ln -fs $(abspath $<) $(HOME)/.$*
+
+/usr/local/share/zsh/site-functions/_git-pr:
+	ln -fs $(abspath bin/git-pr.completions.sh) $@
+
+/usr/local/bin/git-pr:
+	ln -fs $(abspath bin/git-pr.sh) $@
 
 # Install oh-my-zsh
 $(build.dir)/oh-my-zsh.installed:

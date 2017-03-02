@@ -7,13 +7,13 @@
 #    load the body of the functions before they're used. The value of
 #    $fpath is used to find the bodies.
 
-fpath=(~/.zsh-functions $fpath)
+fpath=($DOTFILES_HOME/zsh-functions $fpath)
 
 # Built-in functions
 autoload -U colors && colors # force-load.
 
 # Custom functions
-for function_file (~/.zsh-functions/*); do
+for function_file ($DOTFILES_HOME/zsh-functions/*); do
   autoload -Uz ${function_file:t} # :t takes just the name.
 done
 
