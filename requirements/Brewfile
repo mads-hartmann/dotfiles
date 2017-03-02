@@ -27,6 +27,10 @@ brew 'python3'
 brew 'unrar'
 brew 'zsh'
 
+# A handy little tool for displaying a folder structure like a tree.
+# Example: tree -L 3
+brew 'tree'
+
 cask 'alfred'
 cask 'emacs'
 cask 'sequel-pro'
