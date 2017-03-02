@@ -24,6 +24,24 @@
     "terminal.external.osxExec": "iTerm.app",
 
     "files.associations": {
-        "[a-zA-Z]+": "shellscript"
-    }
+        "zshrc": "shellscript",
+        "zshenv": "shellscript"
+    },
+
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        // until docker-sync is respected
+        "**/.setup": true,
+        "**/.build": true,
+        "**/.idea": true,
+        "**/.docker-sync": true,
+        "**/.last-update": true,
+        "**/stack.txt": true,
+        "**/environment.env": true
+    },
+    "workbench.colorTheme": "One Dark+ (Sublime)",
+    "workbench.iconTheme": "material-icon-theme"
 }
