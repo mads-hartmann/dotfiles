@@ -4,4 +4,5 @@
 # into the current branch, but aren't named 'master' or 'staging'
 git branch --merged \
     | grep -E -v "(master|staging)" \
+    | grep -E -v "^\*" \
     | xargs git branch -d
