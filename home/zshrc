@@ -63,6 +63,11 @@ bindkey -s '^[p' '^Uselect-project^M' # Ctrl+u to delete line, select-project, e
 bindkey -s '^[s' '^Ugit-switch^M'
 bindkey -s '^[e' '^Uedit^M'
 
+# Nice small convenience key-bindings.
+# CTRL+T to select a file in the current directory and paste it.
+# CTRL+R to get a nicer backwards history search
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 ### Prompt.
 
 function promt_part_git {
