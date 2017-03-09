@@ -82,6 +82,6 @@ function promt_part_git {
   fi
 }
 
-PROMPT='%{$fg[magenta]%}%~%{$reset_color%}$(promt_part_git) '
+PROMPT='%{$fg[magenta]%}%~%{$reset_color%}$(promt_part_git) %{$fg[red]%}%(!.#.»)%{$reset_color%} '
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
