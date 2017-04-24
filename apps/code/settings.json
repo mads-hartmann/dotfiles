@@ -1,14 +1,14 @@
 {
 
-    "editor.fontSize": 13,
-    "window.zoomLevel": -0.4,
+    "editor.fontSize": 12,
+    "window.zoomLevel": 0,
     "window.titleBarStyle": "custom",
 
     "workbench.sideBar.location": "left",
     "workbench.activityBar.visible": false,
     "workbench.statusBar.visible": true,
     "workbench.welcome.enabled": false,
-    "workbench.editor.showTabs": false,
+    "workbench.editor.showTabs": true,
 
     "docker.enableLinting": true,
 
@@ -42,6 +42,7 @@
         "**/stack.txt": true,
         "**/environment.env": true
     },
-    "workbench.colorTheme": "One Dark+ (Sublime)",
-    "workbench.iconTheme": "material-icon-theme"
+    "workbench.colorTheme": "Visual Studio Light",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.editor.enablePreview": false
 }
