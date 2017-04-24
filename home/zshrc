@@ -68,7 +68,21 @@ bindkey -s '^[e' '^Uedit^M'
 # CTRL+R to get a nicer backwards history search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+### Tools
+
+# AWS completions
+source /usr/local/opt/awscli/libexec/bin/aws_zsh_completer.sh
+
 ### Prompt.
+
+function aws_part {
+  local profile="${AWS_PROFILE:-${AWS_DEFAULT_PROFILE}}"
+
+  if [[ -z "${profile}" ]]
+  then echo ""
+  else echo "aws:%{$fg[green]%}${profile}%{$reset_color%} "
+  fi
+}
 
 function promt_part_git {
   local git_branch
@@ -78,10 +92,11 @@ function promt_part_git {
   if [[ $status == 0 ]]
   then
     git_branch=$(git rev-parse --abbrev-ref HEAD)
-    echo " on %{$fg[green]%}$git_branch%{$reset_color%}"
+    echo "git:%{$fg[green]%}$git_branch%{$reset_color%}"
   fi
 }
 
-PROMPT='%{$fg[magenta]%}%~%{$reset_color%}$(promt_part_git) %{$fg[red]%}%(!.#.»)%{$reset_color%} '
+PROMPT='%{$fg[magenta]%}%~%{$reset_color%} %{$fg[red]%}%(!.#.»)%{$reset_color%} '
+RPROMPT='$(aws_part)$(promt_part_git)'
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
