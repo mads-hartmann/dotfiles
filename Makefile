@@ -14,6 +14,7 @@ install_targets =
 
 setup_targets = \
 	$(build.dir)/oh-my-zsh.installed \
+	$(build.dir)/zsh-syntax-highlighting.installed \
 	$(symlinks) \
 	$(git-pr)
 
@@ -65,6 +66,11 @@ $(HOME)/.%: home/%
 $(build.dir)/oh-my-zsh.installed:
 	$(call print,Installing oh-my-zsh)
 	$(QUIET)sh -c "$$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+	$(call touch,$@)
+
+$(build.dir)/zsh-syntax-highlighting.installed:
+	$(call print,Installing zsh-syntax-highlighting)
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $(HOME)/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 	$(call touch,$@)
 
 #

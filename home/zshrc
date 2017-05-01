@@ -19,7 +19,7 @@ done
 
 ### Oh-my-zsh
 
-plugins=(git docker)
+plugins=(git npm docker hub zsh-syntax-highlighting)
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME=""
 source $ZSH/oh-my-zsh.sh
