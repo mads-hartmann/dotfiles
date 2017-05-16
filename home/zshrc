@@ -75,6 +75,26 @@ source /usr/local/opt/awscli/libexec/bin/aws_zsh_completer.sh
 
 ### Prompt.
 
+function is_in_project {
+  git rev-parse --is-inside-work-tree &> /dev/null
+  return $status
+}
+
+function project_path {
+  git rev-parse --show-toplevel
+}
+
+function project_name {
+  echo ${$(project_path)##*/}
+}
+
+function path_part {
+  if is_in_project
+  then echo "%{$fg[red]%}$(project_name)%{$reset_color%}:%{$fg[white]%}${$(pwd)##$(project_path)}%{$reset_color%}"
+  else echo '%~'
+  fi
+}
+
 function aws_part {
   local profile="${AWS_PROFILE:-${AWS_DEFAULT_PROFILE}}"
 
@@ -84,19 +104,22 @@ function aws_part {
   fi
 }
 
-function promt_part_git {
+function git_part {
   local git_branch
 
-  git rev-parse --is-inside-work-tree &> /dev/null
-
-  if [[ $status == 0 ]]
-  then
+  if is_in_project; then
     git_branch=$(git rev-parse --abbrev-ref HEAD)
-    echo "git:%{$fg[green]%}$git_branch%{$reset_color%}"
+    if [[ ${#git_branch} -gt 30 ]]
+    then
+      git_branch="${git_branch:0:30}…"
+    fi
+    echo "git:%{$fg[green]%}${git_branch}%{$reset_color%}"
   fi
 }
 
-PROMPT='%{$fg[magenta]%}%~%{$reset_color%} %{$fg[red]%}%(!.#.»)%{$reset_color%} '
-RPROMPT='$(aws_part)$(promt_part_git)'
+function prompt_symbol {
+  echo " %{$fg[yellow]%}%(!.#.λ)%{$reset_color%} "
+}
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+PROMPT='$(path_part)$(prompt_symbol)'
+RPROMPT='$(aws_part)$(git_part)'
