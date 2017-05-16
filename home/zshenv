@@ -4,7 +4,7 @@
 # not contain commands that produce output or assume the shell is
 # attached to a tty.
 
-export AWS_DEFAULT_PROFILE=mads379
+export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 export DOTFILES_HOME="$HOME/dev/personal/dotfiles"
 
