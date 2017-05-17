@@ -4,6 +4,9 @@
 # not contain commands that produce output or assume the shell is
 # attached to a tty.
 
+export ZSH=$HOME/.oh-my-zsh
+export ZSH_CUSTOM=$HOME/.zsh
+export ZSH_THEME="hartmann"
 export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 export DOTFILES_HOME="$HOME/dev/personal/dotfiles"
@@ -29,3 +32,10 @@ export PATH="$DOTFILES_HOME/bin:$PATH"
 # Make sure that the homebrew installed emacs comes first in the
 # shell.
 export PATH="/usr/local/opt/emacs/bin:$PATH"
+
+# fzf is an extremely useful tool.
+# These are just some tweaks to make it even more useful than what
+# the defaults are.
+export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS="--height 100% --reverse --color=bg+:#000000,hl:#EAC170,hl+:#EAC170,prompt:#EAC170,pointer:#EAC170"

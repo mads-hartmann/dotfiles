@@ -26,6 +26,7 @@ brew 'python'
 brew 'python3'
 brew 'unrar'
 brew 'zsh'
+brew 'ag'
 
 # A handy little tool for displaying a folder structure like a tree.
 # Example: tree -L 3

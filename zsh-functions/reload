@@ -1,7 +1,0 @@
-#!/usr/bin/env zsh
-
-# Reload my zsh configuration.
-function reload {
-    source ~/.zshrc
-    compinit
-}

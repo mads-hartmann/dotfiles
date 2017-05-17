@@ -1,67 +1,21 @@
 # .zshrc is sourced in interactive shells. It should contain
 # commands to set up aliases, functions, options, key bindings, etc.
 
-### Register lazily loaded functions.
-#
-#    This tells zsh that these functions exist but that it shouldn't
-#    load the body of the functions before they're used. The value of
-#    $fpath is used to find the bodies.
+plugins=(
+  # Plugins from oh-my-zsh
+  git
+  npm
+  docker
+  hub
+  zsh-syntax-highlighting
+  zsh_reload
+  # My own plugins
+  project
+  aws-switch
+  git-pr
+)
 
-fpath=($DOTFILES_HOME/zsh-functions $fpath)
-
-# Built-in functions
-autoload -U colors && colors # force-load.
-
-# Custom functions
-for function_file ($DOTFILES_HOME/zsh-functions/*); do
-  autoload -Uz ${function_file:t} # :t takes just the name.
-done
-
-### Oh-my-zsh
-
-plugins=(git npm docker hub zsh-syntax-highlighting)
-export ZSH=$HOME/.oh-my-zsh
-export ZSH_THEME=""
 source $ZSH/oh-my-zsh.sh
-
-### Aliases.
-#
-#    various commands that I'm too lazy to type out all the time.
-
-alias pj="select-project"
-alias f="famlydev"
-alias epoch="date +%s"
-alias e="emacsclient -nw --socket-name=shell-emacs"
-alias eg="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c --no-wait"
-
-# Starts an emacs daemon with a dedicated name. I use this daemon
-# whenever I use emacs from the terminal.
-alias emacs-daemon="emacs --daemon=shell-emacs"
-
-alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}'"
-alias dc="docker-compose"
-
-### Keybindings.
-#
-# This binds keys to Zle widgets (Zsh Line Editor widgets.).
-# To get a list of all widgets run zle -la
-#
-# See this link for more information.
-#
-#   http://sgeb.io/posts/2014/04/zsh-zle-custom-widgets/
-#   http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Standard-Widgets
-#
-# You can use `bindkey 'M-x'` to see what command M-x is bound to. Use `bindkey`
-# to get a list of all mappings.
-#
-# ^[ is alt.
-#
-
-bindkey '^[l' down-case-word
-bindkey '^[u' up-case-word
-bindkey -s '^[p' '^Uselect-project^M' # Ctrl+u to delete line, select-project, enter.
-bindkey -s '^[s' '^Ugit-switch^M'
-bindkey -s '^[e' '^Uedit^M'
 
 # Nice small convenience key-bindings.
 # CTRL+T to select a file in the current directory and paste it.
@@ -72,54 +26,3 @@ bindkey -s '^[e' '^Uedit^M'
 
 # AWS completions
 source /usr/local/opt/awscli/libexec/bin/aws_zsh_completer.sh
-
-### Prompt.
-
-function is_in_project {
-  git rev-parse --is-inside-work-tree &> /dev/null
-  return $status
-}
-
-function project_path {
-  git rev-parse --show-toplevel
-}
-
-function project_name {
-  echo ${$(project_path)##*/}
-}
-
-function path_part {
-  if is_in_project
-  then echo "%{$fg[red]%}$(project_name)%{$reset_color%}:%{$fg[white]%}${$(pwd)##$(project_path)}%{$reset_color%}"
-  else echo '%~'
-  fi
-}
-
-function aws_part {
-  local profile="${AWS_PROFILE:-${AWS_DEFAULT_PROFILE}}"
-
-  if [[ -z "${profile}" ]]
-  then echo ""
-  else echo "aws:%{$fg[green]%}${profile}%{$reset_color%} "
-  fi
-}
-
-function git_part {
-  local git_branch
-
-  if is_in_project; then
-    git_branch=$(git rev-parse --abbrev-ref HEAD)
-    if [[ ${#git_branch} -gt 30 ]]
-    then
-      git_branch="${git_branch:0:30}…"
-    fi
-    echo "git:%{$fg[green]%}${git_branch}%{$reset_color%}"
-  fi
-}
-
-function prompt_symbol {
-  echo " %{$fg[yellow]%}%(!.#.λ)%{$reset_color%} "
-}
-
-PROMPT='$(path_part)$(prompt_symbol)'
-RPROMPT='$(aws_part)$(git_part)'
