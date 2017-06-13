@@ -70,12 +70,12 @@
     },
     {
         "key": "ctrl+w",
-        "command": "editor.action.smartSelect.grow",
+        "command": "expand_region",
         "when": "editorTextFocus"
     },
     {
         "key": "ctrl+shift+w",
-        "command": "editor.action.smartSelect.shrink",
+        "command": "undo_expand_region",
         "when": "editorTextFocus"
     },
     {
@@ -166,5 +166,9 @@
     {
         "key": "cmd+9",
         "command": "workbench.action.openEditorAtIndex9"
+    },{
+        "key": "ctrl+shift+alt+.",
+        "command": "editor.action.addSelectionToNextFindMatch",
+        "when": "editorTextFocus"
     }
 ]
