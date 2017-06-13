@@ -6,6 +6,7 @@ cordova
 ember-cli
 yarn
 diff-so-fancy
+git://github.com/reasonml/reason-cli.git#beta-v-1.13.5
 
 eslint
 eslint-plugin-babel

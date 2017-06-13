@@ -1,2 +1,4 @@
 pylint
 virtualenv
+virtualenvwrapper
+twine

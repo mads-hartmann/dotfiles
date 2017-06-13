@@ -2,6 +2,7 @@ cask_args appdir: '/Applications'
 
 tap 'homebrew/bundle'
 tap 'homebrew/php'
+tap 'lampepfl/brew'
 
 cask 'java'
 
@@ -27,11 +28,15 @@ brew 'python3'
 brew 'unrar'
 brew 'zsh'
 brew 'ag'
+brew 'ctags'
+brew 'dotty'
+brew 'opam'
 
 # A handy little tool for displaying a folder structure like a tree.
 # Example: tree -L 3
 brew 'tree'
 
+cask 'keybase'
 cask 'alfred'
 cask 'emacs'
 cask 'sequel-pro'
@@ -54,6 +59,7 @@ cask 'beamer'
 cask 'vlc'
 cask 'google-drive'
 cask 'virtualbox'
+cask 'github-desktop'
 
 # Quick look plugins
 # Syntax highlighting
