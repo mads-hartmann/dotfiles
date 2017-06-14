@@ -1,0 +1,4 @@
+{
+    "psFormat": "table {{.Names}}\\t{{.Image}}\\t{{.Statjs}}"
+
+}
