@@ -1,14 +1,14 @@
 {
     "window.nativeTabs": false,
 
-    "editor.fontSize": 12,
+    "editor.fontSize": 13,
     "window.zoomLevel": 0,
     "editor.fontFamily": "Bitstream Vera Sans Mono",
     "window.titleBarStyle": "native",
 
     "workbench.sideBar.location": "right",
     "workbench.activityBar.visible": false,
-    "workbench.statusBar.visible": false,
+    "workbench.statusBar.visible": true,
     "workbench.welcome.enabled": false,
     "workbench.editor.showTabs": true,
 
@@ -52,7 +52,7 @@
         "plaintext",
         "text"
     ],
-    "workbench.colorTheme": "Kimbie Dark",
+    "workbench.colorTheme": "Nord",
     "editor.renderLineHighlight": "none",
 
     "[markdown]": {
@@ -61,5 +61,11 @@
         "editor.renderWhitespace": "boundary",
         "files.trimTrailingWhitespace": false
     },
-    "editor.minimap.enabled": false
+    "editor.minimap.enabled": false,
+    "kite.showTourOnStartup": false,
+    "cSpell.userWords": [
+        "templating",
+        "OCaml",
+        "jbuilder"
+    ]
 }
