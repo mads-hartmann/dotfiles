@@ -13,6 +13,7 @@ install_targets += \
 	$(build.dir)/homebrew.installed \
 	$(build.dir)/npm.installed \
 	$(build.dir)/gems.installed \
+	$(build.dir)/opam-packages.installed \
 	$(build.dir)/pips.installed
 
 setup_targets += \
@@ -44,6 +45,12 @@ $(build.dir)/gems.installed: requirements/gems.txt
 $(build.dir)/pips.installed: requirements/pip-packages.txt
 	$(call print,Installing pip packages)
 	$(QUIET)pip install $(shell cat $<)
+	$(call touch, $@)
+
+# Installs global opam packages.
+$(build.dir)/opam-packages.installed: requirements/opam-packages.txt
+	$(call print,Installing OPAM packages)
+	$(QUIET)grep -v "#" $< | grep -v "^$$" | xargs -L 1 opam
 	$(call touch, $@)
 
 # Configure Visual Studio Code

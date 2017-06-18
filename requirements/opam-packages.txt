@@ -1,0 +1,11 @@
+# Build tool for OCaml and ReasonML projects.
+install jbuilder
+
+# Editor support
+install merlin
+
+# Reason
+install reason
+
+# Tool for creating new projects using jbuilder.
+pin add --yes ohai "git+https://github.com/jaredly/ohai"
