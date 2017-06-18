@@ -36,6 +36,10 @@ export PATH="$DOTFILES_HOME/bin:$PATH"
 # shell.
 export PATH="/usr/local/opt/emacs/bin:$PATH"
 
+# I mostly use sed in CI scripts so might as well use the version that
+# the CI servers are going to use
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
 # fzf is an extremely useful tool.
 # These are just some tweaks to make it even more useful than what
 # the defaults are.

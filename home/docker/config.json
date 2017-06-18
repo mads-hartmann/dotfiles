@@ -1,4 +1,7 @@
 {
-    "psFormat": "table {{.Names}}\\t{{.Image}}\\t{{.Statjs}}"
-
+	"auths": {
+		"https://index.docker.io/v1/": {}
+	},
+	"psFormat": "table {{.Names}}\\t{{.Image}} ago\\t{{.Status}}",
+	"credsStore": "osxkeychain"
 }
