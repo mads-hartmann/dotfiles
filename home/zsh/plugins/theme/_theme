@@ -1,0 +1,11 @@
+# -*- mode: sh -*-
+#compdef theme
+#description Switch between iTerm2 profiles
+
+_theme() {
+    themes="Light Dark"
+    _arguments \
+        ':iTerm2 Profile:($(echo ${themes}))'
+}
+
+_theme "$@"

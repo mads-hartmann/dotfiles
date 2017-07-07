@@ -1,5 +1,4 @@
-# .zshrc is sourced in interactive shells. It should contain
-# commands to set up aliases, functions, options, key bindings, etc.
+# -*- mode: sh -*-
 
 plugins=(
   # Plugins from oh-my-zsh
@@ -13,6 +12,8 @@ plugins=(
   project
   aws-switch
   git-pr
+  colorful-tabs
+  theme
 )
 
 source $ZSH/oh-my-zsh.sh
