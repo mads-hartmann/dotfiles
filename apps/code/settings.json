@@ -1,41 +1,25 @@
 {
-    "window.nativeTabs": false,
-
-    "editor.fontSize": 13,
-    "window.zoomLevel": 0,
-    "editor.fontFamily": "Bitstream Vera Sans Mono",
-    "window.titleBarStyle": "native",
-
-    "workbench.sideBar.location": "right",
-    "workbench.activityBar.visible": false,
-    "workbench.statusBar.visible": true,
-    "workbench.welcome.enabled": false,
-    "workbench.editor.showTabs": true,
-
-    "docker.enableLinting": false,
-
-    "files.trimTrailingWhitespace": true,
-    "files.insertFinalNewline": true,
-
     "editor.cursorStyle": "block",
-    "editor.scrollBeyondLastLine": false,
+    "editor.fontFamily": "Bitstream Vera Sans Mono",
+    "editor.fontLigatures":true,
+    "editor.fontSize": 13,
+    "editor.minimap.enabled": false,
+    "editor.renderLineHighlight": "none",
     "editor.renderWhitespace": "none",
+    "editor.scrollBeyondLastLine": false,
 
-    "explorer.openEditors.visible": 20,
     "explorer.autoReveal": false,
-    "terminal.external.osxExec": "iTerm.app",
+    "explorer.openEditors.visible": 20,
 
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
     "files.associations": {
         "zshrc": "shellscript",
         "zshenv": "shellscript"
     },
-
     "files.exclude": {
         "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
         "**/.DS_Store": true,
-        // until docker-sync is respected
         "**/.setup": true,
         "**/.build": true,
         "**/.idea": true,
@@ -44,28 +28,45 @@
         "**/stack.txt": true,
         "**/environment.env": true
     },
+
+    "terminal.external.osxExec": "iTerm.app",
+
+    "window.nativeTabs": false,
+    "window.titleBarStyle": "native",
+    "window.zoomLevel": 0,
+
+    "workbench.activityBar.visible": true,
+    "workbench.editor.showTabs": true,
+    "workbench.sideBar.location": "right",
+    "workbench.statusBar.visible": true,
+    "workbench.welcome.enabled": false,
     "workbench.iconTheme": "material-icon-theme",
-    "workbench.editor.enablePreview": false,
+    "workbench.colorTheme": "Nord",
+    "workbench.editor.enablePreview": true,
+
+    /**
+     * Various utility plugins
+     */
+
     "cSpell.enabledLanguageIds": [
         "latex",
         "markdown",
         "plaintext",
         "text"
     ],
-    "workbench.colorTheme": "Nord",
-    "editor.renderLineHighlight": "none",
+
+    /**
+     * Language specific settings
+     */
+
+    "docker.enableLinting": false,
+
+    "reason.formatOnSave": true,
 
     "[markdown]": {
         "editor.wordWrap": "on",
         "editor.quickSuggestions": false,
         "editor.renderWhitespace": "boundary",
         "files.trimTrailingWhitespace": false
-    },
-    "editor.minimap.enabled": false,
-    "kite.showTourOnStartup": false,
-    "cSpell.userWords": [
-        "templating",
-        "OCaml",
-        "jbuilder"
-    ]
+    }
 }
