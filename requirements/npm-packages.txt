@@ -4,3 +4,4 @@ diff-so-fancy
 eslint
 eslint-plugin-babel
 eslint-plugin-react@latest
+gatsby@next

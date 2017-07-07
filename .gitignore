@@ -2,3 +2,5 @@
 .vscode
 _build
 home/sbt
+home/docker
+home/pypirc

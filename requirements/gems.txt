@@ -2,3 +2,4 @@ jekyll
 crowdin-cli
 docker-sync
 bundler
+rogue
