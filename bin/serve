@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -euo pipefail
+
+function serve {
+    local port=$1
+    echo "Listening on http://localhost:${port} 🚀"
+    python -m SimpleHTTPServer ${port} .
+}
+
+port=${1:-8080}
+serve ${port}
