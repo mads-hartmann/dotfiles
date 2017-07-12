@@ -14,6 +14,7 @@ plugins=(
   git-pr
   colorful-tabs
   theme
+  git-fzf
 )
 
 source $ZSH/oh-my-zsh.sh

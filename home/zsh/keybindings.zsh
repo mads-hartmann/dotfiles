@@ -11,6 +11,10 @@
 # You can use `bindkey 'M-x'` to see what command M-x is bound to. Use `bindkey`
 # to get a list of all mappings.
 #
+# bindkey <keys> <widget>
+# bindkey -s <keys> <input strokes>
+#
+# ^ is control.
 # ^[ is alt.
 #
 
