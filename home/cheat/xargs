@@ -1,0 +1,16 @@
+# xargs -- construct argument list(s) and execute utility
+
+# Pipe stdout into another command
+echo "xargs is fun\nand usefull" | xargs echo
+
+# Pipe every X lines into another command
+echo "xargs is fun\nand usefull" | xargs -L1 echo
+
+# Set the number of arguments taken from standard input for each invocation of utility
+echo "arg1 arg2 arg3 arg4" | xargs -n2 echo
+
+# Construct the more advanced commands with patterns
+echo "arg1 arg2 arg3 arg4" | xargs -I{} -n1 echo '{}'
+
+# Debugging. Use -t to echo commands before executing them
+echo "XARGS" | xargs -t echo

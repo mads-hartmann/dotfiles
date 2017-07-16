@@ -32,6 +32,11 @@ brew 'ctags'
 brew 'dotty'
 brew 'opam'
 
+# Cute little tool that looks up cheatsheet information.
+# e.g. cheat tar
+# https://github.com/chrisallenlane/cheat
+brew 'cheat'
+
 # A handy little tool for displaying a folder structure like a tree.
 # Example: tree -L 3
 brew 'tree'
