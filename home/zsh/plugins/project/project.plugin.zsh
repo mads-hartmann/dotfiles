@@ -4,10 +4,10 @@
 function project {
     clear
     paths=($(find \
-                 ~/dev/personal \
-                 ~/dev/famly \
-                 ~/dev/hatch-sh \
-                 -maxdepth 1 \
+                 ~/dev/personal/* \
+                 ~/dev/famly/* \
+                 ~/dev/hatch-sh/* \
+                 -maxdepth 0 \
                  -type d)) # all paths
     names=${paths##~/dev/} # remove longest match of ~/dev/ from paths
     selection=$(echo ${names:gs/ /\\n/} | fzf --reverse) # substitution adds newlines
