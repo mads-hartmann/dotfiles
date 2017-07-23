@@ -15,6 +15,7 @@ plugins=(
   colorful-tabs
   theme
   git-fzf
+  reload-function
 )
 
 source $ZSH/oh-my-zsh.sh
