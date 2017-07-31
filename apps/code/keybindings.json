@@ -17,6 +17,15 @@
         "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"
     },
     {
+        "key": "ctrl+r",
+        "command": "workbench.action.quickSwitchWindow"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "workbench.action.quickOpenNavigateNext",
+        "when": "inWindowsPicker"
+    },
+    {
         "key": "cmd+t",
         "command": "workbench.action.quickOpen"
     },

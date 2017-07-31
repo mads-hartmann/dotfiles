@@ -20,13 +20,21 @@
     "files.exclude": {
         "**/.git": true,
         "**/.DS_Store": true,
-        "**/.setup": true,
-        "**/.build": true,
-        "**/.idea": true,
-        "**/.docker-sync": true,
         "**/.last-update": true,
-        "**/stack.txt": true,
-        "**/environment.env": true
+        ".setup": true,
+        ".build": true,
+        ".idea": true,
+        ".vscode": true,
+        "build": true,
+        "dist": true,
+        // python
+        ".venv": true,
+        "**/*.pyc": true,
+        "*.egg-info": true,
+        // famly
+        ".docker-sync": true,
+        "stack.txt": true,
+        "environment.env": true
     },
 
     "terminal.external.osxExec": "iTerm.app",
@@ -35,14 +43,14 @@
     "window.titleBarStyle": "native",
     "window.zoomLevel": 0,
 
-    "workbench.activityBar.visible": true,
+    "workbench.activityBar.visible": false,
     "workbench.editor.showTabs": true,
+    "workbench.editor.tabCloseButton": "off",
+    "workbench.editor.enablePreview": false,
     "workbench.sideBar.location": "right",
-    "workbench.statusBar.visible": true,
-    "workbench.welcome.enabled": false,
+    "workbench.statusBar.visible": false,
     "workbench.iconTheme": "material-icon-theme",
     "workbench.colorTheme": "Nord",
-    "workbench.editor.enablePreview": true,
 
     /**
      * Various utility plugins
@@ -68,5 +76,8 @@
         "editor.quickSuggestions": false,
         "editor.renderWhitespace": "boundary",
         "files.trimTrailingWhitespace": false
-    }
+    },
+
+    "prettier.eslintIntegration": true,
+    "workbench.startupEditor": "newUntitledFile"
 }
