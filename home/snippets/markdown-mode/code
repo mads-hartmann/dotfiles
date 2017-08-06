@@ -1,0 +1,6 @@
+# name: code
+# key: code
+# --
+```${1:language}
+$0
+```

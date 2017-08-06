@@ -561,8 +561,8 @@
   :defer
   :init
   (progn
-    (yas-global-mode)
-    (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+    (yas-global-mode 1)
+    (setq yas-snippet-dirs '("~/.snippets"))
     (yas-reload-all)))
 
 (use-package diff-hl
