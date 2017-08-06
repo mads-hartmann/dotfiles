@@ -4,6 +4,7 @@ endif
 
 # Find the files that I'd like linked for Visual Studio Code.
 vscode := $(addprefix $(HOME)/Library/Application\ Support/Code/User/, $(shell ls apps/code))
+vscode_insiders := $(addprefix $(HOME)/Library/Application\ Support/Code\ -\ Insiders/User/, $(shell ls apps/code))
 
 #
 # Targets
@@ -17,7 +18,8 @@ install_targets += \
 	$(build.dir)/pips.installed
 
 setup_targets += \
-	$(vscode)
+	$(vscode) \
+	$(vscode_insiders)
 
 #
 # Rules
@@ -54,6 +56,10 @@ $(build.dir)/opam-packages.installed: requirements/opam-packages.txt
 	$(call touch, $@)
 
 # Configure Visual Studio Code
-$(HOME)/Library/Application\ Support/%: apps/code/%
-	$(call print,Linking $(support)/Code/User/$* → $(abspath $<))
-	$(QUIET)ln -fs $(abspath $<) $(support)/Code/User/$*
+$(HOME)/Library/Application\ Support/Code/User/%: apps/code/%
+	$(call print,Linking $* → $(abspath $<))
+	$(QUIET)ln -fs $(abspath $<) "$@"
+
+$(HOME)/Library/Application\ Support/Code\ -\ Insiders/User/%: apps/code/%
+	$(call print,Linking $* → $(abspath $<))
+	$(QUIET)ln -fs $(abspath $<) "$@"
