@@ -1,5 +1,3 @@
-# -*- mode: sh -*-
-
 plugins=(
   # Plugins from oh-my-zsh
   git
@@ -12,9 +10,10 @@ plugins=(
   project
   aws-switch
   git-pr
-  colorful-tabs
+  # colorful-tabs
   theme
   git-fzf
+  hello
   reload-function
 )
 
