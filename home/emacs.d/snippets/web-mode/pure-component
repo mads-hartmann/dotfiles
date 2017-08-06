@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: pure-component
+# key: pure
+# --
+const ${1:Component} = (props) => {
+      return (
+          $0
+      );
+};
+
+$1.propTypes = {
+
+};
+
+$1.contextTypes = {
+
+};

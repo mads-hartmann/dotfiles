@@ -1,0 +1,10 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: class
+# key: class
+# --
+class ${1:Foo} {
+    constructor(${2:arg}) {
+        this.$2 = $2;
+        $0
+    }
+}

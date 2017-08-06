@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: React :: shouldComponentUpdate
+# key: react-lifecycle
+# --
+shouldComponentUpdate(nextProps, nextState) {
+    $0
+},

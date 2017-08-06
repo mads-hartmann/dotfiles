@@ -1,0 +1,17 @@
+# -*- mode: snippet; -*-
+# name: Bash Ceramony
+# key: ceramony
+# --
+#!/usr/bin/env bash
+
+## header ceramony -- sane bash defaults.
+
+set -e # fail on errors
+set -u # fail if you use variable that is undefined
+set -o pipefail # break pipes
+
+## variables
+
+## functions
+
+## main

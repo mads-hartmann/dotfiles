@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: sql
+# key: sql
+# --
+#+begin_src sql :engine mysql :cmdline -hlocalhost -uroot -Duserdb :results output
+$0
+#+end_src

@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: method
+# key: method
+# --
+${1:method}(${2:argument}) {
+    ${0}
+}

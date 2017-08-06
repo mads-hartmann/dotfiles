@@ -1,0 +1,8 @@
+# -*- mode: snippet; -*-
+# name: class
+# key: class
+# --
+class ${1:Foo}(${2:object}):
+    ${3:"""${4:This class does amazing things}"""}
+    ${5:def __init__(self):
+        $0}
