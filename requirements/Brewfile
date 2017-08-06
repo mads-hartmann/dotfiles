@@ -31,6 +31,7 @@ brew 'ag'
 brew 'ctags'
 brew 'dotty'
 brew 'opam'
+brew 'olafurpg/scalafmt/scalafmt'
 
 # Cute little tool that looks up cheatsheet information.
 # e.g. cheat tar
