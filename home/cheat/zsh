@@ -1,0 +1,9 @@
+
+# Starting an empty zsh shell
+zsh --no-rcs
+
+# Documentation
+man zshbuiltins
+man zshall
+man zshzle
+man zshcompsys # completions
