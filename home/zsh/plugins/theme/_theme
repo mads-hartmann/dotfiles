@@ -1,5 +1,4 @@
-# -*- mode: sh -*-
-#compdef theme
+#compdef _theme theme
 #description Switch between iTerm2 profiles
 
 _theme() {
@@ -7,5 +6,3 @@ _theme() {
     _arguments \
         ':iTerm2 Profile:($(echo ${themes}))'
 }
-
-_theme "$@"
