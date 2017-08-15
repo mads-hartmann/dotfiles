@@ -40,9 +40,16 @@ function git_part {
   fi
 }
 
+function docker_part {
+  if [[ -z ${DOCKER_MACHINE_NAME} ]]
+  then echo ""
+  else echo "docker:%{$fg[green]%}${DOCKER_MACHINE_NAME}%{$reset_color%} "
+  fi
+}
+
 function prompt_symbol {
   echo " %{$fg[yellow]%}%(!.#.λ)%{$reset_color%} "
 }
 
 PROMPT='$(path_part)$(prompt_symbol)'
-RPROMPT='$(aws_part)$(git_part)'
+RPROMPT='$(docker_part)$(aws_part)$(git_part)'
