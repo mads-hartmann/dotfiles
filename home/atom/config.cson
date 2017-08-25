@@ -1,0 +1,17 @@
+"*":
+  core:
+    audioBeep: false
+    packagesWithKeymapsDisabled: [
+      "text-select-mode"
+    ]
+    telemetryConsent: "limited"
+    titleBar: "custom"
+  editor:
+    showIndentGuide: true
+    showInvisibles: true
+  "exception-reporting":
+    userId: "9756de94-6685-4a4e-856f-2302d86b1ba5"
+  "text-select-mode":
+    clearSelection: true
+  welcome:
+    showOnStartup: false

@@ -1,0 +1,13 @@
+browser-plus@0.0.98
+busy-signal@1.4.3
+editorconfig@2.2.2
+expand-region@0.3.1
+hyperclick@0.1.3
+intentions@1.1.5
+language-scala@1.1.9
+linter@2.2.0
+linter-ui-default@1.6.7
+text-select-mode@0.4.0
+
+Ensime@0.41.0
+

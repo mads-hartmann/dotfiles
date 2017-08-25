@@ -15,7 +15,8 @@ install_targets += \
 	$(build.dir)/npm.installed \
 	$(build.dir)/gems.installed \
 	$(build.dir)/opam-packages.installed \
-	$(build.dir)/pips.installed
+	$(build.dir)/pips.installed \
+  $(build.dir)/apm.installed
 
 setup_targets += \
 	$(vscode) \
@@ -53,6 +54,11 @@ $(build.dir)/pips.installed: requirements/pip-packages.txt
 $(build.dir)/opam-packages.installed: requirements/opam-packages.txt
 	$(call print,Installing OPAM packages)
 	$(QUIET)grep -v "#" $< | grep -v "^$$" | xargs -L 1 opam
+	$(call touch, $@)
+
+$(build.dir)/apm.installed: home/atom/apm-packages.txt
+	$(call print,Installing APM packages)
+	$(QUIET)apm install --packages-file $<
 	$(call touch, $@)
 
 # Configure Visual Studio Code

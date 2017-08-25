@@ -1,0 +1,40 @@
+'body':
+  'ctrl-g': 'core:cancel'
+
+'atom-workspace':
+  'cmd-t': 'fuzzy-finder:toggle-file-finder'
+  'ctrl-.': 'command-palette:toggle'
+
+'atom-text-editor':
+  'alt-x':'command-palette:toggle'
+  'alt-/': 'autocomplete-plus:activate'
+  # Viewport movements
+  'ctrl-v':'core:page-down'
+  'alt-v':'core:page-up'
+  'alt-<':'core:move-to-top'
+  'escape <':'core:move-to-top'
+  'alt->':'core:move-to-bottom'
+  # Text editing
+  'ctrl-space': 'text-select-mode:toggle'
+  'cmd-l': 'go-to-line:toggle'
+  'alt-q': 'autoflow:reflow-selection'
+  'alt-down': 'editor:move-line-down'
+  'alt-up': 'editor:move-line-up'
+  'ctrl-w': 'expand-region:expand'
+  'alt-u': 'editor:upper-case'
+  'alt-l': 'editor:lower-case'
+  # Pane management and manipulation
+  'ctrl-x 0':'pane:close'
+  'ctrl-x 1': 'init:merge-panes'
+  'ctrl-x 2': 'pane:split-down-and-copy-active-item'
+  'ctrl-x 3': 'pane:split-right-and-copy-active-item'
+  'ctrl-x o':'window:focus-next-pane'
+  'cmd-]': 'window:focus-next-pane'
+  'cmd-[': 'window:focus-previous-pane'
+
+'atom-text-editor:not([mini])':
+  # selection
+  'ctrl-g': 'editor:consolidate-selections'
+  'ctrl-shift-.': 'editor:add-selection-below'
+  'ctrl-shift-,': 'editor:add-selection-above'
+  'ctrl-space': 'text-select-mode:toggle'
