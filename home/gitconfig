@@ -10,6 +10,7 @@
         recap = diff --stat origin/staging...HEAD
 [core]
         pager = diff-so-fancy | less --tabs=4 -RFX
+        editor = emacsclient -c --socket-name=shell-emacs
 [user]
-	email = mads379@gmail.com
-	name = Mads Hartmann
+        email = mads379@gmail.com
+        name = Mads Hartmann
