@@ -4,3 +4,11 @@ _build
 home/sbt
 home/docker
 home/pypirc
+
+home/atom/.apm
+home/atom/blob-store
+home/atom/compile-cache
+home/atom/storage
+home/atom/recovery
+home/atom/packages
+home/atom/.node-gyp
