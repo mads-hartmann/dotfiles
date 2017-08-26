@@ -1,0 +1,12 @@
+# -*- mode: snippet; -*-
+# name: Script
+# key: script
+# --
+#!/bin/bash
+set -euo pipefail
+
+function main {
+    $0
+}
+
+main $@
