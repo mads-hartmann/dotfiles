@@ -19,7 +19,8 @@ export DEFAULT_PR_BRANCH="staging"
 
 # Use emacs as the default editor. It expects that an emacs daemon is
 # running with the name 'shell-emacs'.
-export EDITOR="emacsclient -c --socket-name=shell-emacs"
+# export EDITOR="emacsclient -c --socket-name=shell-emacs"
+export EDITOR="atom"
 
 # Path.
 #   For many of these path updates it would've been nicer to use
