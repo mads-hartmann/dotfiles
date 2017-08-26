@@ -1,4 +1,4 @@
-#compdef reload-function
+#compdef _reload-function reload-function
 #description Reload a ZSH function
 
 function _reload-function {
@@ -6,5 +6,3 @@ function _reload-function {
     _arguments -C \
         "1:function:(${function_names})"
 }
-
-_reload-function
