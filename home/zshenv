@@ -22,6 +22,8 @@ export DEFAULT_PR_BRANCH="staging"
 # export EDITOR="emacsclient -c --socket-name=shell-emacs"
 export EDITOR="atom"
 
+export ATOM_REPOS_HOME=~/dev/other
+
 # Path.
 #   For many of these path updates it would've been nicer to use
 #   (brew --prefix <package>) to find the path, however, it's rather
