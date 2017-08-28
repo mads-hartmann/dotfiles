@@ -8,6 +8,7 @@
 'atom-text-editor':
   'alt-x':'command-palette:toggle'
   'alt-/': 'autocomplete-plus:activate'
+  'alt-tab': 'autocomplete-plus:activate'
   # Viewport movements
   'ctrl-v':'core:page-down'
   'alt-v':'core:page-up'
@@ -23,6 +24,7 @@
   'ctrl-w': 'expand-region:expand'
   'alt-u': 'editor:upper-case'
   'alt-l': 'editor:lower-case'
+  'alt-c': 'init:capitalize-word'
   # Pane management and manipulation
   'ctrl-x 0':'pane:close'
   'ctrl-x 1': 'init:merge-panes'
