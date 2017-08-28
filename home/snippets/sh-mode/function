@@ -2,6 +2,6 @@
 # name: Function
 # key: fun
 # --
-${1:my_function}() {
+function ${1:my_function} {
     $0
 }
