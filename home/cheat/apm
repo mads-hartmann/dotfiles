@@ -1,0 +1,5 @@
+# Clone an existing package and link it.
+apm develop <package_name>
+
+# If you haven't used `apm develop` then you can link a package instead.
+apm link
