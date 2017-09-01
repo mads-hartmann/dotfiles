@@ -9,7 +9,7 @@
 # simply using the functions provided by
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/git.zsh
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$FG[051]%}❯%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_ADDED="%{$FG[${NEON_GREEN}]%}❯%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_ADDED="%{$FG[046]%}❯%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_MODIFIED="%{$FG[226]%}❯%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_RENAMED="%{$FG[123]%}❯%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DELETED="%{$FG[196]%}❯%{$reset_color%}"
@@ -40,6 +40,8 @@ function path_part {
     if [[ ! -z "$(parse_git_dirty)" ]]
     then
       part="${part} "
+    else
+      part="${part} %{$FG[046]%}✓%{$reset_color%}"
     fi
     part="${part}%{$fg[white]%}${$(pwd)##$(project_path)}%{$reset_color%}"
     echo ${part}
