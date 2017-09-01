@@ -4,7 +4,7 @@
         // usd to in Emacs.
         "key": "backspace",
         "command": "emacs.C-w",
-        "when": "editorTextFocus &&  editorHasSelection"
+        "when": "editorTextFocus && editorHasSelection && !editorHasMultipleSelections"
     },
     {
         "key": "alt+tab",
