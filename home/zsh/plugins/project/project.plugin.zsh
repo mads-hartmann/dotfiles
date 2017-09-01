@@ -5,6 +5,7 @@ function project {
     clear
     paths=($(find \
                  ~/dev/personal/* \
+                 ~/dev/other/* \
                  ~/dev/famly/* \
                  ~/dev/hatch-sh/* \
                  -maxdepth 0 \
