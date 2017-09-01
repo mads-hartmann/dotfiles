@@ -8,10 +8,10 @@
 # I really don't want to re-implement the nice git prompt features so I'm
 # simply using the functions provided by
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/git.zsh
-ZSH_THEME_GIT_PROMPT_UNTRACKED=''
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$FG[051]%}❯%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_ADDED="%{$FG[${NEON_GREEN}]%}❯%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_MODIFIED="%{$FG[226]%}❯%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_RENAMED=''
+ZSH_THEME_GIT_PROMPT_RENAMED="%{$FG[123]%}❯%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DELETED="%{$FG[196]%}❯%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_STASHED=''
 ZSH_THEME_GIT_PROMPT_UNMERGED=''
