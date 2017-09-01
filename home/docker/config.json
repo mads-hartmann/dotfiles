@@ -2,5 +2,6 @@
 	"auths": {
 		"https://index.docker.io/v1/": {}
 	},
-	"credsStore": "osxkeychain"
+	"credsStore": "osxkeychain",
+        "psFormat": "table {{ .ID }}\\t{{ .Names }}\\t{{ .Status }}\\t{{ .Ports }}"
 }
