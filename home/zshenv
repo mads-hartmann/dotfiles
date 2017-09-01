@@ -19,8 +19,7 @@ export DEFAULT_PR_BRANCH="staging"
 
 # Use emacs as the default editor. It expects that an emacs daemon is
 # running with the name 'shell-emacs'.
-# export EDITOR="emacsclient -c --socket-name=shell-emacs"
-export EDITOR="atom"
+export EDITOR="emacsclient -c --socket-name=shell-emacs"
 
 export ATOM_REPOS_HOME=~/dev/other
 
