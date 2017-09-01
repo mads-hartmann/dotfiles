@@ -9,6 +9,8 @@
   'alt-x':'command-palette:toggle'
   'alt-/': 'autocomplete-plus:activate'
   'alt-tab': 'autocomplete-plus:activate'
+  'ctrl-x ctrl-s':'core:save'
+  'ctrl-x ctrl-o':'fuzzy-finder:toggle-file-finder'
   # Viewport movements
   'ctrl-v':'core:page-down'
   'alt-v':'core:page-up'
@@ -35,6 +37,7 @@
   'cmd-[': 'window:focus-previous-pane'
 
 'atom-text-editor:not([mini])':
+  'ctrl-o': 'editor:newline-below'
   # selection
   'ctrl-g': 'editor:consolidate-selections'
   'ctrl-shift-.': 'editor:add-selection-below'

@@ -3,15 +3,26 @@
     audioBeep: false
     packagesWithKeymapsDisabled: [
       "text-select-mode"
+      "atom-ternjs"
     ]
     telemetryConsent: "limited"
     titleBar: "custom"
   editor:
+    fontFamily: "Fira Code"
+    fontSize: 13
     showIndentGuide: true
-    showInvisibles: true
   "exception-reporting":
     userId: "9756de94-6685-4a4e-856f-2302d86b1ba5"
+  "linter-ui-default": {}
+  "prettier-atom":
+    formatOnSaveOptions: {}
+    prettierOptions:
+      singleQuote: true
+    useEslint: true
   "text-select-mode":
     clearSelection: true
   welcome:
     showOnStartup: false
+".source.ts":
+  editor:
+    autoIndentOnPaste: false
