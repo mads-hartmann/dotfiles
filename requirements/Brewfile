@@ -6,6 +6,7 @@ tap 'lampepfl/brew'
 
 cask 'java'
 
+brew 'zsh-completions'
 brew 'sbt'
 brew 'jq'
 brew 'postgresql'

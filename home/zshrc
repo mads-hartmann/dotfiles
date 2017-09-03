@@ -1,3 +1,6 @@
+# Completion scripts written by the zsh community. Installed through brew
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 plugins=(
   # Plugins from oh-my-zsh
   git
