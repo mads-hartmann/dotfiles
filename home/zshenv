@@ -4,6 +4,9 @@
 # not contain commands that produce output or assume the shell is
 # attached to a tty.
 
+# Environment variables I don't want to have commited to git goes into that file
+[ -f ~/.secrets ] && source ~/.secrets
+
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
