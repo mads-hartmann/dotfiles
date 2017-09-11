@@ -43,3 +43,8 @@
   'ctrl-shift-.': 'editor:add-selection-below'
   'ctrl-shift-,': 'editor:add-selection-above'
   'ctrl-space': 'text-select-mode:toggle'
+
+'atom-text-editor[data-grammar="source reason"]':
+  'alt-.': 'ocaml-merlin:go-to-declaration'
+  'alt-,': 'ocaml-merlin:return-from-declaration'
+  'ctrl-?': 'ocaml-merlin:toggle-type'
