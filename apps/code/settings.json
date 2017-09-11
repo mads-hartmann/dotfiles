@@ -27,10 +27,15 @@
         "**/.last-update": true,
         ".setup": true,
         ".build": true,
+        ".gitignore": true,
         ".idea": true,
         ".vscode": true,
+        "_build": true,
         "build": true,
         "dist": true,
+        // OCaml / Reason
+        "**/.merlin": true,
+        "**/*.install": true,
         // python
         ".venv": true,
         "**/*.pyc": true,
@@ -44,17 +49,17 @@
     "terminal.external.osxExec": "iTerm.app",
 
     "window.nativeTabs": false,
-    "window.titleBarStyle": "native",
+    "window.titleBarStyle": "custom",
     "window.zoomLevel": 0,
 
     "workbench.activityBar.visible": false,
-    "workbench.editor.showTabs": false,
+    "workbench.editor.showTabs": true,
     "workbench.editor.tabCloseButton": "off",
     "workbench.editor.enablePreview": false,
     "workbench.sideBar.location": "left",
     "workbench.statusBar.visible": false,
     "workbench.iconTheme": "vs-minimal",
-    "workbench.colorTheme": "Nord",
+    "workbench.colorTheme": "One Dark Pro",
     "workbench.startupEditor": "newUntitledFile",
 
     /**
