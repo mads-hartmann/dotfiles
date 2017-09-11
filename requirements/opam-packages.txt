@@ -1,11 +1,15 @@
 # Build tool for OCaml and ReasonML projects.
-install jbuilder
+jbuilder
+
+# packager for distributing OCaml software
+topkg
+topkg-care
+topkg-jbuilder
 
 # Editor support
-install merlin
+merlin
 
 # Reason
-install reason
+reason
 
-# Tool for creating new projects using jbuilder.
-pin add --yes ohai "git+https://github.com/jaredly/ohai"
+opam-publish

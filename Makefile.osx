@@ -53,7 +53,7 @@ $(build.dir)/pips.installed: requirements/pip-packages.txt
 # Installs global opam packages.
 $(build.dir)/opam-packages.installed: requirements/opam-packages.txt
 	$(call print,Installing OPAM packages)
-	$(QUIET)grep -v "#" $< | grep -v "^$$" | xargs -L 1 opam
+	$(QUIET)grep -v "#" $< | grep -v "^$$" | xargs -L 1 opam install --yes
 	$(call touch, $@)
 
 $(build.dir)/apm.installed: home/atom/apm-packages.txt
