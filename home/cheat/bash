@@ -1,5 +1,6 @@
 # Variables
 echo ${myvar:-default} # use value of myvar if defined, otherwise use default
+echo ${myvar/foo/bar} # replace foo with bar in variable
 
 # Debugging
 set -x # turn in on
