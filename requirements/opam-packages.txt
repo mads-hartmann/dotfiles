@@ -1,15 +1,15 @@
 # Build tool for OCaml and ReasonML projects.
-jbuilder
+install --yes jbuilder
 
 # packager for distributing OCaml software
-topkg
-topkg-care
-topkg-jbuilder
+# install --yes topkg
+# install --yes topkg-care
+# install --yes topkg-jbuilder
+
+# opam-publish
 
 # Editor support
-merlin
+pin --yes add merlin 2.5.4
 
 # Reason
-reason
-
-opam-publish
+pin --yes add reason 1.13.7
