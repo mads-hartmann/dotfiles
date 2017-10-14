@@ -1,0 +1,5 @@
+# name: switch
+# --
+switch ${1:variable} {
+    | $0
+}
