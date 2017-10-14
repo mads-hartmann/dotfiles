@@ -33,6 +33,9 @@ export ATOM_REPOS_HOME=~/dev/other
 # Coming from bash, I expect these to be in the PATH.
 export PATH=/usr/local/bin:$HOME/bin:$PATH
 
+# Homebrew somtimes puts things here.
+export PATH="/usr/local/sbin:$PATH"
+
 # Make sure my shell scripts are on on the path
 export PATH="$DOTFILES_HOME/bin:$PATH"
 
