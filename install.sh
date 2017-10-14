@@ -91,7 +91,7 @@ function install_opam_packages {
 # Create symlinks for all the .xyz files into $HOME
 function create_symlinks {
     local files
-    files=$(ls -Al | awk '{ print $9 }' | grep -E '^\.' | grep -v '.DS_Store')
+    files=$(ls -Al | awk '{ print $9 }' | grep -E '^\.' | grep -v '.DS_Store' | grep -v '.gitignore' | grep -v '.git$')
 
     echo "Create symlinks for everyhing"
     for file in ${files}; do
