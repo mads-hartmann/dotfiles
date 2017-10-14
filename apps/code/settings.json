@@ -1,98 +1,98 @@
 {
-    "editor.cursorStyle": "block",
-    "editor.fontFamily": "Fira Code",
-    "editor.fontLigatures":true,
-    "editor.fontSize": 13,
-    "editor.minimap.enabled": false,
-    "editor.renderLineHighlight": "none",
-    "editor.renderWhitespace": "none",
-    "editor.scrollBeyondLastLine": false,
-    "editor.wordBasedSuggestions": true,
-    // Disable vscode snippets, I use yassnippets
-    "editor.tabCompletion": false,
-    "editor.snippetSuggestions": "none",
+  "editor.cursorStyle": "block",
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "none",
+  "editor.renderWhitespace": "none",
+  "editor.scrollBeyondLastLine": false,
+  "editor.wordBasedSuggestions": true,
+  // Disable vscode snippets, I use yassnippets
+  "editor.tabCompletion": false,
+  "editor.snippetSuggestions": "none",
 
-    "explorer.autoReveal": false,
-    "explorer.openEditors.visible": 20,
+  "explorer.autoReveal": false,
+  "explorer.openEditors.visible": 20,
 
-    "files.insertFinalNewline": true,
-    "files.trimTrailingWhitespace": true,
-    "files.associations": {
-        "zshrc": "shellscript",
-        "zshenv": "shellscript"
-    },
-    "files.exclude": {
-        "**/.git": true,
-        "**/.DS_Store": true,
-        "**/.last-update": true,
-        ".setup": true,
-        ".build": true,
-        ".gitignore": true,
-        ".idea": true,
-        ".vscode": true,
-        "_build": true,
-        "build": true,
-        "dist": true,
-        // OCaml / Reason
-        "**/.merlin": true,
-        "**/*.install": true,
-        // python
-        ".venv": true,
-        "**/*.pyc": true,
-        "*.egg-info": true,
-        // famly
-        ".docker-sync": true,
-        "stack.txt": true,
-        "environment.env": true
-    },
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.associations": {
+    "zshrc": "shellscript",
+    "zshenv": "shellscript"
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/.last-update": true,
+    ".setup": true,
+    ".build": true,
+    ".gitignore": true,
+    ".idea": true,
+    ".vscode": true,
+    "_build": true,
+    "build": true,
+    "dist": true,
+    // OCaml / Reason
+    "**/.merlin": true,
+    "**/*.install": true,
+    // python
+    ".venv": true,
+    "**/*.pyc": true,
+    "*.egg-info": true,
+    // famly
+    ".docker-sync": true,
+    "stack.txt": true,
+    "environment.env": true
+  },
 
-    "terminal.external.osxExec": "iTerm.app",
+  "terminal.external.osxExec": "iTerm.app",
 
-    "window.nativeTabs": false,
-    "window.titleBarStyle": "custom",
-    "window.zoomLevel": 0,
+  "window.nativeTabs": false,
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": 0,
 
-    "workbench.activityBar.visible": false,
-    "workbench.editor.showTabs": true,
-    "workbench.editor.tabCloseButton": "off",
-    "workbench.editor.enablePreview": false,
-    "workbench.sideBar.location": "left",
-    "workbench.statusBar.visible": false,
-    "workbench.iconTheme": "vs-minimal",
-    "workbench.colorTheme": "One Dark Pro",
-    "workbench.startupEditor": "newUntitledFile",
+  "workbench.fontAliasing": "default",
+  "workbench.activityBar.visible": false,
+  "workbench.editor.showTabs": true,
+  "workbench.editor.tabCloseButton": "off",
+  "workbench.editor.enablePreview": false,
+  "workbench.sideBar.location": "left",
+  "workbench.statusBar.visible": false,
+  "workbench.iconTheme": "vs-minimal",
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.startupEditor": "newUntitledFile",
 
-    /**
+  /**
      * Various utility plugins
      */
 
-    "yassnippet.path": ".snippets",
-    "yassnippet.mapping": {
-        "shellscript": "sh-mode"
-    },
+  "yassnippet.path": ".snippets",
+  "yassnippet.mapping": {
+    "shellscript": "sh-mode"
+  },
 
-    "cSpell.enabledLanguageIds": [
-        "latex",
-        "markdown",
-        "plaintext",
-        "text"
-    ],
+  "cSpell.enabledLanguageIds": ["latex", "markdown", "plaintext", "text"],
 
-    /**
+  /**
      * Language specific settings
      */
 
-    "docker.enableLinting": false,
+  "docker.showExplorer": false,
 
-    "reason.formatOnSave": true,
+  "reason.formatOnSave": true,
 
-    "[markdown]": {
-        "editor.wordWrap": "on",
-        "editor.quickSuggestions": false,
-        "editor.renderWhitespace": "boundary",
-        "files.trimTrailingWhitespace": false
-    },
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": false,
+    "editor.renderWhitespace": "boundary",
+    "files.trimTrailingWhitespace": false
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
 
-    "prettier.eslintIntegration": true,
-    "vsicons.presets.foldersAllDefaultIcon": true
+  "prettier.eslintIntegration": true,
+  "vsicons.presets.foldersAllDefaultIcon": true,
+  "vsicons.dontShowNewVersionMessage": true,
 }
