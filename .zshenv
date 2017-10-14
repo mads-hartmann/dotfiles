@@ -30,6 +30,10 @@ export ATOM_REPOS_HOME=~/dev/other
 #   (brew --prefix <package>) to find the path, however, it's rather
 #   slow so when you have a lot of them your boot time gets slow :(
 
+# I have both python3 and python2 installed.
+# This makes sure that python2 is on the path.
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
 # Coming from bash, I expect these to be in the PATH.
 export PATH=/usr/local/bin:$HOME/bin:$PATH
 

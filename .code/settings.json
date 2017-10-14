@@ -74,10 +74,6 @@
 
   "cSpell.enabledLanguageIds": ["latex", "markdown", "plaintext", "text"],
 
-  /**
-     * Language specific settings
-     */
-
   "docker.showExplorer": false,
 
   "reason.formatOnSave": true,
@@ -91,8 +87,11 @@
   "[javascript]": {
     "editor.formatOnSave": true
   },
+  "[makefile]": {
+    "editor.renderWhitespace": "boundary"
+  },
 
   "prettier.eslintIntegration": true,
   "vsicons.presets.foldersAllDefaultIcon": true,
-  "vsicons.dontShowNewVersionMessage": true,
+  "vsicons.dontShowNewVersionMessage": true
 }

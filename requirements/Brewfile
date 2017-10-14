@@ -5,34 +5,44 @@ tap 'homebrew/php'
 tap 'lampepfl/brew'
 
 cask 'java'
-
-brew 'zsh-completions'
 brew 'sbt'
-brew 'jq'
+brew 'dotty'
+brew 'olafurpg/scalafmt/scalafmt'
+
+brew 'ruby'
+brew 'node@6'
+
+brew 'python'
+brew 'python3'
+
+brew 'opam'
+
+brew 'php70'
+brew 'php70-mcrypt'
+brew 'php70-redis'
+brew 'php70-xdebug'
+brew 'homebrew/php/composer'
+
 brew 'postgresql'
 brew 'mysql'
-brew 'coreutils'
 brew 'redis'
+
+brew 'zsh'
+brew 'zsh-completions'
+
+brew 'jq'
+brew 'coreutils'
 brew 'git'
 brew 'ispell'
-brew 'node'
-brew 'ruby'
-brew 'yarn'
 brew 'shellcheck'
 brew 'cloc'
 brew 'fswatch'
 brew 'mas'
 brew 'awscli'
 brew 'fzf'
-brew 'python'
-brew 'python3'
 brew 'unrar'
-brew 'zsh'
 brew 'ag'
 brew 'ctags'
-brew 'dotty'
-brew 'opam'
-brew 'olafurpg/scalafmt/scalafmt'
 
 # Cute little tool that looks up cheatsheet information.
 # e.g. cheat tar
@@ -56,7 +66,6 @@ cask 'spotify'
 cask 'appzapper'
 cask 'flux'
 cask 'skype'
-cask 'logitech-options'
 cask 'postman'
 cask 'docker'
 cask 'visual-studio-code'
@@ -66,7 +75,7 @@ cask 'beamer'
 cask 'vlc'
 cask 'google-drive'
 cask 'virtualbox'
-cask 'github-desktop'
+brew 'ios-deploy'
 
 # Quick look plugins
 # Syntax highlighting
@@ -93,12 +102,3 @@ mas 'Keynote', id: 409183694
 mas 'GarageBand', id: 682658836
 mas 'Pages', id: 409201541
 mas 'Numbers', id: 409203825
-
-# Used at Famly.
-brew 'homebrew/php/composer'
-brew 'php70'
-brew 'php70-mcrypt'
-brew 'php70-redis'
-brew 'php70-xdebug'
-brew 'ios-deploy'
-cask 'phpstorm'
