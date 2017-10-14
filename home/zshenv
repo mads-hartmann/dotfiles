@@ -20,9 +20,8 @@ export DOTFILES_HOME="$HOME/dev/personal/dotfiles"
 # Used in some of my git-related scripts.
 export DEFAULT_PR_BRANCH="staging"
 
-# Use emacs as the default editor. It expects that an emacs daemon is
-# running with the name 'shell-emacs'.
-export EDITOR="emacsclient -c --socket-name=shell-emacs"
+# Use emacs as the default editor.
+export EDITOR="emacsclient -c"
 
 export ATOM_REPOS_HOME=~/dev/other
 
