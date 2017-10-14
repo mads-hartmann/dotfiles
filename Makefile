@@ -1,6 +1,10 @@
 # This Makefile takes care of symlinking, installing
 # dependencies and generally configuring everything.
 
+ifeq ($(shell which brew),)
+    $(error Cant find brew in $$PATH. Please install it.)
+endif
+
 QUIET := @
 .DEFAULT_GOAL := setup
 
@@ -19,14 +23,74 @@ setup_targets = \
 lint_targets = \
 	$(addprefix $(build.dir)/lint/, $(shell ls ./bin/*))
 
+# Find the files that I'd like linked for Visual Studio Code.
+vscode := $(addprefix $(HOME)/Library/Application\ Support/Code/User/, $(shell ls apps/code))
+vscode_insiders := $(addprefix $(HOME)/Library/Application\ Support/Code\ -\ Insiders/User/, $(shell ls apps/code))
+
 #
-# Import the appropriate setup.
+# Targets
 #
-ifeq ($(shell uname),Linux)
-    include Makefile.linux
-else
-    include Makefile.osx
-endif
+
+install_targets += \
+	$(build.dir)/homebrew.installed \
+	$(build.dir)/npm.installed \
+	$(build.dir)/gems.installed \
+	$(build.dir)/opam-packages.installed \
+	$(build.dir)/pips.installed \
+  $(build.dir)/apm.installed
+
+setup_targets += \
+	$(vscode) \
+	$(vscode_insiders)
+
+#
+# Rules
+#
+
+# Install all homebrew packages.
+$(build.dir)/homebrew.installed: requirements/Brewfile
+	$(call print,Installing Homebrew packages)
+	$(QUIET)cd requirements && brew bundle -v
+	$(call touch, $@)
+
+# Installs global NPM dependencies.
+$(build.dir)/npm.installed: requirements/npm-packages.txt
+	$(call print,Installing global NPM packages)
+	$(QUIET)npm install -g $(shell cat $<)
+	$(call touch, $@)
+
+# Installs global gems.
+$(build.dir)/gems.installed: requirements/gems.txt
+	$(call print,Installing global gems)
+	$(QUIET)gem install $(shell cat $<)
+	$(call touch, $@)
+
+# Installs global pip packages.
+$(build.dir)/pips.installed: requirements/pip-packages.txt
+	$(call print,Installing pip packages)
+	$(QUIET)pip install $(shell cat $<)
+	$(call touch, $@)
+
+# Installs global opam packages.
+$(build.dir)/opam-packages.installed: requirements/opam-packages.txt
+	$(call print,Installing OPAM packages)
+	$(QUIET)grep -v "#" $< | grep -v "^$$" | xargs -L 1 opam
+	$(call touch, $@)
+
+$(build.dir)/apm.installed: home/atom/apm-packages.txt
+	$(call print,Installing APM packages)
+	$(QUIET)apm install --packages-file $<
+	$(call touch, $@)
+
+# Configure Visual Studio Code
+$(HOME)/Library/Application\ Support/Code/User/%: apps/code/%
+	$(call print,Linking $* → $(abspath $<))
+	$(QUIET)ln -fs $(abspath $<) "$@"
+
+$(HOME)/Library/Application\ Support/Code\ -\ Insiders/User/%: apps/code/%
+	$(call print,Linking $* → $(abspath $<))
+	$(QUIET)ln -fs $(abspath $<) "$@"
+
 
 #
 # Targets

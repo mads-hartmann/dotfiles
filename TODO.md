@@ -7,7 +7,6 @@
 - [ ] Do I need to run `xcode-select  --install` at some point?
 - [ ] Currently I had to brew link --overwrite. Make sure that happens on setup automatically
 - [ ] Switch to Hyper for my terminal? Would need to add theme etc as part of my dotfiles
-- [ ] Move .emacs.d into my dotfiles? Only if my current repo doesn't have stars. also it does make it less discoverable?
 
 
 https://github.com/jwiegley/git-scripts
