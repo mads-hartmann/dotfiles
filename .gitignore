@@ -9,3 +9,4 @@
 .atom/packages
 .atom/.node-gyp
 .atom/github.cson
+.ssh/known_hosts
