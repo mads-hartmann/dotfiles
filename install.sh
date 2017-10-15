@@ -14,7 +14,7 @@ function symlink {
     elif [[ -e "${target}" ]]; then
         echo "File already exists ${origin} and isn't a link: ${target}"
     else
-        echo "Linking ${origin} -> ${target}"
+        echo "✓ Linking ${origin} -> ${target}"
         ln -s "${origin}" "${target}"
     fi
 }
@@ -97,6 +97,8 @@ function create_symlinks {
     for file in ${files}; do
         symlink "$(pwd)/$file" "$HOME/$file"
     done
+
+    symlink "${HOME}/Library/Mobile Documents/com~apple~CloudDocs" "${HOME}/iCloudDrive"
 }
 
 # Make vscode work well with my dotfiles.
