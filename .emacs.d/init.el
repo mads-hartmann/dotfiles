@@ -308,11 +308,10 @@
         ("<s-up>" . diredp-up-directory))
   :init
   (progn
-
+    (require 'dired-x)
     (setq
      insert-directory-program "/usr/local/opt/coreutils/libexec/gnubin/ls"
-     dired-listing-switches "-lXGh --group-directories-first")
-
+     dired-listing-switches "-lAXGh --group-directories-first")
     (add-hook 'dired-mode-hook 'hl-line-mode)
     (add-hook 'dired-mode-hook 'dired-omit-mode)
     (add-hook 'dired-mode-hook 'dired-hide-details-mode)))
