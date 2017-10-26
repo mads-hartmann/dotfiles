@@ -37,7 +37,6 @@ brew 'ispell'
 brew 'shellcheck'
 brew 'cloc'
 brew 'fswatch'
-brew 'mas'
 brew 'awscli'
 brew 'fzf'
 brew 'unrar'
@@ -94,11 +93,3 @@ cask 'quicklook-csv'
 cask 'betterzipql'
 # Show image size and resolution when display images
 cask 'qlimagesize'
-
-# Appstore apps
-mas 'Tweetbot', id: 557168941
-mas 'iMovie', id: 408981434
-mas 'Keynote', id: 409183694
-mas 'GarageBand', id: 682658836
-mas 'Pages', id: 409201541
-mas 'Numbers', id: 409203825
