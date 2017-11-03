@@ -40,9 +40,6 @@ export PATH=/usr/local/bin:$HOME/bin:$PATH
 # Homebrew somtimes puts things here.
 export PATH="/usr/local/sbin:$PATH"
 
-# Make sure my shell scripts are on on the path
-export PATH="$DOTFILES_HOME/bin:$PATH"
-
 # Make sure that the homebrew installed emacs comes first in the
 # shell.
 export PATH="/usr/local/opt/emacs/bin:$PATH"
