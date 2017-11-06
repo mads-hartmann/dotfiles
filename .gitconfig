@@ -1,19 +1,20 @@
 # Local/private config goes in the include
 [include]
-        path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
 [alias]
-        b = branch
-        co = checkout
-        st = status -s
-        stats = diff --stat
-        count = !git shortlog -sn
-        recap = diff --stat origin/staging...HEAD
+	b = branch
+	co = checkout
+	st = status -s
+	stats = diff --stat
+	count = !git shortlog -sn
+	recap = diff --stat origin/staging...HEAD
+	mylog = !git log --author=\"$(git config user.name)\"
 [core]
-        pager = diff-so-fancy | less --tabs=4 -RFX
-        editor = emacsclient -c
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	editor = emacsclient -c
 [user]
-        email = mads379@gmail.com
-        name = Mads Hartmann
+	email = mads379@gmail.com
+	name = Mads Hartmann
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
