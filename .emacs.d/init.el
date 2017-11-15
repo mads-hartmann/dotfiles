@@ -161,6 +161,8 @@
 ;; ---------------------------------
 (if window-system
     (progn
+      (setq server-name "server-gui")
+      (server-start)
       (tool-bar-mode -1)
       (scroll-bar-mode -1)
       (add-to-list 'initial-frame-alist '(width . 150))
