@@ -38,7 +38,8 @@
  line-move-visual t
  custom-file "~/.emacs.d/custom.el"
  explicit-shell-file-name "/bin/bash"
- shell-file-name "bash")
+ shell-file-name "bash"
+ imenu-auto-rescan t)
 
 ;; Buffer Local Variables
 ;; ---------------------------------
@@ -643,6 +644,12 @@
     (setq scss-compile-at-save nil)
     (add-hook 'scss-mode-hook 'linum-mode)))
 
+(use-package imenu-list
+  :ensure t
+  :bind (("C-c o" . imenu-list-smart-toggle))
+  :config
+  (setq imenu-list-focus-after-activation t
+        imenu-list-auto-resize nil))
 (use-package markdown-mode
   :commands markdown-mode
   :bind
@@ -652,6 +659,7 @@
         ("C-c C-c" . flycheck-list-errors))
   :config
   (progn
+    (add-hook 'markdown-mode-hook 'imenu-add-menubar-index)
     (add-hook 'markdown-mode-hook 'linum-mode)
     (add-hook 'markdown-mode-hook 'flycheck-mode)
     (add-hook 'markdown-mode-hook 'flyspell-mode)))
