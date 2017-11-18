@@ -659,6 +659,9 @@
         ("C-c C-c" . flycheck-list-errors))
   :config
   (progn
+    (custom-set-variables
+     '(markdown-hide-markup t)
+     '(markdown-fontify-code-blocks-natively t))
     (add-hook 'markdown-mode-hook 'imenu-add-menubar-index)
     (add-hook 'markdown-mode-hook 'linum-mode)
     (add-hook 'markdown-mode-hook 'flycheck-mode)
