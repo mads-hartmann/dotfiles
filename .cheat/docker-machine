@@ -1,0 +1,11 @@
+# Create a machine (virtualbox based)
+docker-machine create -d virtualbox my-machine
+
+# Get the environment to talk to the machine
+docker-machine env my-machine
+
+# To use that machine as your docker engine for a whole session
+eval $(docker-machine env my-machine)
+
+# To get the IP
+docker-machine ip my-machine
