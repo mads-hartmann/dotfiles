@@ -37,8 +37,8 @@
  debug-on-error nil
  line-move-visual t
  custom-file "~/.emacs.d/custom.el"
- explicit-shell-file-name "/bin/bash"
- shell-file-name "bash"
+ explicit-shell-file-name "/usr/local/bin/zsh"
+ shell-file-name "zsh"
  imenu-auto-rescan t)
 
 ;; Buffer Local Variables
@@ -80,7 +80,6 @@
 ;; from within Emacs so it's no so important for me that it inherits my
 ;; normal shell config.
 (setenv "SHELL" shell-file-name)
-(setenv "PS1" "> ")
 (setenv
  "PATH"
  (mapconcat
