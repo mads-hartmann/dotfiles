@@ -3,6 +3,7 @@
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   "editor.fontSize": 13,
+  "editor.lineHeight": 17,
   "editor.minimap.enabled": false,
   "editor.renderLineHighlight": "none",
   "editor.renderWhitespace": "none",
@@ -85,7 +86,7 @@
     "files.trimTrailingWhitespace": false
   },
   "[javascript]": {
-    "editor.formatOnSave": true
+    "editor.formatOnSave": false
   },
   "[makefile]": {
     "editor.renderWhitespace": "boundary"
