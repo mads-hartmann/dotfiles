@@ -11,3 +11,4 @@ alias gti=git # DWIM version of git.
 
 alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}'"
 alias dc="docker-compose"
+alias dm="docker-machine"
