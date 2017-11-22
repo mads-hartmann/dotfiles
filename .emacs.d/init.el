@@ -1030,9 +1030,7 @@
   :bind ("M-?" . osx-dictionary-search-global))
 
 (use-package neotree
-  :disabled t
   :bind (("<f12>" . neotree-projectile))
-  :load-path "~/dev/personal/emacs-neotree"
   :config
   (progn
     (defun neotree-projectile ()
@@ -1048,8 +1046,11 @@
 
     (add-hook 'neotree-mode-hook 'neotree-mode-hook)
 
+    (add-to-list 'neo-hidden-regexp-list "__pycache__")
+    (add-to-list 'neo-hidden-regexp-list "\\.egg-info$")
+
     (setq
-     neo-theme 'icons
+     neo-theme 'ascii
      neo-mode-line-type 'none
      neo-show-updir-line nil
      neo-smart-open t
