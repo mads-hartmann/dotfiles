@@ -568,7 +568,10 @@
     (yas-reload-all)))
 
 (use-package diff-hl
-  :init (global-diff-hl-mode))
+  :bind
+  (:map diff-hl-mode-map
+        ("M-g l" . diff-hl-diff-goto-hunk)
+  :init (global-diff-hl-mode)))
 
 (use-package org
   :bind
