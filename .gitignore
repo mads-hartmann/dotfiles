@@ -1,6 +1,7 @@
 .DS_Store
 .pypirc
 .vscode
+.emacs.d/helm-adaptive-history
 .atom/.apm
 .atom/blob-store
 .atom/compile-cache
@@ -10,3 +11,11 @@
 .atom/.node-gyp
 .atom/github.cson
 .ssh/known_hosts
+.sbt/**/plugins/idea.sbt
+.sbt/**/plugins/target/
+.sbt/**/plugins/project/
+.sbt/**/zinc
+.sbt/boot
+.sbt/preloaded
+.docker/.buildNodeID
+.docker/machine/
