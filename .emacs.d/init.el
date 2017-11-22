@@ -900,7 +900,7 @@
 
 (use-package ensime
   :ensure t
-  :pin melpa
+  :pin melpa-stable
   :commands ensime ensime-mode
   :config
   (setq ensime-startup-notification nil
