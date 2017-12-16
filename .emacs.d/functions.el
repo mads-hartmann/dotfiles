@@ -359,6 +359,8 @@ the current block."
     (back-to-indentation)))
 
 (defun copy-from-osx ()
+  "Paste into the buffer from the OSX paste buffer."
+  (interactive)
   (shell-command-to-string "pbpaste"))
 
 (defun paste-to-osx (text &optional push)

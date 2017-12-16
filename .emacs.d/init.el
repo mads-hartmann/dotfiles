@@ -172,7 +172,11 @@
       (load-theme 'base16-ocean-dark-hartmann t)
       (set-face-attribute 'default nil :font "Fira Code-14:antialias=subpixel"))
   (progn
-    ;; (load-theme 'basic-light t)
+    ;; Defines to interact with the osx clipbord.
+    ;; This is only relevant when I'm using Emacs from the terminal (right now)
+    (setq interprogram-cut-function 'paste-to-osx
+          interprogram-paste-function 'copy-from-osx)
+
     (menu-bar-mode -1)
     (xterm-mouse-mode t)
     (global-set-key (kbd "C-M-d") 'backward-kill-word)))
