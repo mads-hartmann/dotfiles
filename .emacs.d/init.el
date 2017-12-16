@@ -568,6 +568,10 @@
   :init
   (progn
     (yas-global-mode 1)
+    (setq
+     yas-indent-line 'auto
+     yas-also-auto-indent-first-line t
+     yas-also-indent-empty-lines t)
     (setq yas-snippet-dirs '("~/.snippets"))
     (yas-reload-all)))
 
