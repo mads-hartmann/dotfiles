@@ -1,0 +1,10 @@
+# List sessions
+tmux list-sessions
+
+# Kill session 2
+tmux kill-session -t2
+
+# iTerm integration
+tmux -CC # creates a session
+tmux -CC attach # attaches to existing session
+tmux -CC attach-session -t1 # attach specific session

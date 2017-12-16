@@ -1,0 +1,5 @@
+# cleanup
+#
+docker rm -f $(docker ps -aq)
+docker rmi $(docker images -q)
+docker volume ls -qf dangling=true | xargs docker volume rm

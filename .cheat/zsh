@@ -1,4 +1,3 @@
-
 # Starting an empty zsh shell
 zsh --no-rcs
 
@@ -7,3 +6,6 @@ man zshbuiltins
 man zshall
 man zshzle
 man zshcompsys # completions
+
+# A list of al global variables
+http://zsh.sourceforge.net/Doc/Release/Variables-Index.html

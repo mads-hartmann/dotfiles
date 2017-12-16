@@ -1,0 +1,2 @@
+# What for file changes but exclude some
+fswatch ~/Desktop -e ".DS_Store" -e "*.pyc" | while read line ; do sleep 1 ; echo $line ; done

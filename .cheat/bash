@@ -6,6 +6,9 @@ echo ${myvar/foo/bar} # replace foo with bar in variable
 set -x # turn in on
 set +x # turn it off
 
+# Getting exit status
+echo $?
+
 # Retrieve N-th piped command exit status
 printf 'foo' | fgrep 'foo' | sed 's/foo/bar/'
 echo ${PIPESTATUS[0]}  # replace 0 with N

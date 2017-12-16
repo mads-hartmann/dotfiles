@@ -1,0 +1,5 @@
+# Print the 3rd column
+echo "a b c d" | awk '{ print $3 }'
+
+# Print everything exepct the 3rd column
+echo "a b c d" | awk '{$3=""; print $0 }'
