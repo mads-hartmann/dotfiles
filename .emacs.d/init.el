@@ -836,6 +836,7 @@
   :bind
   (:map python-mode-map
         ("M-." . jedi:goto-definition)
+        ("M-," . jedi:goto-definition-pop-marker)
         ("M-*" . jedi:goto-definition-pop-marker)
         ("M-?" . jedi:show-doc))
   :init
