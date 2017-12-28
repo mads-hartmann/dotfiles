@@ -316,7 +316,9 @@ the current block."
 
 (defun dedicate-window-to-buffer ()
   (interactive)
-  (set-window-dedicated-p (get-buffer-window (current-buffer)) t))
+  (progn
+    (buffer-face-set `(:background ,(car (custom-variable-theme-value 'dired-sidebar-background))))
+    (set-window-dedicated-p (get-buffer-window (current-buffer)) t)))
 
 (defun disable-click-in-dired ()
   "Disable the default behavior for mouse clicks."
