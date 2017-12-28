@@ -48,6 +48,12 @@ export PATH="/usr/local/opt/emacs/bin:$PATH"
 # the CI servers are going to use
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
+# Go
+export GOROOT=/usr/local/opt/go/libexec # where homebrew install it.
+export GOPATH=~/.go
+export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOPATH/bin
+
 # Docker for Mac ships with an out-dated version of docker-machine
 # (0.12.0) rather than the one brew has (0.12.2). On top of that it
 # seems that Docker for Mac will actually re-install itself over

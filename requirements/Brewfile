@@ -15,6 +15,8 @@ brew 'node@6'
 brew 'python'
 brew 'python3'
 
+brew 'go'
+
 brew 'opam'
 
 brew 'php70'
