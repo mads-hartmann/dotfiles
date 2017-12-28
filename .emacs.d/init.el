@@ -349,11 +349,10 @@
 (use-package exec-path-from-shell
   ;; Make sure that emacs inherit environment variables from ~/.zshenv
   ;; and files like that.
-  ;; TODO: I'd rather not use this I think. But somehow, it seems that flycheck doesn't
-  ;;       look in the PATH environment, so this function must be settion some other things.
   :init
   (progn
-    (exec-path-from-shell-initialize)))
+    (exec-path-from-shell-initialize)
+    (exec-path-from-shell-copy-env "GOPATH")))
 
 (use-package sh-script
   :config
@@ -638,6 +637,49 @@
       (let ((file-name (buffer-file-name)))
         ad-do-it
         (setq buffer-file-name file-name)))))
+
+(use-package flycheck-gometalinter
+  :config
+  (progn
+    (flycheck-gometalinter-setup)))
+
+(use-package go-autocomplete)
+(use-package go-mode
+  :bind (("M-." . godef-jump)
+         ("M-," . pop-tag-mark)
+         ("C-c C-c" . compile)
+         ("M-<tab>" . ac-complete-go))
+  :config
+  (progn
+    (require 'go-autocomplete)
+    (require 'auto-complete-config)
+    (ac-config-default)
+
+    ; Use goimports instead of go-fmt
+    (setq gofmt-command "goimports")
+
+    (add-hook 'go-mode-hook
+              (lambda ()
+                ;; Go uses tabs :O
+                ;; Deactivate my otherwise agressive styling of tabs
+                ;; for any buffer that using go-mode.
+                (setq-local whitespace-style '(trailing face))
+                ;; Seems to handle auto-indentation poorly.
+                (setq-local yas-indent-line 'fixed)))
+
+    ; Customize compile command to run go build
+    (if (not (string-match "go" compile-command))
+        (set (make-local-variable 'compile-command)
+             "go build -v && go vet"))
+
+    ;; go get github.com/rogpeppe/godef
+    ;; go get -u github.com/nsf/gocode
+    ;; go get golang.org/x/tools/cmd/goimports
+    ;; go get golang.org/x/tools/cmd/guru
+    ;; go get -v github.com/ramya-rao-a/go-outline
+    ;; go get -v github.com/uudashr/gopkgs/cmd/gopkgs
+    ;; go get -v sourcegraph.com/sqs/goreturns
+    (add-hook 'before-save-hook 'gofmt-before-save)))
 
 (use-package css-mode
   :bind
