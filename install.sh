@@ -1,4 +1,9 @@
 #/bin/bash
+#
+# Usage:
+#   homebrew  - Installs homebrew + homebrew packages
+#   all       - Installs _everything_
+#
 
 set -euo pipefail
 
@@ -110,12 +115,31 @@ function create_vscode_symlinks {
     symlink ~/.code/settings.json "${HOME}/Library/Application Support/Code - Insiders/User/settings.json"
 }
 
-install_homebrew
-install_oh_my_zsh
-install_npm_packages
-install_gem_packages
-install_atom_packages
-install_pip_packages
-install_opam_packages
-create_symlinks
-create_vscode_symlinks
+function install_all {
+    install_homebrew
+    install_oh_my_zsh
+    install_npm_packages
+    install_gem_packages
+    install_atom_packages
+    install_pip_packages
+    install_opam_packages
+    create_symlinks
+    create_vscode_symlinks
+}
+
+
+
+function main {
+    local cmd="${1:-all}"
+
+    case "${cmd}" in
+        "homebrew")
+             install_homebrew
+             ;;
+        *)
+            install_all
+            ;;
+    esac
+}
+
+main "$@"
