@@ -8,6 +8,9 @@
 - [ ] Currently I had to brew link --overwrite. Make sure that happens on setup automatically
 - [ ] Switch to Hyper for my terminal? Would need to add theme etc as part of my dotfiles
 
+- [ ] ~/.ssh
+- [ ] Look for all . files in $HOME I haven't linked yet.
+- [ ] How do I specify the `brew services xxx` that I want to run?
 
 https://github.com/jwiegley/git-scripts
 https://github.com/jwiegley/git-all
