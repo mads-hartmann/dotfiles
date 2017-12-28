@@ -79,8 +79,7 @@ function fzf-git-status {
     is-in-git-repo || return
 
     local preview='
-        (git diff --color=always -- {-1} | sed 1,4d; cat {-1}) |
-        head -500
+        (git diff --color=always -- {-1} | sed 1,4d; cat {-1})
     '
 
     git -c color.status=always status --short |
@@ -88,7 +87,8 @@ function fzf-git-status {
         -m \
         --ansi \
         --nth 2..,.. \
-        --preview ${preview} |
+        --preview ${preview} \
+        --bind ctrl-v:preview-page-down,alt-v:preview-page-up|
     cut -c4- |
     sed 's/.* -> //'
 }
