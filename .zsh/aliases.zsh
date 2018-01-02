@@ -6,7 +6,7 @@ alias reload=src
 alias f=famlydev
 alias epoch="date +%s"
 alias e="emacsclient -nw --socket-name=shell-emacs"
-alias eg="emacsclient --no-wait --socket-name server-gui"
+alias eg="emacsclient -c --no-wait --socket-name server-gui"
 alias gti=git # DWIM version of git.
 
 alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}'"
