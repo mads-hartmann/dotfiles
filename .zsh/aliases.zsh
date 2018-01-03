@@ -4,7 +4,7 @@
 
 alias reload=src
 alias f=famlydev
-alias epoch="date +%s"
+alias epoch="date +%s | tr -d '\n'"
 alias e="emacsclient -nw --socket-name=shell-emacs"
 alias eg="emacsclient -c --no-wait --socket-name server-gui"
 alias gti=git # DWIM version of git.
