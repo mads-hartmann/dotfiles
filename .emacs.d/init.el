@@ -351,6 +351,7 @@
   ;; and files like that.
   :init
   (progn
+    (setq exec-path-from-shell-check-startup-files nil)
     (exec-path-from-shell-initialize)
     (exec-path-from-shell-copy-env "GOPATH")))
 
