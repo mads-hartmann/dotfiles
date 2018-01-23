@@ -16,6 +16,7 @@
 .sbt/**/plugins/project/
 .sbt/**/zinc
 .sbt/boot
+.sbt/1.0/templates
 .sbt/preloaded
 .docker/.buildNodeID
 .docker/machine/
