@@ -3,3 +3,6 @@
 docker rm -f $(docker ps -aq)
 docker rmi $(docker images -q)
 docker volume ls -qf dangling=true | xargs docker volume rm
+
+# Show memory usage
+docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}"
