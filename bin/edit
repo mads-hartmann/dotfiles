@@ -24,4 +24,7 @@ function get_file {
 }
 
 file=$(get_file "${1: }")
-${EDITOR} "${file}"
+
+# Open the file in the GUI version of Emacs. If it isn't running then open Emacs.
+emacsclient -c --no-wait --socket-name server-gui ${file} > /dev/null 2>&1 \
+    || open -a Emacs.app "${file}"

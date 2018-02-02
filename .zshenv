@@ -21,7 +21,8 @@ export DOTFILES_HOME="$HOME/dev/personal/dotfiles"
 export DEFAULT_PR_BRANCH="staging"
 
 # Use emacs as the default editor.
-export EDITOR="emacsclient -c"
+# Default to using the GUI. Fallback to the launching emacs in the shell.
+export EDITOR="emacsclient -c --socket-name server-gui --alternate-editor=emacsclient"
 
 export ATOM_REPOS_HOME=~/dev/other
 
