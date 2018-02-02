@@ -64,6 +64,10 @@
   "workbench.colorTheme": "One Dark Pro",
   "workbench.startupEditor": "newUntitledFile",
 
+  "yaml.schemas": {
+    "kubernetes": "manifests.yml"
+  },
+
   /**
      * Various utility plugins
      */
