@@ -18,6 +18,7 @@ plugins=(
   git-fzf
   hello
   reload-function
+  danger-danger
 )
 
 source $ZSH/oh-my-zsh.sh
