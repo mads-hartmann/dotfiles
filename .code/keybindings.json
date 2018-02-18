@@ -7,6 +7,11 @@
         "when": "editorTextFocus && editorHasSelection && !editorHasMultipleSelections"
     },
     {
+        "key": "escape",
+        "command": "emacs.exitMarkMode",
+        "when": "editorHasSelection && editorTextFocus"
+    },
+    {
         "key": "alt+tab",
         "command": "editor.action.triggerSuggest",
         "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"
@@ -175,7 +180,8 @@
     {
         "key": "cmd+9",
         "command": "workbench.action.openEditorAtIndex9"
-    },{
+    },
+    {
         "key": "ctrl+shift+alt+.",
         "command": "editor.action.addSelectionToNextFindMatch",
         "when": "editorTextFocus"
