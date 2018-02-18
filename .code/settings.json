@@ -14,11 +14,12 @@
   "editor.snippetSuggestions": "none",
 
   "explorer.autoReveal": false,
-  "explorer.openEditors.visible": 20,
+  "explorer.openEditors.visible": 10,
 
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "files.associations": {
+    "_*": "shellscript", // completion files.
     "zshrc": "shellscript",
     "zshenv": "shellscript",
     "*.env": "ini"
@@ -46,19 +47,19 @@
 
   "terminal.external.osxExec": "iTerm.app",
 
-  "window.nativeTabs": false,
-  "window.titleBarStyle": "custom",
-  "window.zoomLevel": 0,
+  "window.nativeTabs": true,
+  "window.titleBarStyle": "native",
+  "window.zoomLevel": -0.6,
 
   "workbench.fontAliasing": "default",
   "workbench.activityBar.visible": false,
-  "workbench.editor.showTabs": false,
+  "workbench.editor.showTabs": true,
   "workbench.editor.tabCloseButton": "off",
   "workbench.editor.enablePreview": false,
   "workbench.sideBar.location": "left",
   "workbench.statusBar.visible": false,
   "workbench.iconTheme": "vs-minimal",
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Default Light+",
   "workbench.startupEditor": "newUntitledFile",
 
   "yaml.schemas": {
@@ -105,5 +106,14 @@
     "suppressNoRepositoryWarning": false,
     "suppressUpdateNotice": true,
     "suppressWelcomeNotice": true
-  }
+  },
+  "editor.renderControlCharacters": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true
+  },
+  "window.restoreWindows": "none",
+  "workbench.editor.labelFormat": "short",
+  "workbench.editor.tabSizing": "shrink",
+  "vsicons.presets.hideExplorerArrows": true
 }
