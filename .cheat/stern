@@ -1,0 +1,2 @@
+# Get all new log lines from famlyapi pods in the famly namespace
+stern --tail 1 "famlyapi*" -n famly

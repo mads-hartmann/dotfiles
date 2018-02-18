@@ -1,0 +1,8 @@
+# Start a session
+redis-cli -h <host> -p <port> -a <password>
+
+# Authenticate
+AUTH <password>
+
+# Change the password
+config set requirepass <new-password>

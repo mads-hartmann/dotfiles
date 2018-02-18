@@ -1,0 +1,9 @@
+
+# Produce messages
+echo "Yay, we've produced;Two Messages" | kafkacat -D ';' -P -b kafka.kafka.svc.cluster.local:9092 -t mhj-debug
+
+# Consume messages
+kafkacat -C -b kafka.kafka.svc.cluster.local:9092 -t mhj-debug
+
+# Show metadata
+kafkacat -L -b kafka.kafka.svc.cluster.local:9092

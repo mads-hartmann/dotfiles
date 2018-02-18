@@ -1,0 +1,10 @@
+# Terminal version of Wireshark.
+#
+# See full list of fields to extract or filter on here
+# https://www.wireshark.org/docs/dfref/
+
+# Get list of fields (named something with kafka)
+tshark -G fields | grep -i kafka
+
+# Extract specific fields on all HTTP traffic from a specific host (10.103.246.10)
+tshark -Y http -Tfields -e http.content_encoding -e http.content_type -e http.request.method -e http.host -e http.file_data -i eth0 host 10.103.246.100
