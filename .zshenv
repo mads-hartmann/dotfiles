@@ -55,6 +55,9 @@ export GOPATH=~/.go
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 
+# PHP
+export PATH="/usr/local/opt/php71:$PATH"
+
 # Docker for Mac ships with an out-dated version of docker-machine
 # (0.12.0) rather than the one brew has (0.12.2). On top of that it
 # seems that Docker for Mac will actually re-install itself over
