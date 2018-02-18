@@ -1,7 +1,7 @@
 [
     {
         // A bit of a hacky way to get backspace to work on a selection as I've been
-        // usd to in Emacs.
+        // used to in Emacs.
         "key": "backspace",
         "command": "emacs.C-w",
         "when": "editorTextFocus && editorHasSelection && !editorHasMultipleSelections"
@@ -21,18 +21,57 @@
         "command": "editor.action.triggerSuggest",
         "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"
     },
+    // File explorer.
     {
-        "key": "ctrl+r",
-        "command": "workbench.action.quickSwitchWindow"
+        "key": "tab",
+        "command": "list.toggleExpand",
+        "when": "filesExplorerFocus && !inputFocus"
     },
     {
-        "key": "ctrl+r",
-        "command": "workbench.action.quickOpenNavigateNext",
-        "when": "inWindowsPicker"
+        "key": "shift+tab",
+        "command": "list.collapse",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "list.select",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "list.focusDown",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "list.focusUp",
+        "when": "listFocus && !inputFocus"
+    },
+    // Quick open.
+    // The default behavior for the Emacs extension was making me insane. The
+    // following two bindings makes sure that ctrl+n and ctrl+p simply moves the
+    // selection. Previously it would automatically select the item once you
+    // stopped holding down ctrl.
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
+    },
+
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
     },
     {
         "key": "cmd+t",
         "command": "workbench.action.quickOpen"
+    },
+    // Uncategorized - for now.
+    {
+        "key": "cmd+0",
+        "command": "workbench.files.action.focusFilesExplorer",
+        "when": "editorTextFocus"
     },
     {
         "key": "cmd+]",
