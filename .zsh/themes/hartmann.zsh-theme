@@ -126,5 +126,11 @@ function prompt_symbol {
   echo " "
 }
 
-PROMPT='$(path_part) $(git_status_part)$(prompt_symbol)'
-RPROMPT='$(docker_part)$(aws_part)$(git_branch_part)'
+if [[ $TERM = "dumb" ]]
+then
+    PROMPT="$ "
+    RPROMPT=""
+else
+    PROMPT='$(path_part) $(git_status_part)$(prompt_symbol)'
+    RPROMPT='$(docker_part)$(aws_part)$(git_branch_part)'
+fi
