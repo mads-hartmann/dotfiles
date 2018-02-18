@@ -5,6 +5,7 @@
 alias reload=src
 alias f=famlydev
 alias e=edit
+alias k=kubectl
 alias epoch="date +%s | tr -d '\n'"
 
 alias gti=git # DWIM version of git.
