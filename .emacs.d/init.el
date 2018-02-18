@@ -37,8 +37,8 @@
  debug-on-error nil
  line-move-visual t
  custom-file "~/.emacs.d/custom.el"
- explicit-shell-file-name "/usr/local/bin/zsh"
- shell-file-name "zsh"
+ explicit-shell-file-name "/bin/bash"
+ shell-file-name "bash"
  imenu-auto-rescan t)
 
 ;; Buffer Local Variables
