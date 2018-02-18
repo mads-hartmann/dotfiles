@@ -1,13 +1,16 @@
-# Dynamically switch profile in zsh if you're using iTerm
+# Dynamically switch iTerm profile.
 #
 # Currently it switches if the kubectl context is named anything like
 # %production%
 #
-# It expects you to have two iTerm profiles (Default and Danger)
+# It expects you to have a theme named Danger. Additionally you need to either
+# have a theme named Default or set the environment variable ITERM_THEME to your
+# preferred default theme
 #
 # Inspired by this gist https://gist.github.com/mrfoto/c6072e4fede3a6fe0f6b
 
 if [[ -n "$ITERM_SESSION_ID" ]]; then
+
   function change-tab-color() {
     echo -ne "\033]6;1;bg;red;brightness;$1\a"
     echo -ne "\033]6;1;bg;green;brightness;$2\a"
@@ -25,8 +28,8 @@ if [[ -n "$ITERM_SESSION_ID" ]]; then
         change-profile Danger
         change-tab-color 255 0 0
     else
-        echo -ne "\033]6;1;bg;*;Default\a"
-        change-profile Default
+        echo -ne "\033]6;1;bg;*;${ITERM_THEME:-Default}\a"
+        change-profile ${ITERM_THEME:-Default}
     fi
   }
 

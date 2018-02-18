@@ -2,7 +2,7 @@
 #description Switch between iTerm2 profiles
 
 _theme() {
-    local themes="Light Dark"
+    local themes="Light Default Danger"
     _arguments \
         ':iTerm2 Profile:($(echo ${themes}))'
 }
