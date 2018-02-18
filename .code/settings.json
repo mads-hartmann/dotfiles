@@ -20,7 +20,8 @@
   "files.trimTrailingWhitespace": true,
   "files.associations": {
     "zshrc": "shellscript",
-    "zshenv": "shellscript"
+    "zshenv": "shellscript",
+    "*.env": "ini"
   },
   "files.exclude": {
     "**/.git": true,
@@ -40,11 +41,7 @@
     // python
     ".venv": true,
     "**/*.pyc": true,
-    "*.egg-info": true,
-    // famly
-    ".docker-sync": true,
-    "stack.txt": true,
-    "environment.env": true
+    "*.egg-info": true
   },
 
   "terminal.external.osxExec": "iTerm.app",
@@ -55,7 +52,7 @@
 
   "workbench.fontAliasing": "default",
   "workbench.activityBar.visible": false,
-  "workbench.editor.showTabs": true,
+  "workbench.editor.showTabs": false,
   "workbench.editor.tabCloseButton": "off",
   "workbench.editor.enablePreview": false,
   "workbench.sideBar.location": "left",
@@ -65,7 +62,7 @@
   "workbench.startupEditor": "newUntitledFile",
 
   "yaml.schemas": {
-    "kubernetes": "manifests.yml"
+    "kubernetes": "*.yaml",
   },
 
   /**
