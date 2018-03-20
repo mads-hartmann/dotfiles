@@ -31,7 +31,7 @@ function aws_part {
 
   if [[ -z "${profile}" ]]
   then echo ""
-  else echo "%{$FG[248]%}aws%{$reset_color%}:%{$fg[black]%}${profile}%{$reset_color%} "
+  else echo "%{$FG[248]%}aws%{$reset_color%}:${profile} "
   fi
 }
 
@@ -40,6 +40,15 @@ function docker_part {
   then echo ""
   else echo "docker:%{$fg[green]%}${DOCKER_MACHINE_NAME}%{$reset_color%} "
   fi
+}
+
+function kube_part {
+    local context
+    context="$(kubectl config current-context)"
+    if [[ -z "${context}" ]]
+    then echo ""
+    else echo "k8s:${context} "
+    fi
 }
 
 function prompt_part {
@@ -68,5 +77,5 @@ then
     PROMPT="$ "
     RPROMPT=""
 else
-    PROMPT='$(path_part)$(git_prompt_info)$(docker_part)$(aws_part)$(prompt_part)'
+    PROMPT='$(path_part)$(git_prompt_info)$(docker_part)$(kube_part)$(aws_part)$(prompt_part)'
 fi
