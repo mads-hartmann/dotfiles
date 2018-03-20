@@ -38,3 +38,6 @@ DELETE FROM tbl_name WHERE user = 'jcole';
 SET GLOBAL general_log = 'ON';
 SHOW VARIABLES LIKE "general_log%";
 tail -f <where the file is>
+
+# Get some diagnostics info about recently failed queries
+SHOW ENGINE INNODB STATUS;
