@@ -1,19 +1,27 @@
 "*":
+  "atom-ide-ui":
+    use: {}
   core:
     audioBeep: false
+    debugLSP: false
     packagesWithKeymapsDisabled: [
       "text-select-mode"
       "atom-ternjs"
     ]
     telemetryConsent: "limited"
+    themes: [
+      "one-light-ui"
+      "atom-light-syntax"
+    ]
     titleBar: "custom"
+    useTreeSitterParsers: true
   editor:
     fontFamily: "Fira Code"
-    fontSize: 13
     showIndentGuide: true
   "exception-reporting":
     userId: "9756de94-6685-4a4e-856f-2302d86b1ba5"
-  "linter-ui-default": {}
+  "linter-ui-default":
+    panelHeight: 303
   "prettier-atom":
     formatOnSaveOptions: {}
     prettierOptions:
