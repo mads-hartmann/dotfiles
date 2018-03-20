@@ -30,9 +30,9 @@
     "**/.last-update": true,
     ".setup": true,
     ".build": true,
-    ".gitignore": true,
+    ".gitignore": false,
     ".idea": true,
-    ".vscode": true,
+    ".vscode": false,
     "_build": true,
     "build": true,
     "dist": true,
@@ -49,17 +49,17 @@
 
   "window.nativeTabs": true,
   "window.titleBarStyle": "native",
-  "window.zoomLevel": -0.6,
+  "window.zoomLevel": 0,
 
   "workbench.fontAliasing": "default",
   "workbench.activityBar.visible": false,
-  "workbench.editor.showTabs": true,
+  "workbench.editor.showTabs": false,
   "workbench.editor.tabCloseButton": "off",
   "workbench.editor.enablePreview": false,
   "workbench.sideBar.location": "left",
   "workbench.statusBar.visible": false,
   "workbench.iconTheme": "vs-minimal",
-  "workbench.colorTheme": "Default Light+",
+  "workbench.colorTheme": "GitHub Plus",
   "workbench.startupEditor": "newUntitledFile",
 
   "yaml.schemas": {
@@ -112,8 +112,10 @@
     "**/node_modules": true,
     "**/bower_components": true
   },
+  "search.location": "panel",
   "window.restoreWindows": "none",
   "workbench.editor.labelFormat": "short",
   "workbench.editor.tabSizing": "shrink",
-  "vsicons.presets.hideExplorerArrows": true
+  "vsicons.presets.hideExplorerArrows": true,
+  "go.gopath": null
 }
