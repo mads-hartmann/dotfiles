@@ -76,3 +76,6 @@ export FZF_DEFAULT_OPTS="--height 100% --reverse --color=bg+:#000000,hl:#EAC170,
 
 # cheat
 export CHEATCOLORS=true
+
+# Load Famly specific environment variables if relevant.
+[[ -f ~/.zshenv-famly ]] && source ~/.zshenv-famly
