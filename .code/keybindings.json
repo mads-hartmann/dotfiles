@@ -69,6 +69,25 @@
     },
     // Uncategorized - for now.
     {
+        "key": "cmd+ctrl+`",
+        "command": "workbench.action.switchWindow"
+    },
+    {
+        "key": "alt+u",
+        "command": "editor.action.transformToUppercase",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+l",
+        "command": "editor.action.transformToLowercase",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+enter",
+        "command": "editor.action.quickFix",
+        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    },
+    {
         "key": "cmd+0",
         "command": "workbench.files.action.focusFilesExplorer",
         "when": "editorTextFocus"
@@ -112,6 +131,16 @@
         "when": "editorTextFocus"
     },
     // Disable default keybinding, as this is what I'm using to switch windows
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "terminalFocus"
+    },
     {
         "key": "cmd+\\",
         "command": ""
@@ -224,5 +253,15 @@
         "key": "ctrl+shift+alt+.",
         "command": "editor.action.addSelectionToNextFindMatch",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+p",
+        "command": "editor.action.triggerParameterHints",
+        "when": "editorHasSignatureHelpProvider && editorTextFocus"
+    },
+    {
+        "key": "shift+cmd+space",
+        "command": "-editor.action.triggerParameterHints",
+        "when": "editorHasSignatureHelpProvider && editorTextFocus"
     }
 ]
