@@ -7,16 +7,11 @@ tap 'lampepfl/brew'
 cask 'java'
 brew 'sbt'
 brew 'dotty'
-brew 'olafurpg/scalafmt/scalafmt'
 
 brew 'ruby'
-brew 'node@6'
-
+brew 'node@8'
 brew 'python'
-brew 'python3'
-
 brew 'go'
-
 brew 'opam'
 
 brew 'php70'
@@ -74,9 +69,7 @@ cask 'soulver'
 cask 'spectacle'
 cask 'beamer'
 cask 'vlc'
-cask 'google-drive'
 cask 'virtualbox'
-brew 'ios-deploy'
 
 # Quick look plugins
 # Syntax highlighting
@@ -91,7 +84,5 @@ cask 'quicklook-json'
 cask 'qlprettypatch'
 # Preview csv files
 cask 'quicklook-csv'
-# Preview archive files
-cask 'betterzipql'
 # Show image size and resolution when display images
 cask 'qlimagesize'

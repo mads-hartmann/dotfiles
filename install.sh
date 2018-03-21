@@ -63,7 +63,7 @@ function install_oh_my_zsh {
         echo "Installing zsh-syntax-highlighting"
         git clone \
             https://github.com/zsh-users/zsh-syntax-highlighting.git \
-            $(HOME)/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+            ${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
     fi
 }
 
@@ -79,7 +79,7 @@ function install_gem_packages {
 
 function install_pip_packages {
     echo "Python"
-    pip install $(cat requirements/pip-packages.txt)
+    pip3 install $(cat requirements/pip-packages.txt)
 }
 
 function install_atom_packages {
@@ -89,6 +89,7 @@ function install_atom_packages {
 
 function install_opam_packages {
     echo "OCaml"
+    [[ ! -d ${HOME}/.opam ]] && opam init
     grep -v "#" requirements/opam-packages.txt | grep -v "^$$" | xargs -L 1 opam
 }
 
@@ -111,8 +112,10 @@ function create_vscode_symlinks {
     echo "Creating vscode symlinks"
     symlink ~/.code/keybindings.json "${HOME}/Library/Application Support/Code/User/keybindings.json"
     symlink ~/.code/settings.json "${HOME}/Library/Application Support/Code/User/settings.json"
-    symlink ~/.code/keybindings.json "${HOME}/Library/Application Support/Code - Insiders/User/keybindings.json"
-    symlink ~/.code/settings.json "${HOME}/Library/Application Support/Code - Insiders/User/settings.json"
+    if [[ -d "${HOME}/Library/Application Support/Code - Insiders" ]]; then
+        symlink ~/.code/keybindings.json "${HOME}/Library/Application Support/Code - Insiders/User/keybindings.json"
+        symlink ~/.code/settings.json "${HOME}/Library/Application Support/Code - Insiders/User/settings.json"
+    fi
 }
 
 function install_all {
@@ -120,9 +123,7 @@ function install_all {
     install_oh_my_zsh
     install_npm_packages
     install_gem_packages
-    install_atom_packages
     install_pip_packages
-    install_opam_packages
     create_symlinks
     create_vscode_symlinks
 }
@@ -136,6 +137,12 @@ function main {
         "homebrew")
              install_homebrew
              ;;
+        "atom")
+            install_atom_packages
+            ;;
+        "ocaml")
+            install_opam_packages
+            ;;
         *)
             install_all
             ;;
