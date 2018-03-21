@@ -123,11 +123,7 @@ function create_vscode_symlinks {
 }
 
 function install_all {
-    install_homebrew
     install_oh_my_zsh
-    install_npm_packages
-    install_gem_packages
-    install_pip_packages
     create_symlinks
     create_vscode_symlinks
 }
@@ -146,6 +142,15 @@ function main {
             ;;
         "ocaml")
             install_opam_packages
+            ;;
+        "python")
+            install_pip_packages
+            ;;
+        "node")
+            install_npm_packages
+            ;;
+        "ruby")
+            install_gem_packages
             ;;
         *)
             install_all
