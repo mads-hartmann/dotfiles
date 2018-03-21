@@ -11,6 +11,7 @@
 .atom/.node-gyp
 .atom/github.cson
 .ssh/known_hosts
+.ssh/id_*
 .sbt/**/staging
 .sbt/**/server
 .sbt/**/plugins/idea.sbt
