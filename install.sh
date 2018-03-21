@@ -17,7 +17,11 @@ function symlink {
     if [[ -L "${target}" ]]; then
         echo "✓ Link already exists: ${target} "
     elif [[ -e "${target}" ]]; then
-        echo "File already exists ${origin} and isn't a link: ${target}"
+        local msg="File already exists ${target} and isn't a link. Overwrite it with ${origin}?: (y/n)"
+        read -p "${msg}" -n 1 -r
+        if [[ ${REPLY} =~ ^[Yy]$ ]]; then
+            rm -rf ${target} && ln -s "${origin}" "${target}"
+        fi
     else
         echo "✓ Linking ${origin} -> ${target}"
         ln -s "${origin}" "${target}"
