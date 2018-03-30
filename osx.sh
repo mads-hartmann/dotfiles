@@ -50,6 +50,9 @@ defaults write NSGlobalDomain KeyRepeat -int 1
 # Set a shorter Delay until key repeat
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
+# Emacs style Ctrl+u <int> <key> in do repeat inserts.
+defaults write -g NSRepeatCountBinding -string "^u"
+
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################
