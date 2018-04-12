@@ -33,7 +33,7 @@ export ATOM_REPOS_HOME=~/dev/other
 
 # I have both python3 and python2 installed.
 # This makes sure that python2 is on the path.
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="/usr/local/opt/python@2:$PATH"
 
 # Coming from bash, I expect these to be in the PATH.
 export PATH=/usr/local/bin:$HOME/bin:$PATH
