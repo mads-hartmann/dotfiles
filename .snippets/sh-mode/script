@@ -2,7 +2,8 @@
 # name: Script
 # key: script
 # --
-#!/bin/bash
+#!/usr/bin/env bash
+
 set -euo pipefail
 
 function main {
