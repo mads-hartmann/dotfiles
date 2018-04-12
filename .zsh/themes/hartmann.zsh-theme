@@ -5,6 +5,8 @@
 # ohmyzsh has a function `spectrum_ls` which prints the color-codes of a wide
 # varity of colors. They can be accessed using $FG[COLOR_CODE]
 
+ENABLE_K8s_PART=0
+
 function is_in_project {
   git rev-parse --is-inside-work-tree &> /dev/null
   return $status
@@ -43,11 +45,13 @@ function docker_part {
 }
 
 function kube_part {
-    local context
-    context="$(kubectl config current-context)"
-    if [[ -z "${context}" ]]
-    then echo ""
-    else echo "k8s:${context} "
+    if [[ ${ENABLE_K8s_PART} == 1 ]]; then
+        local context
+        context="$(kubectl config current-context)"
+        if [[ -z "${context}" ]]
+        then echo ""
+        else echo "k8s:${context} "
+        fi
     fi
 }
 
@@ -61,7 +65,7 @@ function prompt_part {
     else echo "\n${relative_path} ${prompt}"
     fi
   else
-    echo ': '
+    echo ' '
   fi
 }
 
