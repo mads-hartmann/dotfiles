@@ -2,6 +2,20 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Package Manager
+;; ---------------------------------
+(require 'package)
+(setq
+ package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                    ("melpa" . "http://melpa.milkbox.net/packages/")
+                    ("melpa-stable" . "http://stable.melpa.org/packages/")))
+
+(package-initialize)
+(when (not package-archive-contents)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(require 'use-package)
+
 ;; Global Variables
 ;; ---------------------------------
 (setq
@@ -108,6 +122,7 @@
 (global-set-key (kbd "s--") 'text-scale-decrease)
 (global-set-key (kbd "s-`") 'ns-next-frame)
 (global-set-key (kbd "s-¬") 'ns-prev-frame)
+(global-set-key (kbd "<backtab>") nil)  ; Wanted it to de-indent, but that's not really a thing
 (global-set-key [(super shift return)] 'toggle-maximize-buffer)
 (global-set-key (kbd "C-o") 'open-line)
 (global-set-key (kbd "M-.") 'mhj/find-tag)
@@ -136,20 +151,6 @@
 (global-set-key (kbd "<f12>") 'mhj/toggle-project-explorer)
 (global-set-key (kbd "s-0") 'mhj/focus-project-explorer)
 (define-key isearch-mode-map (kbd "<backspace>") 'isearch-delete-char)
-
-;; Package Manager
-;; ---------------------------------
-(require 'package)
-(setq
- package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                    ("melpa" . "http://melpa.milkbox.net/packages/")
-                    ("melpa-stable" . "http://stable.melpa.org/packages/")))
-
-(package-initialize)
-(when (not package-archive-contents)
-  (package-refresh-contents)
-  (package-install 'use-package))
-(require 'use-package)
 
 ;; Load my various elisp files.
 ;; ---------------------------------
@@ -184,30 +185,12 @@
 ;; Configuration of modes
 ;; ---------------------------------
 
-(use-package flycheck
-  ;; On the fly linting.
-  :diminish ""
-  :bind
-  (:map flycheck-mode-map
-        ("C-c ! ?" . flycheck-display-error-at-point))
-  :commands flycheck-mode
-  :config
-  (progn
-    (flycheck-set-checker-executable 'javascript-eslint "/usr/local/bin/eslint"))
-  :init
-  (progn
-    ;; Disable jshint making eslint the selected linter
-    (setq-default flycheck-disabled-checkers '(javascript-jshint))
-    (setq flycheck-check-syntax-automatically '(save mode-enabled))
-    (setq flycheck-highlighting-mode 'symbols)
-    (setq flycheck-indication-mode 'left-fringe)))
-
 (use-package conf-mode
   :init
   (progn
     (add-to-list 'auto-mode-alist '("\\.cnf\\'" . conf-mode))))
 
-(use-package compilation
+(use-package compile
   ;; Configuration of the built-in compilation-mode
   :ensure nil
   :config
@@ -275,13 +258,6 @@
   ;; Awesome little package for expanding macros. Helps to understand
   ;; what is going on im my use-package declarations.
   :bind ("C-c e m" . macrostep-expand))
-
-(use-package hdl-mode
-  ;; My own small package for hdl files.
-  :ensure nil
-  :load-path "my-pkgs/"
-  :mode "\\.hdl\\'"
-  :defer)
 
 (use-package ibuffer-projectile)
 (use-package ibuffer
@@ -441,8 +417,7 @@
   (progn
     (setq helm-follow-mode t)
     (setq helm-full-frame nil)
-    ;; (setq helm-split-window-in-side-p nil)
-    (setq helm-split-window-in-side-p t)
+    (setq helm-split-window-inside-p t)
     (setq helm-split-window-default-side 'below)
     (setq helm-buffer-max-length nil)
 
@@ -528,16 +503,6 @@
          ("C->" . mc/mark-next-like-this)
          ("C-<" . mc/mark-previous-like-this)))
 
-(use-package bookmark+
-  :bind (("s-<f2>" . bmkp-toggle-autonamed-bookmark-set/delete)
-         ("<f2>" . bmkp-next-bookmark-this-buffer)
-         ("S-<f2>" . bmkp-previous-bookmark-this-buffer))
-  :config
-  (progn
-    (setq bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
-    (setq bmkp-light-left-fringe-bitmap 'empty-line)
-    (setq bmkp-auto-light-when-set 'autonamed-bookmark)))
-
 (use-package ag
   :commands ag
   :config
@@ -578,66 +543,20 @@
 (use-package diff-hl
   :bind
   (:map diff-hl-mode-map
-        ("M-g l" . diff-hl-diff-goto-hunk)
-  :init (global-diff-hl-mode)))
+        ("M-g l" . diff-hl-diff-goto-hunk))
+  :init (global-diff-hl-mode))
 
 (use-package org
   :bind
   (:map org-mode-map
         ("C-," . nil)
         ("C-c C-j" . helm-org-in-buffer-headings))
-  :init
+  :config
   (progn
-    (require 'ox-publish)
-    (require 'ob-ocaml)
-    (require 'ob-sh)
-    (require 'ob-sql)
-    (require 'ob-python)
-    (require 'ob-js)
-    (require 'ob-R)
-
-    (define-key global-map (kbd "C-c c") 'org-capture)
-
-    (define-key org-mode-map (kbd "C-c C-a") 'org-agenda)
-    (define-key org-mode-map (kbd "C-<tab>") nil)
-
-    (setq
-     org-html-htmlize-output-type 'css
-     ;trying it out
-     org-src-fontify-natively t
-     org-startup-folded nil
-     ;; Living on the edge
-     org-confirm-babel-evaluate nil
-     org-startup-indented nil
-     ;; Don't evaluate on export by default.
-     org-export-babel-evaluate nil
-     ;; This is important, otherwise I can't tangle source blocks
-     ;; written in makefile mode.
-     org-src-preserve-indentation t
-     org-goto-interface 'outline-path-completion org-goto-max-level 10
-     ;; Even if sh-mode source-blocks fail I still want the output.
-     org-babel-default-header-args:sh
-     '((:prologue . "exec 2>&1") (:epilogue . ":"))
-
-     org-babel-load-languages
-          '((ocaml . t)
-            (emacs-lisp . t)
-            (sh . t)
-            (sql . t)
-            (makefile . t)
-            (python . t)
-            (js . t)
-            (r . R)))
-
+    (define-key 'org-mode-map (kbd "C-<tab>") nil)
     (add-hook 'org-mode-hook 'linum-mode)
     (add-hook 'org-mode-hook 'flyspell-mode)
-    (add-hook 'org-mode-hook (lambda () (imenu-add-to-menubar "Imenu")))
-
-    ;; http://www.wisdomandwonder.com/link/9573/how-to-correctly-enable-flycheck-in-babel-source-blocks
-    (defadvice org-edit-src-code (around set-buffer-file-name activate compile)
-      (let ((file-name (buffer-file-name)))
-        ad-do-it
-        (setq buffer-file-name file-name)))))
+    (add-hook 'org-mode-hook (lambda () (imenu-add-to-menubar "Imenu")))))
 
 (use-package flycheck-gometalinter
   :config
@@ -704,6 +623,7 @@
   :config
   (setq imenu-list-focus-after-activation t
         imenu-list-auto-resize nil))
+
 (use-package markdown-mode
   :commands markdown-mode
   :bind
@@ -752,140 +672,6 @@
     (add-hook 'emacs-lisp-mode-hook 'company-mode)
     (add-hook 'emacs-lisp-mode-hook 'eldoc-mode)))
 
-(use-package octave
-  :commands octave-mode
-  :mode (("\\.m$" . octave-mode))
-  :config
-  (progn
-    (autoload 'octave-mode "octave-mod" nil t)
-    (add-hook 'octave-mode-hook
-              (lambda ()
-                (abbrev-mode 1)
-                (auto-fill-mode 1)
-                (if (eq window-system 'x)
-                    (font-lock-mode 1))))))
-
-(use-package erlang
-  :disabled
-  :commands erlang-mode
-  :bind
-  (:map erlang-mode-map
-        ("M-." . erl-find-source-under-point)
-        ("M-," . erl-find-source-unwind)
-        ("M-<tab>" . erl-complete)
-        ("C-c C-c" . compile)
-        ("<return>" . newline-and-indent))
-  :config
-  (progn
-    ;; (add-to-list 'load-path "/Users/hartmann/dev/distel/elisp") ; Not in melpa yet
-    ;; (require 'distel)
-    ;; (distel-setup)
-    ;; ;; http://parijatmishra.wordpress.com/2008/08/15/up-and-running-with-emacs-erlang-and-distel/
-    ;; ;; http://alexott.net/en/writings/emacs-devenv/EmacsErlang.html#sec8
-    ;; (setq inferior-erlang-machine-options '("-sname" "emacs"))
-    (add-hook 'erlang-mode-hook 'flycheck-mode)))
-
-(use-package tuareg
-  :commands tuareg-mode
-  :config
-  (progn
-    ;; TODO: Consider using flycheck: http://www.flycheck.org/manual/latest/Supported-languages.html#Supported-languages
-    ;; TODO: Can I use company-mode for this?
-
-    ;; Add opam emacs directory to the load-path
-    (setq opam-share (substring (shell-command-to-string "opam config var share 2> /dev/null") 0 -1))
-    (add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
-
-    ;; Setup environment variables using OPAM
-    (dolist (var (car (read-from-string (shell-command-to-string "opam config env --sexp"))))
-      (setenv (car var) (cadr var)))
-
-    ;; One of the `opam config env` variables is PATH. Update `exec-path` to that.
-    (setq exec-path (split-string (getenv "PATH") path-separator))
-
-    ;; Load merlin-mode
-    (require 'merlin)
-    (require 'ocp-indent)
-
-    ;; Use opam switch to lookup ocamlmerlin binary
-    (setq merlin-command 'opam)
-    (setq merlin-use-auto-complete-mode 'easy)
-
-    ;; Automatically load utop.el.
-    (add-to-list 'load-path "/Users/hartmann/dev/utop/src/top")
-    (autoload 'utop-minor-mode "utop" "Minor mode for utop" t)
-
-    ;; Used if I want to run some of ISSUU's OCaml projects in UTOP .
-    (setenv "AGGREGATOR_CONF_SHADOW" "")
-    (setenv "AGGREGATOR_HOME" "/Users/hartmann/dev/backend-insight/aggregator")
-    (setenv "PROMOTED_HOME" "/Users/hartmann/dev/backend-promoted")
-    (setenv "PROMOTED_CONF_SHADOW" "")
-
-    (define-key merlin-mode-map (kbd "M-<tab>") 'merlin-try-completion)
-    (define-key merlin-mode-map "\M-." 'merlin-locate)
-    (define-key merlin-mode-map (kbd "C-c C-p") 'prev-match)
-    (define-key merlin-mode-map (kbd "C-c C-n") 'next-match)
-    (define-key tuareg-mode-map (kbd "C-x C-r") 'tuareg-eval-region)
-
-    ;; (setq merlin-logfile "/Users/hartmann/Desktop/merlin.log")
-    (setq merlin-error-after-save t)
-
-    (add-hook 'tuareg-mode-hook
-              (lambda ()
-                (merlin-mode)
-                (utop-minor-mode)
-                (define-key utop-minor-mode-map (kbd "C-c C-z") 'utop)
-                (setq indent-line-function 'ocp-indent-line)))))
-
-(use-package python
-  :commands python-mode
-  :bind
-  (:map python-mode-map
-        ("M-s" . nil)
-        ("C-c C-p" . nil)
-        ("C-c C-c" . flycheck-list-errors)
-        ("M-<tab>" . company-complete))
-  :config
-  (progn
-
-    (defun flycheck-python-set-pylint-executable ()
-      "Use the pylint executable from your local venv."
-      (let ((exec-path (python-shell-calculate-exec-path)))
-        (setq flycheck-python-pylint-executable (executable-find "pylint"))))
-
-    (defun flycheck-python-setup ()
-      "Configure flycheck to use pylint and respect the projects configuration.
-       Wait till after the .dir-locals.el has been loaded."
-      (add-hook 'hack-local-variables-hook 'flycheck-python-set-pylint-executable nil 'local)
-      (setq flycheck-checker 'python-pylint)
-      (setq flycheck-pylintrc (concat (upward-find-file "pylint.cfg") "/pylint.cfg")))
-
-    (defun company-python-setup ()
-      "Set the relevant backends for company-mode when editing python files."
-      (set (make-local-variable 'company-backends)
-           '(company-jedi)))
-
-    (add-hook 'python-mode-hook 'flycheck-python-setup)
-    (add-hook 'python-mode-hook 'flycheck-mode)
-    (add-hook 'python-mode-hook 'flycheck-mode)
-    (add-hook 'python-mode-hook 'company-mode)
-    (add-hook 'python-mode-hook 'linum-mode)
-    (add-hook 'python-mode-hook 'company-python-setup)
-    (add-hook 'python-mode-hook 'jedi:setup)))
-
-(use-package company-jedi)
-
-(use-package jedi
-  :bind
-  (:map python-mode-map
-        ("M-." . jedi:goto-definition)
-        ("M-," . jedi:goto-definition-pop-marker)
-        ("M-*" . jedi:goto-definition-pop-marker)
-        ("M-?" . jedi:show-doc))
-  :init
-  (progn
-    (setq jedi:complete-on-dot nil)))
-
 (use-package highlight-symbol
   :bind (("C-x w ." . highlight-symbol-at-point)
          ("C-x w %" . highlight-symbol-query-replace)
@@ -902,29 +688,6 @@
   :config
   (progn
     (setq company-show-numbers t)))
-
-(use-package elixir-mode
-  :commands elixir-mode
-  :disabled
-  :config
-  (progn
-    (add-hook 'elixir-mode-hook 'alchemist-mode)))
-
-(use-package alchemist
-  :commands alchemist-mode
-  :disabled
-  :bind
-  (:map alchemist-mode-map
-        ("M-<tab>" . company-complete)
-        ("M-?" . alchemist-help-search-at-point)
-        ("C-c C-t" . alchemist-mix-test-file)
-        ("C-c C-c" . alchemist-mix-compile)
-        ("C-c C-r" . alchemist-mix-run)
-        ("C-c C-z" . alchemist-iex-project-run))
-  :config
-  (progn
-    (add-hook 'alchemist-mode-hook 'company-mode)
-    (add-hook 'alchemist-iex-mode-hook 'company-mode)))
 
 ;;
 ;; Scala
@@ -991,9 +754,6 @@
     (add-hook 'sql-mode-hook 'linum-mode)
     (add-hook 'sql-mode-hook 'extend-with-mysql-syntax-and-keywords)))
 
-(use-package elm-mode
-  :commands elm-mode)
-
 (use-package yaml-mode
   :config
   (progn
@@ -1056,8 +816,7 @@
 (use-package suggest)
 
 (use-package groovy-mode
-  :disabled
-  :init
+  :config
   (progn
     (add-hook 'groovy-mode 'linum-mode)))
 
