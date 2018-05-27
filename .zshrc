@@ -34,5 +34,7 @@ source $ZSH/oh-my-zsh.sh
 source /usr/local/opt/awscli/libexec/bin/aws_zsh_completer.sh
 
 # OPAM configuration
-eval `opam config env`
-. /Users/hartmann/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+if which opam > /dev/null; then
+  eval `opam config env`
+  . /Users/hartmann/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+fi
