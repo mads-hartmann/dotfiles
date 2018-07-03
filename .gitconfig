@@ -11,6 +11,7 @@
 	mylog = !git log --author=\"$(git config user.name)\"
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
+	editor = code --wait
 [user]
 	email = mads379@gmail.com
 	name = Mads Hartmann
@@ -19,3 +20,7 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
