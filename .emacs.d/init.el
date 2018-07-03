@@ -706,6 +706,11 @@
 (use-package sbt-mode
   :pin melpa
   :commands sbt-start sbt-command
+  :bind 
+  (:map sbt-mode-map
+        ("s-k" . comint-clear-buffer)
+        ("<up>" . comint-previous-input)
+        ("<down>" . comint-next-input))
   :config
   ;; WORKAROUND: https://github.com/ensime/emacs-sbt-mode/issues/31
   ;; allows using SPACE when in the minibuffer
