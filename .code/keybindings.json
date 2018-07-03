@@ -21,6 +21,15 @@
         "command": "editor.action.triggerSuggest",
         "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"
     },
+    // Editor zoom (macOS defaults)
+    { "key": "cmd+numpad_add",      "command": "editor.action.fontZoomIn" },
+    { "key": "shift+cmd+=",         "command": "editor.action.fontZoomIn" },
+    { "key": "cmd+=",               "command": "editor.action.fontZoomIn" },
+    { "key": "cmd+numpad_subtract", "command": "editor.action.fontZoomOut" },
+    { "key": "shift+cmd+-",         "command": "editor.action.fontZoomOut" },
+    { "key": "cmd+-",               "command": "editor.action.fontZoomOut" },
+    { "key": "cmd+numpad0",         "command": "editor.action.fontZoomReset" },
+    { "key": "cmd+0",               "command": "editor.action.fontZoomReset" },
     // File explorer.
     {
         "key": "tab",
@@ -68,8 +77,16 @@
         "command": "workbench.action.quickOpen"
     },
     // Uncategorized - for now.
+    // {
+    //     "key": "cmd+shift+`",
+    //     "command": "workbench.action.switchWindow"
+    // },
     {
         "key": "cmd+ctrl+`",
+        "command": "workbench.action.switchWindow"
+    },
+    {
+        "key": "cmd+shift+\\",
         "command": "workbench.action.switchWindow"
     },
     {
@@ -86,11 +103,6 @@
         "key": "alt+enter",
         "command": "editor.action.quickFix",
         "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "cmd+0",
-        "command": "workbench.files.action.focusFilesExplorer",
-        "when": "editorTextFocus"
     },
     {
         "key": "cmd+]",
@@ -130,7 +142,9 @@
         "command": "workbench.action.gotoLine",
         "when": "editorTextFocus"
     },
-    // Disable default keybinding, as this is what I'm using to switch windows
+    /*
+     * Terminal bindings
+     */
     {
         "key": "ctrl+`",
         "command": "workbench.action.terminal.focusNext",
@@ -141,6 +155,27 @@
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "terminalFocus"
     },
+    {
+        "key": "cmd+[",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "cmd+]",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "cmd+d",
+        "command": "workbench.action.terminal.split",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "cmd+w",
+        "command": "workbench.action.terminal.kill",
+        "when": "terminalFocus"
+    },
+    // Disable default keybinding, as this is what I'm using to switch windows
     {
         "key": "cmd+\\",
         "command": ""
@@ -170,7 +205,8 @@
     },
     {
         "key": "cmd+d",
-        "command": "editor.action.copyLinesDownAction"
+        "command": "editor.action.copyLinesDownAction",
+        "when": "editorTextFocus"
     },
     {
         "key": "alt+u",

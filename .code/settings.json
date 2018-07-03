@@ -1,9 +1,10 @@
 {
-  "editor.cursorStyle": "block",
+  "editor.cursorStyle": "line",
+  "editor.cursorBlinking": "solid",
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
   "editor.fontSize": 13,
-  "editor.lineHeight": 17,
+  "editor.lineHeight": 16,
   "editor.minimap.enabled": false,
   "editor.renderLineHighlight": "none",
   "editor.renderWhitespace": "none",
@@ -12,10 +13,9 @@
   // Disable vscode snippets, I use yassnippets
   "editor.tabCompletion": false,
   "editor.snippetSuggestions": "none",
-
   "explorer.autoReveal": false,
   "explorer.openEditors.visible": 10,
-
+  "files.defaultLanguage": "markdown", // For scratch documents 😎
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
   "files.associations": {
@@ -44,59 +44,65 @@
     "**/*.pyc": true,
     "*.egg-info": true
   },
-
   "terminal.external.osxExec": "iTerm.app",
-
   "window.nativeTabs": true,
   "window.titleBarStyle": "native",
   "window.zoomLevel": 0,
-
   "workbench.fontAliasing": "default",
-  "workbench.activityBar.visible": false,
-  "workbench.editor.showTabs": false,
+  "workbench.activityBar.visible": true,
+  "workbench.editor.showTabs": true,
   "workbench.editor.tabCloseButton": "off",
   "workbench.editor.enablePreview": false,
   "workbench.sideBar.location": "left",
-  "workbench.statusBar.visible": false,
-  "workbench.iconTheme": "vs-minimal",
+  "workbench.statusBar.visible": true,
+  "workbench.iconTheme": "eq-material-theme-icons",
   "workbench.colorTheme": "GitHub Plus",
   "workbench.startupEditor": "newUntitledFile",
-
   "yaml.schemas": {
     "kubernetes": "*.yaml",
   },
-
+  /*
+   * SCALA
+   */
+  "metals.serverVersion": "SNAPSHOT",
+  "metals.scalafmt.version": "1.5.1",
   /**
      * Various utility plugins
      */
-
   "yassnippet.path": ".snippets",
   "yassnippet.mapping": {
     "shellscript": "sh-mode"
   },
-
-  "cSpell.enabledLanguageIds": ["latex", "markdown", "plaintext", "text"],
-
+  // strings are ignored.
+  "spellright.spellContext": "body comments",
+  "spellright.documentTypes": [
+    "markdown",
+    "latex",
+    "plaintext",
+    "typescript"
+  ],
   "docker.showExplorer": false,
-
   "reason.formatOnSave": true,
-
+  "editor.formatOnSave": true,
   "[markdown]": {
     "editor.wordWrap": "on",
     "editor.quickSuggestions": false,
     "editor.renderWhitespace": "boundary",
     "files.trimTrailingWhitespace": false
   },
+  "markdown.preview.scrollPreviewWithEditor": false,
+  "markdown.preview.scrollEditorWithPreview": false,
   "[javascript]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   "[makefile]": {
     "editor.renderWhitespace": "boundary"
   },
-
   "prettier.eslintIntegration": true,
   "vsicons.presets.foldersAllDefaultIcon": true,
   "vsicons.dontShowNewVersionMessage": true,
+  "vsicons.presets.hideExplorerArrows": true,
+  "vsicons.presets.hideFolders": false,
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": false,
     "suppressCommitNotFoundWarning": false,
@@ -116,6 +122,8 @@
   "window.restoreWindows": "none",
   "workbench.editor.labelFormat": "short",
   "workbench.editor.tabSizing": "shrink",
-  "vsicons.presets.hideExplorerArrows": true,
-  "go.gopath": null
+  "go.gopath": null,
+  "telemetry.enableTelemetry": false,
+  "material-icon-theme.folders.color": "#42a5f5",
+  "metals.scalac.completions.enabled": true
 }
