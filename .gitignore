@@ -24,3 +24,4 @@
 .sbt/preloaded
 .docker/.buildNodeID
 .docker/machine/
+.metals
