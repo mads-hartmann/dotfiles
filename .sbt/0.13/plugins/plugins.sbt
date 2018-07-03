@@ -1,4 +1,1 @@
-// or clone this repo and type `sbt publishLocal`
-resolvers += Resolver.sonatypeRepo("snapshots")
-
-addSbtPlugin("org.ensime" % "sbt-ensime" % "2.0.1")
+addSbtPlugin("org.scalameta" % "sbt-metals" % "0.1.0-M1+90-fcac1cc3")
