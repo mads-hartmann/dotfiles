@@ -45,7 +45,7 @@ function docker_part {
 }
 
 function kube_part {
-    if [[ ${ENABLE_K8s_PART} == 1 ]]; then
+    if [[ ${ENABLE_K8s_PART} == 1 && $(command -v kubectl) ]]; then
         local context
         context="$(kubectl config current-context)"
         if [[ -z "${context}" ]]
