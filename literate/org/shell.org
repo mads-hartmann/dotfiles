@@ -1,0 +1,20 @@
+#+TITLE:       Shell
+#+AUTHOR:      Mads Hartmann
+#+DESCRIPTION: Configuration of my Shell environment
+#+SETUPFILE:   ../etc/options.org
+
+* Shell
+
+# TODO: Can I move this top options.org somehow?
+:PROPERTIES:
+:header-args:    :mkdirp yes
+:END:
+
+First there was the shell.
+Everything starts in the shell.
+
+#+CAPTION: Source listing for ~.profile~.
+#+BEGIN_SRC sh :tangle ../output/tangled/.profile :noweb yes :shebang "#!/bin/sh\n"
+  # Source installed login shell configurations:
+  <<sh-profile>>
+#+END_SRC
