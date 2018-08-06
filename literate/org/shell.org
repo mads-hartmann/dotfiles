@@ -5,16 +5,68 @@
 
 * Shell
 
-# TODO: Can I move this top options.org somehow?
-:PROPERTIES:
-:header-args:    :mkdirp yes
-:END:
-
 First there was the shell.
 Everything starts in the shell.
 
-#+CAPTION: Source listing for ~.profile~.
-#+BEGIN_SRC sh :tangle ../output/tangled/.profile :noweb yes :shebang "#!/bin/sh\n"
-  # Source installed login shell configurations:
-  <<sh-profile>>
+#+CAPTION: Source listing for ~.bashrc~.
+#+BEGIN_SRC sh :tangle ../stow/bash/.bashrc
+  [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 #+END_SRC
+
+** ZSH
+
+*** Keybindings
+
+This binds keys to Zle widgets (Zsh Line Editor widgets.).
+To get a list of all widgets run zle -la
+
+See this link for more information.
+
+   http://sgeb.io/posts/2014/04/zsh-zle-custom-widgets/
+   http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Standard-Widgets
+
+You can use `bindkey 'M-x'` to see what command M-x is bound to. Use `bindkey`
+to get a list of all mappings.
+
+bindkey <keys> <widget>
+bindkey -s <keys> <input strokes>
+
+^ is control.
+^[ is alt.
+
+#+CAPTION: Source listing for ~keybindings.zsh~.
+#+BEGIN_SRC sh :tangle ../stow/zsh/keybindings.zsh
+bindkey '^[l' down-case-word
+bindkey '^[u' up-case-word
+bindkey -s '^[p' '^Uproject^M' # Ctrl+u to delete line, project, enter.
+bindkey -s '^[s' '^Ugit-switch^M'
+bindkey -s '^[e' '^Uedit^M'
+#+END_SRC
+
+*** Aliases
+
+#+BEGIN_SRC sh :tangle ../stow/zsh/aliases.zsh :noweb yes :exports none
+<<aliases>>
+#+END_SRC
+
+various commands that I'm too lazy to type out all the time.
+
+Docker related aliases
+
+#+BEGIN_SRC sh :noweb-ref aliases
+alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}'"
+alias dc="docker-compose"
+alias dm="docker-machine"
+#+END_SRC
+
+Utility
+
+#+BEGIN_SRC sh :noweb-ref aliases
+alias reload=src
+alias f=famlydev
+alias e=edit
+alias k=kubectl
+alias epoch="date +%s | tr -d '\n'"
+alias gti=git # DWIM version of git.
+#+END_SRC
+

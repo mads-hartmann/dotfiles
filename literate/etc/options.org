@@ -1,3 +1,7 @@
 #+OPTIONS: html-postamble:nil html-preamble:t
 #+HTML_CONTAINER: article
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../main.css" />
+
+#+PROPERTY: header-args  :mkdirp yes
+#+PROPERTY: header-args+ :tangle no
+#+PROPERTY: header-args+ :noweb no

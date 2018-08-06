@@ -1,6 +1,3 @@
-;; See this commit 
-;; https://github.com/mads-hartmann/mads-hartmann.github.com/commit/cd02588db1480542e3a5a01b5896905d9ad14a31
-
 (require 'org)
 
 (setq org-publish-project-alist
