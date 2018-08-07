@@ -6,6 +6,7 @@ build: build-website build-files
 build-website: $(ORG_FILES)
 	@emacs \
 		--quick \
+		--directory $(HOME)/.emacs.d/elpa/htmlize-20180412.1944 \
 		--script etc/project.el \
 		--eval "(org-publish-project \"org\")"
 
