@@ -25,24 +25,40 @@
     "*.env": "ini"
   },
   "files.exclude": {
-    "**/.git": true,
+    // MacOS
     "**/.DS_Store": true,
+    // Git
+    "**/.git": true,
+    "**/.gitignore": false,
+    // Editors & IDEs
+    "**/.idea": true,
+    "**/.vscode": false,
+    // Common trash folders
     "**/.last-update": true,
-    ".setup": true,
-    ".build": true,
-    ".gitignore": false,
-    ".idea": true,
-    ".vscode": false,
-    "_build": true,
-    "build": true,
-    "dist": true,
+    "**/.setup": true,
+    "**/.build": true,
+    "**/_build": true,
+    "**/build": true,
+    "**/tmp": true,
+    "**/dist": true,
+    // Node
+    "**/node_modules": true,
     // OCaml / Reason
     "**/.merlin": true,
     "**/*.install": true,
     // python
-    ".venv": true,
+    "**/.venv": true,
     "**/*.pyc": true,
-    "*.egg-info": true
+    "**/*.egg-info": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    // Famly
+    "**/tmp/**": true,
+    "**/dist/**": true,
+    "**/build/**": true
   },
   "terminal.external.osxExec": "iTerm.app",
   "window.nativeTabs": true,
@@ -55,11 +71,11 @@
   "workbench.editor.enablePreview": false,
   "workbench.sideBar.location": "left",
   "workbench.statusBar.visible": true,
-  "workbench.iconTheme": "eq-material-theme-icons",
-  "workbench.colorTheme": "GitHub Plus",
+  "workbench.iconTheme": "eq-material-theme-icons-palenight",
+  "workbench.colorTheme": "Material Theme Palenight",
   "workbench.startupEditor": "newUntitledFile",
   "yaml.schemas": {
-    "kubernetes": "*.yaml",
+    "kubernetes": "*.yaml"
   },
   /*
    * SCALA
@@ -67,8 +83,8 @@
   "metals.serverVersion": "SNAPSHOT",
   "metals.scalafmt.version": "1.5.1",
   /**
-     * Various utility plugins
-     */
+   * Various utility plugins
+   */
   "yassnippet.path": ".snippets",
   "yassnippet.mapping": {
     "shellscript": "sh-mode"
@@ -92,13 +108,14 @@
   },
   "markdown.preview.scrollPreviewWithEditor": false,
   "markdown.preview.scrollEditorWithPreview": false,
-  "[javascript]": {
-    "editor.formatOnSave": true
+  "[markdown]": {
+    "editor.formatOnSave": false
   },
   "[makefile]": {
     "editor.renderWhitespace": "boundary"
   },
   "prettier.eslintIntegration": true,
+  "tslint.autoFixOnSave": true,
   "vsicons.presets.foldersAllDefaultIcon": true,
   "vsicons.dontShowNewVersionMessage": true,
   "vsicons.presets.hideExplorerArrows": true,
@@ -125,5 +142,9 @@
   "go.gopath": null,
   "telemetry.enableTelemetry": false,
   "material-icon-theme.folders.color": "#42a5f5",
-  "metals.scalac.completions.enabled": true
+  "metals.scalac.completions.enabled": true,
+  "materialTheme.fixIconsRunning": false,
+  "bashIde.path": "/usr/local/bin/bash-language-server",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "bashIde.highlightParsingErrors": false
 }
