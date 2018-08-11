@@ -3,10 +3,10 @@ language: python
 env:
   global:
     # So we have acccess to the aws command.
-    - PATH=$HOME/.local/bin:$PATH
+    - PATH=$HOME/virtualenv/python2.7/bin:$PATH
 
 install:
-  - pip install --user awscli
+  - pip install awscli
 
 script:
   # no-op
