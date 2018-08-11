@@ -8,7 +8,7 @@ build-website: $(ORG_FILES)
 		--quick \
 		--directory $(HOME)/.emacs.d/elpa/htmlize-20180412.1944 \
 		--script etc/project.el \
-		--eval "(org-publish-project \"org\")"
+		--eval "(org-publish-project \"everything\" t)"
 
 build-files: $(ORG_FILES)
 	@emacs \

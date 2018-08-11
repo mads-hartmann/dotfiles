@@ -1,0 +1,2 @@
+#+TITLE: Visual Studio Code
+#+SETUPFILE: ../../etc/options.org

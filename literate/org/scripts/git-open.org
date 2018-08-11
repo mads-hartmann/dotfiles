@@ -1,0 +1,2 @@
+#+TITLE: git-open
+#+SETUPFILE: ../../etc/options.org

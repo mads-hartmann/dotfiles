@@ -1,21 +1,9 @@
-#+TITLE:       Shell
-#+AUTHOR:      Mads Hartmann
-#+DESCRIPTION: Configuration of my Shell environment
-#+SETUPFILE:   ../etc/options.org
+#+TITLE: ZSH
+#+SETUPFILE: ../etc/options.org
 
-* Shell
+I use ZSH as my main shell.
 
-First there was the shell.
-Everything starts in the shell.
-
-#+CAPTION: Source listing for ~.bashrc~.
-#+BEGIN_SRC sh :tangle ../stow/bash/.bashrc
-  [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-#+END_SRC
-
-** ZSH
-
-*** Keybindings
+** Keybindings
 
 This binds keys to Zle widgets (Zsh Line Editor widgets.).
 To get a list of all widgets run zle -la
@@ -43,7 +31,7 @@ bindkey -s '^[s' '^Ugit-switch^M'
 bindkey -s '^[e' '^Uedit^M'
 #+END_SRC
 
-*** Aliases
+** Aliases
 
 #+BEGIN_SRC sh :tangle ../stow/zsh/aliases.zsh :noweb yes :exports none
 <<aliases>>
@@ -69,4 +57,3 @@ alias k=kubectl
 alias epoch="date +%s | tr -d '\n'"
 alias gti=git # DWIM version of git.
 #+END_SRC
-

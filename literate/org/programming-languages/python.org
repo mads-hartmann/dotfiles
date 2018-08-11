@@ -1,0 +1,2 @@
+#+TITLE: Python
+#+SETUPFILE: ../../etc/options.org

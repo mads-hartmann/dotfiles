@@ -1,0 +1,11 @@
+#+TITLE: Bash
+#+SETUPFILE: ../etc/options.org
+
+I use bash for scripting not as my shell.
+
+But when I do I still want completions enabled.
+
+#+CAPTION: Source listing for ~.bashrc~.
+#+BEGIN_SRC sh :tangle ../stow/bash/.bashrc
+  [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+#+END_SRC

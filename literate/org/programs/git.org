@@ -1,0 +1,33 @@
+#+TITLE: git
+#+SETUPFILE: ../../etc/options.org
+
+
+#+CAPTION: ~.gitconfig~.
+#+BEGIN_SRC sh :tangle ../stow/git/.gitconfig
+# Local/private config goes in the include
+[include]
+	path = ~/.gitconfig.local
+[alias]
+	b = branch
+	co = checkout
+	st = status -s
+	stats = diff --stat
+	count = !git shortlog -sn
+	recap = diff --stat origin/staging...HEAD
+	mylog = !git log --author=\"$(git config user.name)\"
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	editor = code --wait
+[user]
+	email = mads379@gmail.com
+	name = Mads Hartmann
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+#+END_SRC

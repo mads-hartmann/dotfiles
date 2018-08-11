@@ -1,0 +1,2 @@
+#+TITLE: Emacs
+#+SETUPFILE: ../../etc/options.org

@@ -1,0 +1,2 @@
+#+TITLE: Bash
+#+SETUPFILE: ../../etc/options.org

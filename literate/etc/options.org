@@ -1,7 +1,9 @@
-#+OPTIONS: html-postamble:nil html-preamble:t
 #+HTML_CONTAINER: article
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../main.css" />
+#+HTML_HEAD_EXTRA: <link href="https://fonts.googleapis.com/css?family=Muli:200,200i,400,400i,700,700i" rel="stylesheet">
 
 #+PROPERTY: header-args  :mkdirp yes
 #+PROPERTY: header-args+ :tangle no
 #+PROPERTY: header-args+ :noweb no
+
+#+OPTIONS: toc:t

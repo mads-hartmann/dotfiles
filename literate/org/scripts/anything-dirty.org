@@ -1,0 +1,4 @@
+#+TITLE: anything-dirty
+#+SETUPFILE: ../../etc/options.org
+
+I wrote this once before I had to migrate to another comptuer.

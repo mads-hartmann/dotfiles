@@ -1,0 +1,2 @@
+#+TITLE: tags
+#+SETUPFILE: ../../etc/options.org

@@ -1,0 +1,19 @@
+language: python
+
+env:
+  global:
+    # So we have acccess to the aws command.
+    - PATH=$HOME/.local/bin:$PATH
+
+before_deploy:
+  - pip install --user awscli
+
+deploy:
+  provider: script
+  script: scripts/deploy.sh
+  skip_cleanup: true
+  on:
+    branch: master
+
+notifications:
+  email: false

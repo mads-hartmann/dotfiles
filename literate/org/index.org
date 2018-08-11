@@ -1,3 +1,9 @@
-#+TITLE: My Dotfiles
+#+TITLE: My Computer
+#+SETUPFILE: ../etc/options.org
 
-- [[file:shell.org][Shell]]
+I'm in the process of moving all of my dotfiles to org-mode files that can be
+used to generate this website as well as my actual dotfiles.
+
+Nothing is completed yet.
+
+#+INCLUDE: "../org/sitemap.org" :lines "3-"
