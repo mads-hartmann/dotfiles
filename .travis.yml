@@ -5,8 +5,11 @@ env:
     # So we have acccess to the aws command.
     - PATH=$HOME/.local/bin:$PATH
 
-before_deploy:
+install:
   - pip install --user awscli
+
+script:
+  # no-op
 
 deploy:
   provider: script
