@@ -8,8 +8,7 @@ env:
 install:
   - pip install awscli
 
-script:
-  # no-op
+script: echo "no-op"
 
 deploy:
   provider: script
