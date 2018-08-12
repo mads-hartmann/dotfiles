@@ -18,7 +18,7 @@ before_deploy: echo "no-op"
 
 deploy:
   provider: script
-  script: scripts/deploy.sh
+  script: literate/scripts/deploy.sh
   skip_cleanup: true
   on:
     branch: master
