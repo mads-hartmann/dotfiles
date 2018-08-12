@@ -5,10 +5,16 @@ env:
     # So we have acccess to the aws command.
     - PATH=$HOME/virtualenv/python2.7/bin:$PATH
 
+before_install: echo "no-op"
+
 install:
   - pip install awscli
 
+before_script: echo "no-op"
+
 script: echo "no-op"
+
+before_deploy: echo "no-op"
 
 deploy:
   provider: script
@@ -16,6 +22,10 @@ deploy:
   skip_cleanup: true
   on:
     branch: master
+
+after_deploy: echo "no-op"
+
+after_script: echo "no-op"
 
 notifications:
   email: false
