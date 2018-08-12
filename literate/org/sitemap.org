@@ -1,34 +1,34 @@
 #+TITLE: 
 
-- [[file:bash.org][bash]]
-- [[file:index.org][index]]
-- [[file:zsh.org][zsh]]
-- Editors
-  - [[file:editors/emacs.org][emacs]]
-  - [[file:editors/vscode.org][vscode]]
-- Mac Os
-  - [[file:mac-os/defaults.org][defaults]]
-  - [[file:mac-os/keybindings.org][keybindings]]
-- Programming Languages
-  - [[file:programming-languages/bash.org][bash]]
-  - [[file:programming-languages/go.org][go]]
-  - [[file:programming-languages/node.org][node]]
-  - [[file:programming-languages/ocaml.org][ocaml]]
-  - [[file:programming-languages/python.org][python]]
-  - [[file:programming-languages/scala.org][scala]]
-- Programs
-  - [[file:programs/docker.org][docker]]
-  - [[file:programs/git.org][git]]
-- Scripts
-  - [[file:scripts/anything-dirty.org][anything-dirty]]
-  - [[file:scripts/docker-nuke.org][docker-nuke]]
-  - [[file:scripts/edit.org][edit]]
-  - [[file:scripts/every.org][every]]
-  - [[file:scripts/git-open.org][git-open]]
-  - [[file:scripts/git-recent.org][git-recent]]
-  - [[file:scripts/git-switch.org][git-switch]]
-  - [[file:scripts/git-tidy.org][git-tidy]]
-  - [[file:scripts/serve.org][serve]]
-  - [[file:scripts/sunday.org][sunday]]
-  - [[file:scripts/tags.org][tags]]
-  - [[file:scripts/who-is-using-port.org][who-is-using-port]]
+   + editors
+     + [[file:editors/emacs.org][Emacs]]
+     + [[file:editors/vscode.org][Visual Studio Code]]
+   + mac-os
+     + [[file:mac-os/defaults.org][Defaults]]
+     + [[file:mac-os/keybindings.org][Keybindings]]
+   + programming-languages
+     + [[file:programming-languages/bash.org][Bash]]
+     + [[file:programming-languages/go.org][Go]]
+     + [[file:programming-languages/node.org][Node]]
+     + [[file:programming-languages/ocaml.org][OCaml]]
+     + [[file:programming-languages/python.org][Python]]
+     + [[file:programming-languages/scala.org][Scala]]
+   + programs
+     + [[file:programs/docker.org][docker]]
+     + [[file:programs/git.org][git]]
+   + scripts
+     + [[file:scripts/anything-dirty.org][anything-dirty]]
+     + [[file:scripts/docker-nuke.org][docker-nuke]]
+     + [[file:scripts/edit.org][edit]]
+     + [[file:scripts/every.org][every]]
+     + [[file:scripts/git-open.org][git-open]]
+     + [[file:scripts/git-recent.org][git-recent]]
+     + [[file:scripts/git-switch.org][git-switch]]
+     + [[file:scripts/git-tidy.org][git-tidy]]
+     + [[file:scripts/serve.org][serve]]
+     + [[file:scripts/sunday.org][sunday]]
+     + [[file:scripts/tags.org][tags]]
+     + [[file:scripts/who-is-using-port.org][who-is-using-port]]
+   + [[file:bash.org][Bash]]
+   + [[file:index.org][My Computer]]
+   + [[file:zsh.org][ZSH]]

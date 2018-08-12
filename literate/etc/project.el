@@ -1,8 +1,8 @@
 (require 'org)
 (require 'ox-publish)
 
-(setq dotfiles-dir "~/dev/personal/dotfiles")
-(setq website-output (concat dotfiles-dir "/literate/output/website"))
+(setq dotfiles-dir "/home/babel/dotfiles")
+(setq website-output (concat dotfiles-dir "/output/website"))
 
 ; I had an idea of doing the TOC for the given page here.
 ; But I don't think you have access to the file that being processed.
@@ -44,7 +44,7 @@ PROJECT is the current project."
       `(
         ("everything" :components ("org" "static"))
         ("org"
-         :base-directory ,(concat dotfiles-dir "/literate/org")
+         :base-directory ,(concat dotfiles-dir "/org")
          :base-extension "org"
          :publishing-directory ,website-output
          :publishing-function org-html-publish-to-html
@@ -65,12 +65,11 @@ PROJECT is the current project."
          :html-link-up "../index.html"          ; Just the default for this project.
          )
         ("static"
-         :base-directory ,(concat dotfiles-dir "/literate/static")
+         :base-directory ,(concat dotfiles-dir "/static")
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
          :publishing-directory ,website-output
          :publishing-function org-publish-attachment
          :recursive t)))
 
 (org-publish-reset-cache)
-(org-reset-file-cache)
 (org-refile-cache-clear)

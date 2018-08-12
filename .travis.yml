@@ -1,5 +1,8 @@
 language: python
 
+services:
+  - docker
+
 env:
   global:
     # So we have acccess to the aws command.
