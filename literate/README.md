@@ -7,6 +7,7 @@ Writing the docs `make build-website`
 
 To finish the proof of concept
 
+- [ ] Finish CI setup (it's still broken)
 - [ ] Does deploy remove files that are no longer there?
 - [ ] Set up stow or similar thing to handle symlinks
   This guide seems to be very simple to follow: https://alexpearce.me/2016/02/managing-dotfiles-with-stow/
@@ -18,18 +19,19 @@ https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html
 Might be able to steal some things from these dotfiles as well.
 https://github.com/alexpearce/dotfiles
 
-# CI
+## Debugging build image
 
-I've created a Docker image that contains Emacs and the relevant packages.
-See `docker/Dockerfile`.
+The export it performed by a Docker image that contains Emacs and the relevant
+Emacs packages (see `docker/Dockerfile`).
 
-The rest is taken care of by Travis. See `.travis.yml`.
-
-## Debugging CI image
-
-Sometimes it can be useful to debug the CI image. The following will start a
+Sometimes it can be useful debug the build image. Run the following to start a
 Bash session in the Docker image with the relevant folders mounted.
 
 ```sh
 make shell
 ```
+- *TODO*: See if there's more to steal [here](https://github.com/binarin/docker-org-export/blob/master/Dockerfile)
+
+## CI
+
+See `.travis.yml`.
