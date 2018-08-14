@@ -22,7 +22,8 @@
     "_*": "shellscript", // completion files.
     "zshrc": "shellscript",
     "zshenv": "shellscript",
-    "*.env": "ini"
+    "*.env": "ini",
+    "*.el": "lisp"
   },
   "files.exclude": {
     // MacOS
