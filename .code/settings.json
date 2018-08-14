@@ -64,7 +64,7 @@
   "terminal.external.osxExec": "iTerm.app",
   "window.nativeTabs": true,
   "window.titleBarStyle": "native",
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 0.4,
   "workbench.fontAliasing": "default",
   "workbench.activityBar.visible": true,
   "workbench.editor.showTabs": true,
@@ -72,8 +72,8 @@
   "workbench.editor.enablePreview": false,
   "workbench.sideBar.location": "left",
   "workbench.statusBar.visible": true,
-  "workbench.iconTheme": "eq-material-theme-icons-palenight",
-  "workbench.colorTheme": "Material Theme Palenight",
+  "workbench.iconTheme": "eq-material-theme-icons",
+  "workbench.colorTheme": "Material Theme High Contrast",
   "workbench.startupEditor": "newUntitledFile",
   "yaml.schemas": {
     "kubernetes": "*.yaml"
@@ -92,12 +92,7 @@
   },
   // strings are ignored.
   "spellright.spellContext": "body comments",
-  "spellright.documentTypes": [
-    "markdown",
-    "latex",
-    "plaintext",
-    "typescript"
-  ],
+  "spellright.documentTypes": ["markdown", "latex", "plaintext", "typescript"],
   "docker.showExplorer": false,
   "reason.formatOnSave": true,
   "editor.formatOnSave": true,
@@ -137,6 +132,7 @@
     "**/bower_components": true
   },
   "search.location": "panel",
+  // I like to start from scratch every time.
   "window.restoreWindows": "none",
   "workbench.editor.labelFormat": "short",
   "workbench.editor.tabSizing": "shrink",
@@ -147,5 +143,7 @@
   "materialTheme.fixIconsRunning": false,
   "bashIde.path": "/usr/local/bin/bash-language-server",
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "bashIde.highlightParsingErrors": false
+  "bashIde.highlightParsingErrors": false,
+  "prettier.disableLanguages": ["yaml"],
+  "breadcrumbs.enabled": true
 }
