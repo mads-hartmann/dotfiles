@@ -4,8 +4,7 @@
     // used to in Emacs.
     "key": "backspace",
     "command": "emacs.C-w",
-    "when":
-      "editorTextFocus && editorHasSelection && !editorHasMultipleSelections"
+    "when": "editorTextFocus && editorHasSelection && !editorHasMultipleSelections"
   },
   {
     "key": "escape",
@@ -15,14 +14,12 @@
   {
     "key": "alt+tab",
     "command": "editor.action.triggerSuggest",
-    "when":
-      "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"
+    "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"
   },
   {
     "key": "alt+/",
     "command": "editor.action.triggerSuggest",
-    "when":
-      "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"
+    "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"
   },
   // Editor zoom (macOS defaults)
   { "key": "cmd+numpad_add", "command": "editor.action.fontZoomIn" },
@@ -234,8 +231,7 @@
   {
     "key": "alt+.",
     "command": "editor.action.goToDeclaration",
-    "when":
-      "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
   },
   {
     "key": "alt+,",
