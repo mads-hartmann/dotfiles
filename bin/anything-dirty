@@ -17,7 +17,7 @@ function echo-unpushed-branches {
 }
 
 function main {
-    local path 
+    local path
     for kind in $(ls ~/dev); do
         for project in $(ls ~/dev/${kind}); do
             path="${HOME}/dev/${kind}/${project}"
