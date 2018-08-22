@@ -12,7 +12,6 @@ env:
 before_install: echo "no-op"
 
 install:
-  - sudo apt-get install -y linux-image-virtual kernel linux-image-extra-virtual
   - curl -sSL https://get.docker.com/ | sudo sh
   - pip install awscli
 
