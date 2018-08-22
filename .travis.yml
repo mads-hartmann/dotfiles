@@ -5,6 +5,8 @@ services:
 
 env:
   global:
+    # Enable makefile command output for debug purposes.
+    - QUIET=
     # So we have acccess to the aws command.
     - PATH=$HOME/virtualenv/python2.7/bin:$PATH
 

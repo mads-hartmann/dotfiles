@@ -1,5 +1,6 @@
 
 ORG_FILES := $(wildcard org/**/*.org)
+QUIET ?= @
 
 build: build-website build-files
 
@@ -7,7 +8,7 @@ build: build-website build-files
 # be possible through a simple %.html: %.org rule as there's a direct connection
 # between the two.
 build-website: $(ORG_FILES)
-	@docker run \
+	$(QUIET)docker run \
 		-ti \
 		-v $(shell pwd):/home/babel/dotfiles:rw \
 		mads379/dotfiles-ci:0.0.1 \
@@ -18,7 +19,7 @@ build-website: $(ORG_FILES)
 # There isn't a direct connection between the source files and the tangled output
 # so it doesn't make sense to try to create rules for them.
 tangle: $(ORG_FILES)
-	@docker run \
+	$(QUIET)docker run \
 		-ti \
 		-v $(shell pwd):/home/babel/dotfiles:rw \
 		mads379/dotfiles-ci:0.0.1 \
@@ -27,7 +28,7 @@ tangle: $(ORG_FILES)
 			--eval "(org-publish-project \"tangles\" t)"
 
 shell:
-	@docker run \
+	$(QUIET)docker run \
 		-ti \
 		-v $(shell pwd):/home/babel/dotfiles:rw \
 		dotfiles-ci:latest bash
