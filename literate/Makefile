@@ -9,7 +9,6 @@ build: build-website build-files
 # between the two.
 build-website: $(ORG_FILES)
 	$(QUIET)docker run \
-		-ti \
 		-v $(shell pwd):/home/babel/dotfiles:rw \
 		mads379/dotfiles-ci:0.0.1 \
 			emacs \
