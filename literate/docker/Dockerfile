@@ -1,4 +1,5 @@
 # TODO: Use a smaller image.
+# TODO: Add git/ssh
 FROM debian:jessie
 
 # Install system dependencies

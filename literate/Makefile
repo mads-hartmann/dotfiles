@@ -9,10 +9,10 @@ build: build-website build-files
 # between the two.
 build-website: $(ORG_FILES)
 	$(QUIET)docker run \
-		-v $(shell pwd):/home/babel/dotfiles:rw \
-		mads379/dotfiles-ci:0.0.1 \
+		-v $(shell pwd)/..:/home/babel/dotfiles:rw \
+		mads379/dotfiles-ci:0.0.2 \
 			emacs \
-			--script dotfiles/etc/project.el \
+			--script dotfiles/literate/etc/project.el \
 			--eval "(org-publish-project \"everything\" t)"
 
 # There isn't a direct connection between the source files and the tangled output
@@ -20,17 +20,17 @@ build-website: $(ORG_FILES)
 tangle: $(ORG_FILES)
 	$(QUIET)docker run \
 		-ti \
-		-v $(shell pwd):/home/babel/dotfiles:rw \
-		mads379/dotfiles-ci:0.0.1 \
+		-v $(shell pwd)/..:/home/babel/dotfiles:rw \
+		mads379/dotfiles-ci:0.0.2 \
 			emacs \
-			--script dotfiles/etc/project.el \
+			--script dotfiles/literate/etc/project.el \
 			--eval "(org-publish-project \"tangles\" t)"
 
 shell:
 	$(QUIET)docker run \
 		-ti \
-		-v $(shell pwd):/home/babel/dotfiles:rw \
-		dotfiles-ci:latest bash
+		-v $(shell pwd)/..:/home/babel/dotfiles:rw \
+		mads379/dotfiles-ci:0.0.2 bash
 
 clean:
 	rm -rf output
