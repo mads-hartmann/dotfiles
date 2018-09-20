@@ -13,6 +13,7 @@ jobs:
           name: Build
           command:
             emacs \
+              --batch \
               --script etc/project.el \
               --eval "(org-publish-project \"everything\" t)"
       - run:
