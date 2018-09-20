@@ -5,20 +5,17 @@ jobs:
     working_directory: /home/babel
     docker:
       - image: mads379/dotfiles-ci:0.0.2
-        auth:
-          username: $DOCKER_USER
-          password: $DOCKER_PASS
     steps:
       - checkout
       - run:
-        name: Build
-        command:
-          pwd
-          ls
-          emacs \
-            --script dotfiles/etc/project.el \
-            --eval "(org-publish-project \"everything\" t)"
+          name: Build
+          command:
+            pwd
+            ls
+            emacs \
+              --script dotfiles/etc/project.el \
+              --eval "(org-publish-project \"everything\" t)"
       - run:
-        name: Deploy
-        command: |
-          echo "Would've deployed"
+          name: Deploy
+          command: |
+            echo "Would've deployed"
