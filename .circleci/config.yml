@@ -12,10 +12,7 @@ jobs:
       - run:
           name: Build
           command:
-            emacs \
-              --batch \
-              --script etc/project.el \
-              --eval "(org-publish-project \"everything\" t)"
+            emacs --batch --script etc/project.el --eval "(org-publish-project \"everything\" t)"
       - run:
           name: Deploy
           command: |
