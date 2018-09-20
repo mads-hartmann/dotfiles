@@ -1,7 +1,14 @@
+# TODO: Use a smaller image.
 FROM debian:jessie
 
-# Install dependencies - just Emacs in this case.
-RUN apt-get update && apt-get -y install emacs24
+# Install system dependencies
+RUN apt-get update && \
+    apt-get -y install \
+        # For building
+        emacs24 \
+        # For aws-cli
+        python python-pip && \
+    pip install awscli
 
 # Create a user. No need to run as root.
 RUN useradd -ms /bin/bash babel
