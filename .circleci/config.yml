@@ -6,7 +6,7 @@ jobs:
     docker:
       - image: mads379/dotfiles-ci:0.0.2
         environment:
-          TERM: dumb
+          TERM: xterm-256color
     steps:
       - checkout
       - run:
