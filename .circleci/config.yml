@@ -10,8 +10,6 @@ jobs:
       - run:
           name: Build
           command:
-            pwd
-            ls
             emacs \
               --script etc/project.el \
               --eval "(org-publish-project \"everything\" t)"
