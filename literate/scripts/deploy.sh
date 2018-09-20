@@ -23,7 +23,6 @@ function invlidate-cache {
 }
 
 function main {
-    make build-website
     deploy-to-s3
     invlidate-cache
 }
