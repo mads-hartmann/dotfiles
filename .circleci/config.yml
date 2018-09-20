@@ -5,8 +5,6 @@ jobs:
     working_directory: /home/babel/dotfiles
     docker:
       - image: mads379/dotfiles-ci:0.0.2
-        environment:
-          TERM: xterm-256color
     steps:
       - checkout
       - run:
