@@ -1,4 +1,4 @@
 #+TITLE: every
-#+SETUPFILE: ../../etc/options.org
+#+SETUPFILE: /home/babel/dotfiles/literate/etc/options.org
 
 Runs a command every X seconds

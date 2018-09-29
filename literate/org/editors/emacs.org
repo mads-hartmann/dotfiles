@@ -1,2 +1,2 @@
 #+TITLE: Emacs
-#+SETUPFILE: ../../etc/options.org
+#+SETUPFILE: /home/babel/dotfiles/literate/etc/options.org

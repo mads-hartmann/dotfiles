@@ -1,12 +1,12 @@
 #+TITLE: anything-dirty
-#+SETUPFILE: ../../etc/options.org
+#+SETUPFILE: /home/babel/dotfiles/literate/etc/options.org
 
 I wrote this script before I had to ship my MBP off to the repair shop.
 
 It just looks through all of my folders in ~~/dev/*/*~ and tells me
 if any of the files are dirty.
 
-#+BEGIN_SRC sh :tangle ../../stow/scripts/anything-dirty
+#+BEGIN_SRC sh :tangle /home/babel/dotfiles/literate/output/tangles/scripts/anything-dirty
 #!/usr/bin/env bash
 
 set -euo pipefail

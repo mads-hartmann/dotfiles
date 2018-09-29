@@ -1,9 +1,12 @@
 (require 'org)
 (require 'ox-publish)
 
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+
 (setq dotfiles-dir "/home/babel/dotfiles")
 (setq website-output (concat dotfiles-dir "/literate/output/website"))
-(setq tagle-output (concat dotfiles-dir "/literate/output/tagles"))
+(setq tangle-output (concat dotfiles-dir "/literate/output/tangles"))
 
 ; I had an idea of doing the TOC for the given page here.
 ; But I don't think you have access to the file that being processed.
@@ -75,6 +78,6 @@ PROJECT is the current project."
          :base-directory ,(concat dotfiles-dir "/literate/org")
          :base-extension "org"
          :recursive t
-         :publishing-directory ,tagle-output
-         :publishing-function org-babel-tangle-publish)
+         :publishing-directory nil
+         :publishing-function nil)
          ))

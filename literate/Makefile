@@ -1,6 +1,10 @@
+BUILD_DIR := _build
+QUIET ?= @
 
 ORG_FILES := $(wildcard org/**/*.org)
-QUIET ?= @
+TANGLE_TARGETS := \
+	$(patsubst %.org,$(BUILD_DIR)/%.tangled,$(ORG_FILES))
+
 
 build: build-website build-files
 
@@ -15,16 +19,8 @@ build-website: $(ORG_FILES)
 			--script dotfiles/literate/etc/project.el \
 			--eval "(org-publish-project \"everything\" t)"
 
-# There isn't a direct connection between the source files and the tangled output
-# so it doesn't make sense to try to create rules for them.
-tangle: $(ORG_FILES)
-	$(QUIET)docker run \
-		-ti \
-		-v $(shell pwd)/..:/home/babel/dotfiles:rw \
-		mads379/dotfiles-ci:0.0.2 \
-			emacs \
-			--script dotfiles/literate/etc/project.el \
-			--eval "(org-publish-project \"tangles\" t)"
+
+tangle: $(TANGLE_TARGETS)
 
 shell:
 	$(QUIET)docker run \
@@ -34,6 +30,21 @@ shell:
 
 clean:
 	rm -rf output
+
+# rules
+
+# There isn't a direct connection between the source files and the tangled output
+# so we create this imaginary one instead.
+$(BUILD_DIR)/%.tangled: %.org
+	@mkdir -p $(dir $@)
+	$(QUIET)docker run \
+		-ti \
+		-v $(shell pwd)/..:/home/babel/dotfiles:rw \
+		mads379/dotfiles-ci:0.0.2 \
+			emacs \
+			--script dotfiles/literate/etc/project.el \
+			--eval "(org-babel-tangle-file \"/home/babel/dotfiles/literate/$<\")"
+	touch $@
 
 # Debug.
 

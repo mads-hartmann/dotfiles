@@ -23,7 +23,7 @@ bindkey -s <keys> <input strokes>
 ^[ is alt.
 
 #+CAPTION: Source listing for ~keybindings.zsh~.
-#+BEGIN_SRC sh :tangle ../stow/zsh/keybindings.zsh
+#+BEGIN_SRC sh :tangle /home/babel/dotfiles/literate/output/tangles/zsh/keybindings.zsh
 bindkey '^[l' down-case-word
 bindkey '^[u' up-case-word
 bindkey -s '^[p' '^Uproject^M' # Ctrl+u to delete line, project, enter.
@@ -33,7 +33,7 @@ bindkey -s '^[e' '^Uedit^M'
 
 ** Aliases
 
-#+BEGIN_SRC sh :tangle ../stow/zsh/aliases.zsh :noweb yes :exports none
+#+BEGIN_SRC sh :tangle /home/babel/dotfiles/literate/output/tangles/zsh/aliases.zsh :noweb yes :exports none
 <<aliases>>
 #+END_SRC
 
