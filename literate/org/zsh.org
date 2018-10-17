@@ -22,6 +22,8 @@ bindkey -s <keys> <input strokes>
 ^ is control.
 ^[ is alt.
 
+My key-bindings expect the the left alt key will send meta.
+
 #+CAPTION: Source listing for ~keybindings.zsh~.
 #+BEGIN_SRC sh :tangle /home/babel/dotfiles/literate/output/tangles/zsh/keybindings.zsh
 bindkey '^[l' down-case-word

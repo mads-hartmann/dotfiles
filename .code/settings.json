@@ -151,5 +151,6 @@
       "token": "system"
     }
   ],
-  "workbench.statusBar.feedback.visible": false
+  "workbench.statusBar.feedback.visible": false,
+  "terminal.integrated.macOptionIsMeta": true
 }
