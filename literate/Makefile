@@ -36,7 +36,7 @@ clean:
 # There isn't a direct connection between the source files and the tangled output
 # so we create this imaginary one instead.
 $(BUILD_DIR)/%.tangled: %.org
-	@mkdir -p $(dir $@)
+	$(QUIET)mkdir -p $(dir $@)
 	$(QUIET)docker run \
 		-ti \
 		-v $(shell pwd)/..:/home/babel/dotfiles:rw \
@@ -44,7 +44,7 @@ $(BUILD_DIR)/%.tangled: %.org
 			emacs \
 			--script dotfiles/literate/etc/project.el \
 			--eval "(org-babel-tangle-file \"/home/babel/dotfiles/literate/$<\")"
-	touch $@
+	$(QUIET)touch $@
 
 # Debug.
 
