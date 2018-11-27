@@ -7,7 +7,7 @@ that's been done by the community and to bring a bit of structure to
 my configuration.
 
 I rely heavily on /omzs/ concept of a [[https://github.com/robbyrussell/oh-my-zsh/wiki/Customization#overriding-and-adding-plugins][plugin]]. If I need to configure a
-tool, like [[https://computer.mads-hartmann.com/programs/cheat/][cheat]], I'll do so in the form of a plugin named
+tool, like [[http://computer.localhost/programs/cheat/][cheat]], I'll do so in the form of a plugin named
 ~config-cheat~.
 
 ** Table of contents                                              :TOC_2_ORG:
@@ -127,13 +127,13 @@ plugins+=(
 And finally I have a few of my own plugins that I've written over the
 years.
 
-  + [[https://computer.mads-hartmann.com/zsh/plugins/aws-switch/][aws-switch]]
-  + [[https://computer.mads-hartmann.com/zsh/plugins/danger-danger/][danger-danger]]
-  + [[https://computer.mads-hartmann.com/zsh/plugins/git-fzf/][git-fzf]]
-  + [[https://computer.mads-hartmann.com/zsh/plugins/git-pr/][git-pr]]
-  + [[https://computer.mads-hartmann.com/zsh/plugins/reload-function/][reload-function]]
-  + [[https://computer.mads-hartmann.com/zsh/plugins/iterm-theme/][iterm-theme]]
-  + [[https://computer.mads-hartmann.com/zsh/plugins/switch-project/][switch-project]]
+  + [[http://computer.localhost/zsh/plugins/aws-switch/][aws-switch]]
+  + [[http://computer.localhost/zsh/plugins/danger-danger/][danger-danger]]
+  + [[http://computer.localhost/zsh/plugins/git-fzf/][git-fzf]]
+  + [[http://computer.localhost/zsh/plugins/git-pr/][git-pr]]
+  + [[http://computer.localhost/zsh/plugins/reload-function/][reload-function]]
+  + [[http://computer.localhost/zsh/plugins/iterm-theme/][iterm-theme]]
+  + [[http://computer.localhost/zsh/plugins/switch-project/][switch-project]]
 
 I want to load those as well.
 
@@ -152,7 +152,7 @@ plugins+=(
 
 ** Theme
 
-I've stitched together my own theme, named [[https://computer.mads-hartmann.com/zsh/themes/hartmann][hartmann]], over the years by
+I've stitched together my own theme, named [[http://computer.localhost/zsh/themes/hartmann][hartmann]], over the years by
 copy-pasting from various other themes. To let /omz/ know that that's
 the theme I want to use I set the ~ZSH_THEME~ environment variable.
 

@@ -12,13 +12,13 @@ I'm still in the process of porting over my old dotfiles into this
 literate programming approach so you won't find everything here just
 yet. Poke around if you're curious.
 
-   + [[https://computer.mads-hartmann.com/shell/][Shell]]
-   + [[https://computer.mads-hartmann.com/programming-languages/][Programming Languages]]
-   + [[https://computer.mads-hartmann.com/programs/][Programs]]
+   + [[http://computer.localhost/shell/][Shell]]
+   + [[http://computer.localhost/programming-languages/][Programming Languages]]
+   + [[http://computer.localhost/programs/][Programs]]
 
 In case you're wondering:
 
-   + [[https://computer.mads-hartmann.com/why/][But why?]]
-   + [[https://computer.mads-hartmann.com/how/][How?]]
+   + [[http://computer.localhost/why/][But why?]]
+   + [[http://computer.localhost/how/][How?]]
 
 You can find the source on [[https://github.com/mads-hartmann/dotfiles][Github]].

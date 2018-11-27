@@ -2,7 +2,7 @@
 #+SETUPFILE: ../../../etc/options.org
 
 A little utility function to switch quickly between projects. It's bound to
-~alt+p~ for quick access and uses [[https://computer.mads-hartmann.com/programs/fzf/][fzf]] to provide an interactive selector.
+~alt+p~ for quick access and uses [[http://computer.localhost/programs/fzf/][fzf]] to provide an interactive selector.
 
 #+CAPTION: ~cat ~/.zsh/plugins/switch-project/switch-project.plugin.zsh~
 #+BEGIN_SRC sh :tangle ../.home/.zsh/plugins/switch-project/switch-project.plugin.zsh

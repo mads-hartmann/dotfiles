@@ -26,7 +26,7 @@ clean:
 
 serve: weave
 # TODO: Use nginx or some other docker image instead. I mean, why not.
-	cd .website && serve 8080
+	cd .website && serve 80
 
 #
 # rules
@@ -46,9 +46,9 @@ serve: weave
 			emacs \
 			--script dotfiles/literate/etc/project.el \
 			--eval "(org-publish-file \"/home/babel/dotfiles/literate/$<\" nil nil)"
-        # To the best of my knowledge there isn't a good way to have org-mode
-        # publish name/index.html instead of name.html so instead I do all
-        # this horrible hackery ¯\_(ツ)_/¯
+# To the best of my knowledge there isn't a good way to have org-mode
+# publish name/index.html instead of name.html so instead I do all
+# this horrible hackery ¯\_(ツ)_/¯
 	$(if $(shell [[ $< == "org/index.org" ]] && echo "skip"),\
 		$(QUIET)echo "skipping", \
 		$(QUIET)mkdir -p $(dir $@) && mv .website/$*.html $@)

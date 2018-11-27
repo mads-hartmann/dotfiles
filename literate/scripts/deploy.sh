@@ -6,6 +6,11 @@ bucket=computer.mads-hartmann.com
 
 function deploy-to-s3 {
   echo "Deploying to ${bucket}"
+
+  echo "Performing major hack: Replacing all local urls with production urls"
+  find .website -type f -exec \
+    sed -i 's/http:\/\/computer.localhost/https:\/\/computer\.mads-hartmann\.com/g' {} +
+
   aws s3 sync \
     --region eu-central-1 \
     .website/ \

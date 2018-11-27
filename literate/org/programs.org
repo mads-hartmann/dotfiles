@@ -3,6 +3,6 @@
 
 I use a lot of programs.
 
-  + [[https://computer.mads-hartmann.com/programs/fzf/][fzf]]
-  + [[https://computer.mads-hartmann.com/programs/docker/][docker]]
-  + [[https://computer.mads-hartmann.com/programs/cheat/][cheat]]
+  + [[http://computer.localhost/programs/fzf/][fzf]]
+  + [[http://computer.localhost/programs/docker/][docker]]
+  + [[http://computer.localhost/programs/cheat/][cheat]]
