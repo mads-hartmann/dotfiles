@@ -1,2 +1,0 @@
-#+TITLE: docker-nuke
-#+SETUPFILE: /home/babel/dotfiles/literate/etc/options.org

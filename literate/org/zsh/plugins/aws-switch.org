@@ -1,0 +1,45 @@
+#+TITLE: aws-switch
+#+SETUPFILE: ../../../etc/options.org
+
+This one lets you switch between the AWS profiles you have in your
+~~/.aws/config~ with tab-completion. This is probably not a good idea and
+you should be using [[https://github.com/99designs/aws-vault][aws-vault]] instead.
+
+#+CAPTION: ~cat ~/.zsh/plugins/aws-switch/_aws-switch~
+#+BEGIN_SRC sh :tangle ../.home/.zsh/plugins/aws-switch/_aws-switch
+#compdef aws-switch
+#description Switch the AWS profile
+
+_aws-switch() {
+
+    local -a aws_profiles
+
+    aws_profiles=$( \
+        grep '\[profile' ~/.aws/config \
+        | awk '{sub(/]/, "", $2); print $2}' \
+        | while read -r profile; do echo -n "$profile "; done \
+    )
+
+    _arguments \
+        ':Aws profile:($(echo ${aws_profiles}) clear)'
+}
+
+_aws-switch "$@"
+#+END_SRC
+
+#+CAPTION: ~cat ~/.zsh/plugins/aws-switch/aws-switch.plugin.zsh~
+#+BEGIN_SRC sh :tangle ../.home/.zsh/plugins/aws-switch/aws-switch.plugin.zsh
+function aws-switch() {
+    case ${1} in
+        "")
+            unset AWS_PROFILE
+            ;;
+        clear)
+            unset AWS_PROFILE
+            ;;
+        *)
+            export AWS_PROFILE="${1}"
+            ;;
+    esac
+}
+#+END_SRC

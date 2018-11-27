@@ -7,17 +7,21 @@ body {
     font-size: 1.2rem;
     line-height: 1.7rem;
     color: rgba(46, 48, 58, 0.96);
+
+    color: #c11c1c;
+/*    background: #f7d2e2;  */
+    background: #fdcbc3;
+
+
 }
 
 h1 {
-    text-align: center;
+    text-align: left;
     margin: 0px;
-    font-size: 5rem;
-    padding-bottom: 0.2em;
-    line-height: 5.5rem;
-    padding: 4rem 2rem;
-    background: #d45252;
-    color: #f7d2e2;
+    font-size: 4rem;
+    line-height: 4.1rem;
+    padding: 4rem 2rem 1rem 0rem;
+    font-style: monospace;
 }
 
 h2 {
@@ -34,14 +38,14 @@ h2 {
 p {}
 
 a {
-    color: #d45252;
+    color: inherit;
 }
 
 pre {
-    background: #f9f9f9;
-    border-left: 10px solid #ccc;
-    margin: 1.5em 0px;
+    overflow-x: scroll;
+    background: #fddbd4;
     padding: 1em 20px;
+    margin: 0;
     font-size: 0.9em;
     line-height: 1.3em;
 }
@@ -51,6 +55,21 @@ pre {
 .listing-number {
     font-weight: bold;
 }
+
+.org-src-container {
+    margin: 1.5em 0px;
+}
+
+.org-src-name {
+    overflow-x: scroll;
+    background: #ffd3cc;
+    margin: 1.5em 0 0 0;
+    padding: 0.7em 20px;
+    font-size: 0.8em;
+    line-height: 1em;
+    display: block;
+}
+
 
 #content {
     width: 60%;

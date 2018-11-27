@@ -1,0 +1,25 @@
+#+TITLE: switch-project
+#+SETUPFILE: ../../../etc/options.org
+
+A little utility function to switch quickly between projects. It's bound to
+~alt+p~ for quick access and uses [[https://computer.mads-hartmann.com/programs/fzf/][fzf]] to provide an interactive selector.
+
+#+CAPTION: ~cat ~/.zsh/plugins/switch-project/switch-project.plugin.zsh~
+#+BEGIN_SRC sh :tangle ../.home/.zsh/plugins/switch-project/switch-project.plugin.zsh
+function switch-project {
+    clear
+    paths=($(find ~/dev/*/* -maxdepth 0 -type d)) # all paths
+    names=${paths##~/dev/} # remove longest match of ~/dev/ from paths
+    selection=$(echo ${names:gs/ /\\n/} | fzf --reverse) # substitution adds newlines
+
+    if [ $status -eq 0 ]; then
+        clear
+        cd ~/dev/$selection
+    else
+        echo "No valid made"
+    fi
+}
+
+# Ctrl+u to delete line, project, enter.
+bindkey -s '^[p' '^switch-Uproject^M'
+#+END_SRC

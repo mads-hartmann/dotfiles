@@ -1,0 +1,23 @@
+#+TITLE: Cheat
+#+SETUPFILE: ../../etc/options.org
+
+[[https://github.com/chrisallenlane/cheat][Cheat]] is an awesome little program that allows you to create and view
+interactive cheatsheets on the command-line.
+
+It comes with a bunch of built-in cheatsheets but I use it mostly to
+write my own as a simple form for notes.
+
+** Installation
+
+#+BEGIN_SRC sh :tangle notangle
+brew install cheat
+#+END_SRC
+
+** Configuration
+
+I like syntax highlighting.
+
+#+CAPTION: ~.zsh/plugins/config-cheat.plugin.zsh~
+#+BEGIN_SRC sh :tangle ../../.home/.zsh/plugins/config-cheat/config-cheat.plugin.zsh
+export CHEATCOLORS=true
+#+END_SRC

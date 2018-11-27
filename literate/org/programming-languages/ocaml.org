@@ -1,2 +1,12 @@
 #+TITLE: OCaml
-#+SETUPFILE: /home/babel/dotfiles/literate/etc/options.org
+#+SETUPFILE: ../../etc/options.org
+
+** Configuration
+
+#+CAPTION: ~.zsh/plugins/config-opam/config-opam.plugin.zsh~
+#+BEGIN_SRC sh :tangle ../../.home/.zsh/plugins/config-opam/config-opam.plugin.zsh
+if [[ -d ${HOME}/.opam ]]; then
+  eval `opam config env`
+  . ~.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+fi
+#+END_SRC

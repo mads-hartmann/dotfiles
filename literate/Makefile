@@ -1,25 +1,18 @@
-BUILD_DIR := _build
-QUIET ?= @
+QUIET ?= @ # use QUIET= make xyz to get command output
 
-ORG_FILES := $(wildcard org/**/*.org)
+ORG_FILES := $(shell find org -name "*.org")
+
 TANGLE_TARGETS := \
-	$(patsubst %.org,$(BUILD_DIR)/%.tangled,$(ORG_FILES))
+	$(patsubst %.org,.build/%.tangled,$(ORG_FILES))
 
+WEAVE_TARGETS := \
+	$(patsubst org/%.org,.website/%/index.html,$(ORG_FILES))
 
-build: build-website build-files
+COPY_TARGETS := \
+	$(patsubst static/%,.website/static/%,$(shell find static -name "*"))
 
-# TODO: Improve this so it only generates the files that have changed. This should
-# be possible through a simple %.html: %.org rule as there's a direct connection
-# between the two.
-build-website: $(ORG_FILES)
-	$(QUIET)docker run \
-		-v $(shell pwd)/..:/home/babel/dotfiles:rw \
-		mads379/dotfiles-ci:0.0.2 \
-			emacs \
-			--script dotfiles/literate/etc/project.el \
-			--eval "(org-publish-project \"everything\" t)"
-
-
+all: weave tangle
+weave: $(WEAVE_TARGETS) $(COPY_TARGETS)
 tangle: $(TANGLE_TARGETS)
 
 shell:
@@ -29,13 +22,40 @@ shell:
 		mads379/dotfiles-ci:0.0.2 bash
 
 clean:
-	rm -rf output
+	rm -rf .website .build .home
 
+serve: weave
+# TODO: Use nginx or some other docker image instead. I mean, why not.
+	cd .website && serve 8080
+
+#
 # rules
+#
+
+# Instead of having org-mode copy over static files as many people do
+# I just use make instead.
+.website/static/%: static/%
+	$(QUIET)mkdir -p $(dir $@)
+	cp $< $@
+
+.website/%/index.html: org/%.org
+	$(QUIET)docker run \
+		-ti \
+		-v $(shell pwd)/..:/home/babel/dotfiles:rw \
+		mads379/dotfiles-ci:0.0.2 \
+			emacs \
+			--script dotfiles/literate/etc/project.el \
+			--eval "(org-publish-file \"/home/babel/dotfiles/literate/$<\" nil nil)"
+        # To the best of my knowledge there isn't a good way to have org-mode
+        # publish name/index.html instead of name.html so instead I do all
+        # this horrible hackery ¯\_(ツ)_/¯
+	$(if $(shell [[ $< == "org/index.org" ]] && echo "skip"),\
+		$(QUIET)echo "skipping", \
+		$(QUIET)mkdir -p $(dir $@) && mv .website/$*.html $@)
 
 # There isn't a direct connection between the source files and the tangled output
 # so we create this imaginary one instead.
-$(BUILD_DIR)/%.tangled: %.org
+.build/%.tangled: %.org
 	$(QUIET)mkdir -p $(dir $@)
 	$(QUIET)docker run \
 		-ti \
@@ -46,6 +66,9 @@ $(BUILD_DIR)/%.tangled: %.org
 			--eval "(org-babel-tangle-file \"/home/babel/dotfiles/literate/$<\")"
 	$(QUIET)touch $@
 
+#
 # Debug.
+#
 
+# make print-VARIABLE_NAME will print the contents of the variable
 print-%: ; @echo $* is $($*)

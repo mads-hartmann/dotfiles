@@ -1,2 +1,0 @@
-#+TITLE: Visual Studio Code
-#+SETUPFILE: /home/babel/dotfiles/literate/etc/options.org

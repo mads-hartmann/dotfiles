@@ -1,0 +1,10 @@
+#+TITLE: Programming languages
+#+SETUPFILE: ../etc/options.org
+
+What.
+
+  + [[https://computer.mads-hartmann.com/programming-languages/ocaml/][OCaml]]
+  + [[https://computer.mads-hartmann.com/programming-languages/scala/][Scala]]
+  + [[https://computer.mads-hartmann.com/programming-languages/bash/][Bash]]
+  + [[https://computer.mads-hartmann.com/programming-languages/go/][Go]]
+  + [[https://computer.mads-hartmann.com/programming-languages/php/][PHP]]

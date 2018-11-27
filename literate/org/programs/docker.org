@@ -1,2 +1,9 @@
 #+TITLE: docker
-#+SETUPFILE: /home/babel/dotfiles/literate/etc/options.org
+#+SETUPFILE: ../../etc/options.org
+
+#+CAPTION: ~.zsh/plugins/config-docker.plugin.zsh~
+#+BEGIN_SRC sh :tangle ../../.home/.zsh/plugins/config-docker/config-docker.plugin.zsh
+alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}'"
+alias dc="docker-compose"
+alias dm="docker-machine"
+#+END_SRC

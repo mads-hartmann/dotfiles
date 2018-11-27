@@ -1,9 +1,24 @@
-#+TITLE: My Computer
+#+TITLE: ~
 #+SETUPFILE: ../etc/options.org
 
-I'm in the process of moving all of my dotfiles to org-mode files that can be
-used to generate this website as well as my actual dotfiles.
+I have a /thing/ for automation, I *love* writing documentation, and I
+have a weakness for fiddling with the configuration of any program
+that I use — This merges all three into an executable description of
+my computer that can be /weaved/ into what you're reading now or
+/tangled/ into a set of files that define the configuration of my
+computer.
 
-Nothing is completed yet.
+I'm still in the process of porting over my old dotfiles into this
+literate programming approach so you won't find everything here just
+yet. Poke around if you're curious.
 
-#+INCLUDE: "../org/sitemap.org" :lines "3-"
+   + [[https://computer.mads-hartmann.com/shell/][Shell]]
+   + [[https://computer.mads-hartmann.com/programming-languages/][Programming Languages]]
+   + [[https://computer.mads-hartmann.com/programs/][Programs]]
+
+In case you're wondering:
+
+   + [[https://computer.mads-hartmann.com/why/][But why?]]
+   + [[https://computer.mads-hartmann.com/how/][How?]]
+
+You can find the source on [[https://github.com/mads-hartmann/dotfiles][Github]].

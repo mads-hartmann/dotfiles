@@ -1,3 +1,0 @@
-#+TITLE: Keybindings
-#+SETUPFILE: /home/babel/dotfiles/literate/etc/options.org
-

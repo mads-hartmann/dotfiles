@@ -1,0 +1,8 @@
+#+TITLE: Programs
+#+SETUPFILE: ../etc/options.org
+
+I use a lot of programs.
+
+  + [[https://computer.mads-hartmann.com/programs/fzf/][fzf]]
+  + [[https://computer.mads-hartmann.com/programs/docker/][docker]]
+  + [[https://computer.mads-hartmann.com/programs/cheat/][cheat]]

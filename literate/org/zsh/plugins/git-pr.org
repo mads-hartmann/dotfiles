@@ -1,0 +1,95 @@
+#+TITLE: git-pr
+#+SETUPFILE: ../../../etc/options.org
+
+Simple script to open the Github compare with the current branch
+against another.
+
+There are two ways to specify which branch to compare against.
+
+  1. Set DEFAULT_PR_BRANCH
+  2. Pass it as an argument to git-pr, e.g. `git pr staging`
+
+This will most likely break unless you have very simple branch
+names.
+
+#+CAPTION: ~cat ~/.zsh/plugins/git-pr/git-pr.plugin.zsh~
+#+BEGIN_SRC sh :tangle ../.home/.zsh/plugins/git-pr/git-pr.plugin.zsh
+function git-pr() {
+  DEFAULT_PR_BRANCH=${1:-${DEFAULT_PR_BRANCH:-master}}
+
+  # Make sure we're inside a git repo.
+  git rev-parse --is-inside-work-tree &>/dev/null
+
+  if [[ $? != 0 ]]; then
+    echo "Not a git repository." 1>&2
+    exit 1
+  fi
+
+  # get the branch
+  branch=$(git symbolic-ref -q --short HEAD)
+
+  # get the repo name
+
+  remote_url="remote.origin.url"
+
+  giturl=$(git config --get "$remote_url")
+  if [ -z "$giturl" ]; then
+    echo "$remote_url not set." 1>&2
+    exit 1
+  fi
+
+  giturl=${giturl/git\@github\.com\:/https://github.com/}
+  giturl=${giturl%\.git}
+
+  # Open the compare view.
+  open "$giturl/compare/$DEFAULT_PR_BRANCH...$branch?expand=1"
+}
+#+END_SRC
+
+#+CAPTION: ~cat ~/.zsh/plugins/git-pr/_git-pr~
+#+BEGIN_SRC sh :tangle ../.home/.zsh/plugins/git-pr/_git-pr
+#compdef git-pr
+#description Open the pull request preview view on Github
+
+_git-pr() {
+
+    local -a remote_branches
+
+    remote_branches=$( \
+        git branch -r \
+        | grep -v 'HEAD' \
+        | sed s/origin\\///g \
+        | while read -r branch; do echo -n "$branch "; done \
+    )
+
+    _arguments \
+        ':Remote branch:($(echo ${remote_branches}))'
+}
+
+_git-pr "$@"
+#+END_SRC
+
+*** project
+
+A little convenience function that helps me jump between the various
+projects I'm working on.
+
+#+CAPTION: ~cat ~/.zsh/plugins/project/project.plugin.zsh~
+#+BEGIN_SRC sh :tangle ../.home/.zsh/plugins/project/project.plugin.zsh
+function project {
+    clear
+    paths=($(find ~/dev/*/* -maxdepth 0 -type d)) # all paths
+    names=${paths##~/dev/} # remove longest match of ~/dev/ from paths
+    selection=$(echo ${names:gs/ /\\n/} | fzf --reverse) # substitution adds newlines
+
+    if [ $status -eq 0 ]; then
+        clear
+        cd ~/dev/$selection
+    else
+        echo "No valid made"
+    fi
+}
+
+# Ctrl+u to delete line, project, enter.
+bindkey -s '^[p' '^Uproject^M'
+#+END_SRC

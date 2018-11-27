@@ -1,2 +1,14 @@
 #+TITLE: Go
-#+SETUPFILE: /home/babel/dotfiles/literate/etc/options.org
+#+SETUPFILE: ../../etc/options.org
+
+** Configuration
+
+#+CAPTION: ~.zsh/plugins/config-go/config-go.plugin.zsh~
+#+BEGIN_SRC sh :tangle ../../.home/.zsh/plugins/config-go/config-go.plugin.zsh
+export GOROOT=/usr/local/opt/go/libexec # where homebrew install it.
+export GOPATH=~/.go
+export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOPATH/bin
+#+END_SRC
+
+

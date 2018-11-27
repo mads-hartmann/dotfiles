@@ -1,2 +1,3 @@
-output
-stow
+.build
+.home
+.website

@@ -1,0 +1,27 @@
+#+TITLE: reload-function
+#+SETUPFILE: ../../../etc/options.org
+
+Tiny function for reloading another function. This is useful when
+you're writing completion functions. e.g. ~reload-function
+_mycompletionfunction~
+
+#+CAPTION: ~cat ~/.zsh/plugins/reload-function/reload-function.plugin.zsh~
+#+BEGIN_SRC sh :tangle ../.home/.zsh/plugins/reload-function/reload-function.plugin.zsh
+function reload-function {
+    local function_name=$1
+    unfunction ${function_name}
+    autoload -U ${function_name}
+}
+#+END_SRC
+
+#+CAPTION: ~cat ~/.zsh/plugins/reload-function/_reload-function~
+#+BEGIN_SRC sh :tangle ../.home/.zsh/plugins/reload-function/_reload-function
+#compdef _reload-function reload-function
+#description Reload a ZSH function
+
+function _reload-function {
+    local function_names=$(print -l ${(ok)functions})
+    _arguments -C \
+        "1:function:(${function_names})"
+}
+#+END_SRC

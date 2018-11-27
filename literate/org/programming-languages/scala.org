@@ -1,2 +1,2 @@
 #+TITLE: Scala
-#+SETUPFILE: /home/babel/dotfiles/literate/etc/options.org
+#+SETUPFILE: ../../etc/options.org

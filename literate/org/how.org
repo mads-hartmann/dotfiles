@@ -1,0 +1,31 @@
+#+TITLE: How
+#+SETUPFILE: ../etc/options.org
+
+This is written in Emacs [[https://orgmode.org/][org-mode]]. I use a tiny little sub-set of what
+org-mode is capable of so if I ever find a simpler tool I'll use that
+instead.
+
+** Goals
+
++ **Easy discovery** - the structure of the /website/ takes precedence
+  over the layout of the files on disk - the final files on disk is
+  simply my compilation target and should be considered as such.
+
+** Constraints
+
+There are some limitations to org-mode that have affected the final
+layout of the files.
+
+- You can't tangle output into the same file from several ~.org~
+  files. I think this is a reasonable limitation but it does mean that
+  you can't spread you ~.zshenv~ file out across multiple ~.org~ files
+  which you might have wanted. Instead I'm using Oh my ZSH! plugins so
+  isolate the various pieces that affect my Shell environment for
+  example.
+
+** Avoiding ~XYZ.html files~
+
+So this is rather stupid but I couldn't figure out how to have
+org-mode export files using the naming scheme of ~xyz/index.html~
+rather than ~xyz.html~. To work around this I've had to do some nasty
+Makefile hacks.

@@ -8,7 +8,7 @@ function deploy-to-s3 {
   echo "Deploying to ${bucket}"
   aws s3 sync \
     --region eu-central-1 \
-    output/website/ \
+    .website/ \
     s3://${bucket}/ \
       --acl public-read \
       --cache-control "max-age=0, no-cache, no-store" \

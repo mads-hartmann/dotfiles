@@ -1,0 +1,94 @@
+#+TITLE: hartmann zsh theme
+#+SETUPFILE: ../../../etc/options.org
+
+This is a theme I've stitched together over the years.
+
+To create your own themes you simply have to put a file into the
+~~.zsh/themes~ folder and use the ~.zsh-theme~ extension.
+
+I use quite a lot of colors. To get a full list of all the available
+colors you can use the [[https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/spectrum.zsh][spectrum_ls]] function which prints the
+color-codes of a wide variety of colors. The colors can be accessed
+using ~$FG[COLOR_CODE]~
+
+#+CAPTION: ~$ cat ~/.zsh/themes/hartmann.zsh-theme~
+#+BEGIN_SRC sh :tangle ../.home/.zsh/themes/hartmann.zsh-theme
+ENABLE_K8s_PART=0
+
+function is_in_project {
+  git rev-parse --is-inside-work-tree &> /dev/null
+  return $status
+}
+
+function project_path {
+  git rev-parse --show-toplevel
+}
+
+function project_name {
+  echo $(git config --get remote.origin.url | cut -c 16-)
+}
+
+function path_part {
+  local part
+  if is_in_project
+  then echo "%{$fg[yellow]%}$(project_name)%{$reset_color%}"
+  else echo '%~'
+  fi
+}
+
+function aws_part {
+  local profile="${AWS_PROFILE:-${AWS_DEFAULT_PROFILE}}"
+
+  if [[ -z "${profile}" ]]
+  then echo ""
+  else echo "%{$FG[248]%}aws%{$reset_color%}:${profile} "
+  fi
+}
+
+function docker_part {
+  if [[ -z ${DOCKER_MACHINE_NAME} ]]
+  then echo ""
+  else echo "docker:%{$fg[green]%}${DOCKER_MACHINE_NAME}%{$reset_color%} "
+  fi
+}
+
+function kube_part {
+    if [[ ${ENABLE_K8s_PART} == 1 && $(command -v kubectl) ]]; then
+        local context
+        context="$(kubectl config current-context)"
+        if [[ -z "${context}" ]]
+        then echo ""
+        else echo "k8s:${context} "
+        fi
+    fi
+}
+
+function prompt_part {
+  if is_in_project
+  then
+    local relative_path="${$(pwd)##$(project_path)}"
+    local prompt="%{$fg_bold[yellow]%}>%{$reset_color%} "
+    if [[ -z "${relative_path}" ]]
+    then echo "\n${prompt}"
+    else echo "\n${relative_path} ${prompt}"
+    fi
+  else
+    echo ' '
+  fi
+}
+
+GIT_CB=""
+ZSH_THEME_SCM_PROMPT_PREFIX=":%{$fg[green]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX=$ZSH_THEME_SCM_PROMPT_PREFIX$GIT_CB
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}*%{$fg[green]%}"
+ZSH_THEME_GIT_PROMPT_CLEAN=""
+
+if [[ $TERM = "dumb" ]]
+then
+    PROMPT="$ "
+    RPROMPT=""
+else
+    PROMPT='$(path_part)$(git_prompt_info)$(docker_part)$(kube_part)$(aws_part)$(prompt_part)'
+fi
+#+END_SRC

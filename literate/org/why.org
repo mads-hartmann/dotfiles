@@ -1,0 +1,4 @@
+#+TITLE: Why
+#+SETUPFILE: ../etc/options.org
+
+Why not?
