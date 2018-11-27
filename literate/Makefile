@@ -12,7 +12,7 @@ COPY_TARGETS := \
 	$(patsubst static/%,.website/static/%,$(shell find static -name "*"))
 
 # TODO: Hardcoded for now. Later I'll do something smart.
-LINKS := .zsh .zshrc .zshenv .bashrc .ctags.cnf
+LINKS := .zsh .zshrc .zshenv .bashrc .ctags.cnf .cheat
 LINK_TARGETS := \
 	$(foreach link,$(LINKS),$(HOME)/$(link))
 

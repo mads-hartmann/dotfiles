@@ -1,3 +1,10 @@
+#+TITLE: bash
+#+SETUPFILE: ../../etc/options.org
+
+** Cheat-sheet
+
+#+CAPTION: ~~/.cheat/bash~
+#+BEGIN_SRC sh :tangle ../../.home/.cheat/bash
 # Variables
 echo ${myvar:-default} # use value of myvar if defined, otherwise use default
 echo ${myvar/foo/bar} # replace foo with bar in variable
@@ -15,3 +22,5 @@ echo ${PIPESTATUS[0]}  # replace 0 with N
 
 # Lock file:
 ( set -o noclobber; echo > my.lock ) || echo 'Failed to create lock file'
+#+END_SRC
+

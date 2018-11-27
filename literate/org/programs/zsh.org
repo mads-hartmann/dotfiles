@@ -1,3 +1,10 @@
+#+TITLE: zsh
+#+SETUPFILE: ../../etc/options.org
+
+** Cheat-sheet
+
+#+CAPTION: ~~/.cheat/zsh~
+#+BEGIN_SRC sh :tangle ../../.home/.cheat/zsh
 # Starting an empty zsh shell
 zsh --no-rcs
 
@@ -9,3 +16,5 @@ man zshcompsys # completions
 
 # A list of al global variables
 http://zsh.sourceforge.net/Doc/Release/Variables-Index.html
+#+END_SRC
+

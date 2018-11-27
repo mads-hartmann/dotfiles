@@ -1,3 +1,10 @@
+#+TITLE: kafkacat
+#+SETUPFILE: ../../etc/options.org
+
+** Cheat-sheet
+
+#+CAPTION: ~~/.cheat/kafkacat~
+#+BEGIN_SRC sh :tangle ../../.home/.cheat/kafkacat
 
 # Produce messages
 echo "Yay, we've produced;Two Messages" | kafkacat -D ';' -P -b kafka.kafka.svc.cluster.local:9092 -t mhj-debug
@@ -7,3 +14,5 @@ kafkacat -C -b kafka.kafka.svc.cluster.local:9092 -t mhj-debug
 
 # Show metadata
 kafkacat -L -b kafka.kafka.svc.cluster.local:9092
+#+END_SRC
+

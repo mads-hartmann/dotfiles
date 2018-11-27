@@ -1,2 +1,0 @@
-# Use specific version of a package
-brew switch python 2.7.8_1

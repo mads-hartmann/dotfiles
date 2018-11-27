@@ -1,3 +1,10 @@
+#+TITLE: xargs
+#+SETUPFILE: ../../etc/options.org
+
+** Cheat-sheet
+
+#+CAPTION: ~~/.cheat/xargs~
+#+BEGIN_SRC sh :tangle ../../.home/.cheat/xargs
 # xargs -- construct argument list(s) and execute utility
 
 # Pipe stdout into another command
@@ -14,3 +21,5 @@ echo "arg1 arg2 arg3 arg4" | xargs -I{} -n1 echo '{}'
 
 # Debugging. Use -t to echo commands before executing them
 echo "XARGS" | xargs -t echo
+#+END_SRC
+

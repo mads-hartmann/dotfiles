@@ -1,0 +1,17 @@
+#+TITLE: redis-cli
+#+SETUPFILE: ../../etc/options.org
+
+** Cheat-sheet
+
+#+CAPTION: ~~/.cheat/redis-cli~
+#+BEGIN_SRC sh :tangle ../../.home/.cheat/redis-cli
+# Start a session
+redis-cli -h <host> -p <port> -a <password>
+
+# Authenticate
+AUTH <password>
+
+# Change the password
+config set requirepass <new-password>
+#+END_SRC
+

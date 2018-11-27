@@ -1,3 +1,10 @@
+#+TITLE: kubectl
+#+SETUPFILE: ../../etc/options.org
+
+** Cheat-sheet
+
+#+CAPTION: ~~/.cheat/kubectl~
+#+BEGIN_SRC sh :tangle ../../.home/.cheat/kubectl
 # Start a one-off pod to debug from within cluster
 # Example to debug a kafka cluster
 kubectl --namespace kafka run kafkacat --image=confluentinc/cp-kafkacat:4.0.0 -ti bash
@@ -7,3 +14,5 @@ kubectl -n famly get pods --field-selector=status.phase=Running -o=custom-column
 
 # Debug which fields are available
 kubectl get pods -o json
+#+END_SRC
+

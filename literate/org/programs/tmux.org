@@ -1,3 +1,10 @@
+#+TITLE: tmux
+#+SETUPFILE: ../../etc/options.org
+
+** Cheat-sheet
+
+#+CAPTION: ~~/.cheat/tmux~
+#+BEGIN_SRC sh :tangle ../../.home/.cheat/tmux
 # List sessions
 tmux list-sessions
 
@@ -8,3 +15,5 @@ tmux kill-session -t2
 tmux -CC # creates a session
 tmux -CC attach # attaches to existing session
 tmux -CC attach-session -t1 # attach specific session
+#+END_SRC
+

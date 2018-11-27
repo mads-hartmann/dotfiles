@@ -1,5 +1,14 @@
+#+TITLE: socat
+#+SETUPFILE: ../../etc/options.org
+
+** Cheat-sheet
+
+#+CAPTION: ~~/.cheat/socat~
+#+BEGIN_SRC sh :tangle ../../.home/.cheat/socat
 # Send traffic from TCP port to UNIX socket
 socat TCP-LISTEN:4444,bind=0.0.0.0,reuseaddr,fork UNIX-CLIENT:/tmp/selenium-redirect
 
 # Send traffic from UNIX socket to TCP port
 socat UNIX-LISTEN:/tmp/selenium-redirect,fork TCP4:localhost:4444
+#+END_SRC
+

@@ -1,4 +1,13 @@
+#+TITLE: ssh-add
+#+SETUPFILE: ../../etc/options.org
+
+** Cheat-sheet
+
+#+CAPTION: ~~/.cheat/ssh-add~
+#+BEGIN_SRC sh :tangle ../../.home/.cheat/ssh-add
 # When adding identities, each passphrase will also be stored in
 # the user's keychain.  When removing identities with -d, each
 # passphrase will be removed from it.
 ssh-add -K <path-to-key>
+#+END_SRC
+

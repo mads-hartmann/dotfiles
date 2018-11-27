@@ -1,5 +1,14 @@
+#+TITLE: apm
+#+SETUPFILE: ../../etc/options.org
+
+** Cheat-sheet
+
+#+CAPTION: ~~/.cheat/apm~
+#+BEGIN_SRC sh :tangle ../../.home/.cheat/apm
 # Clone an existing package and link it.
 apm develop <package_name>
 
 # If you haven't used `apm develop` then you can link a package instead.
 apm link
+#+END_SRC
+

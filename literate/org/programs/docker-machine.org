@@ -1,3 +1,10 @@
+#+TITLE: docker-machine
+#+SETUPFILE: ../../etc/options.org
+
+** Cheat-sheet
+
+#+CAPTION: ~~/.cheat/docker-machine~
+#+BEGIN_SRC sh :tangle ../../.home/.cheat/docker-machine
 # Create a machine (virtualbox based)
 docker-machine create -d virtualbox my-machine
 
@@ -9,3 +16,5 @@ eval $(docker-machine env my-machine)
 
 # To get the IP
 docker-machine ip my-machine
+#+END_SRC
+

@@ -1,9 +1,16 @@
 #+TITLE: docker
 #+SETUPFILE: ../../etc/options.org
 
-#+CAPTION: ~.zsh/plugins/config-docker.plugin.zsh~
-#+BEGIN_SRC sh :tangle ../../.home/.zsh/plugins/config-docker/config-docker.plugin.zsh
-alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}'"
-alias dc="docker-compose"
-alias dm="docker-machine"
+** Cheat-sheet
+
+#+CAPTION: ~~/.cheat/docker~
+#+BEGIN_SRC sh :tangle ../../.home/.cheat/docker
+# cleanup
+#
+docker rm -f $(docker ps -aq)
+docker rmi $(docker images -q)
+docker volume ls -qf dangling=true | xargs docker volume rm
+
+# Show memory usage
+docker stats --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}"
 #+END_SRC

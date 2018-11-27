@@ -1,0 +1,11 @@
+#+TITLE: fswatch
+#+SETUPFILE: ../../etc/options.org
+
+** Cheat-sheet
+
+#+CAPTION: ~~/.cheat/fswatch~
+#+BEGIN_SRC sh :tangle ../../.home/.cheat/fswatch
+# What for file changes but exclude some
+fswatch ~/Desktop -e ".DS_Store" -e "*.pyc" | while read line ; do sleep 1 ; echo $line ; done
+#+END_SRC
+
