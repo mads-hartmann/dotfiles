@@ -12,14 +12,14 @@ COPY_TARGETS := \
 	$(patsubst static/%,.website/static/%,$(shell find static -name "*"))
 
 # TODO: Hardcoded for now. Later I'll do something smart.
-LINKS := .zsh .zshrc .zshenv .bashrc
+LINKS := .zsh .zshrc .zshenv .bashrc .ctags.cnf
 LINK_TARGETS := \
 	$(foreach link,$(LINKS),$(HOME)/$(link))
 
 all: weave tangle
 weave: $(WEAVE_TARGETS) $(COPY_TARGETS)
 tangle: $(TANGLE_TARGETS)
-link: $(LINK_TARGETS)
+link: tangle $(LINK_TARGETS)
 
 shell:
 	$(QUIET)docker run \

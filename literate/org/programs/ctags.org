@@ -1,3 +1,11 @@
+#+TITLE: ctags
+#+SETUPFILE: ../../etc/options.org
+
+I don't use ~ctags~ anymore really. It's a remnant from my Emacs days.
+I keep the configuration around though just in case.
+
+#+CAPTION: ~~/.ctags.cnf~
+#+BEGIN_SRC txt :tangle ../../.home/.ctags.cnf
 --exclude=.git
 --exclude=.hg
 --exclude=log
@@ -101,3 +109,4 @@
 --regex-elm=/^module[ \t]*([A-Z][a-zA-Z0-9'_.]*)/\1/m,module/
 --regex-elm=/^type[ \t]*([A-Z][a-zA-Z0-9'_]*)./\1/t,type/
 --regex-elm=/^([a-z_][a-zA-Z0-9'_]*).*=/\1/v,function/
+#+END_SRC
