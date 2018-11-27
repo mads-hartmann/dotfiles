@@ -9,7 +9,7 @@ nice interactive ui.
 This is completely stolen form the [[https://gist.github.com/junegunn/8b572b8d4b5eddd8b85e5f4d40f17236][here]] below and then modified
 slightly.
 
-#+BEGIN_SRC sh :tangle ../.home/.zsh/plugins/git-fzf/git-fzf.plugin.zsh
+#+BEGIN_SRC sh :tangle ../../../.home/.zsh/plugins/git-fzf/git-fzf.plugin.zsh
 #
 # Utility functions
 #

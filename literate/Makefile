@@ -11,9 +11,15 @@ WEAVE_TARGETS := \
 COPY_TARGETS := \
 	$(patsubst static/%,.website/static/%,$(shell find static -name "*"))
 
+# TODO: Hardcoded for now. Later I'll do something smart.
+LINKS := .zsh .zshrc .zshenv .bashrc
+LINK_TARGETS := \
+	$(foreach link,$(LINKS),$(HOME)/$(link))
+
 all: weave tangle
 weave: $(WEAVE_TARGETS) $(COPY_TARGETS)
 tangle: $(TANGLE_TARGETS)
+link: $(LINK_TARGETS)
 
 shell:
 	$(QUIET)docker run \
@@ -31,6 +37,9 @@ serve: weave
 #
 # rules
 #
+
+${HOME}/%: .home/%
+	ln -s $(abspath $<) $@
 
 # Instead of having org-mode copy over static files as many people do
 # I just use make instead.

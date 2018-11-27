@@ -9,7 +9,7 @@ write my own as a simple form for notes.
 
 ** Installation
 
-#+BEGIN_SRC sh :tangle notangle
+#+BEGIN_SRC sh
 brew install cheat
 #+END_SRC
 

@@ -117,6 +117,7 @@ to configure my use of a specific program.
 #+BEGIN_SRC sh :tangle ../.home/.zshrc
 plugins+=(
   config-cheat
+  config-docker
   config-fzf
   config-opam
   config-go
@@ -257,7 +258,7 @@ It needs to know where I've installed it. I just use the default
 location.
 
 #+CAPTION: ~~/.zshrc~
-#+BEGIN_SRC sh :tangle ../.home/.zshenv
+#+BEGIN_SRC sh :tangle ../.home/.zshrc
 export ZSH=$HOME/.oh-my-zsh
 #+END_SRC
 
@@ -265,7 +266,7 @@ Set the ~ZSH_CUSTOM~ environment variable to tell it where to look for
 custom plugins, themes etc.
 
 #+CAPTION: ~~/.zshrc~
-#+BEGIN_SRC sh :tangle ../.home/.zshenv
+#+BEGIN_SRC sh :tangle ../.home/.zshrc
 export ZSH_CUSTOM=$HOME/.zsh
 #+END_SRC
 

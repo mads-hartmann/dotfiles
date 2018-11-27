@@ -1,7 +1,7 @@
 #+TITLE: Programming languages
 #+SETUPFILE: ../etc/options.org
 
-What.
+At some point in time I've used all of the langauges below.
 
   + [[http://computer.localhost/programming-languages/ocaml/][OCaml]]
   + [[http://computer.localhost/programming-languages/scala/][Scala]]

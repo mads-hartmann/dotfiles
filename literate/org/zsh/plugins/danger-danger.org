@@ -9,7 +9,7 @@ It expects you to have a theme named Danger. Additionally you need to either
 have a theme named Default or set the environment variable ITERM_THEME to your
 preferred default theme. It's inspired by this [[https://gist.github.com/mrfoto/c6072e4fede3a6fe0f6b][gits]].
 
-#+BEGIN_SRC sh :tangle ../.home/.zsh/plugins/danger-danger/danger-danger.plugin.zsh
+#+BEGIN_SRC sh :tangle ../../../.home/.zsh/plugins/danger-danger/danger-danger.plugin.zsh
 if [[ -n "$ITERM_SESSION_ID" ]]; then
 
   function change-tab-color() {

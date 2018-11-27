@@ -6,7 +6,7 @@ This one lets you switch between the AWS profiles you have in your
 you should be using [[https://github.com/99designs/aws-vault][aws-vault]] instead.
 
 #+CAPTION: ~cat ~/.zsh/plugins/aws-switch/_aws-switch~
-#+BEGIN_SRC sh :tangle ../.home/.zsh/plugins/aws-switch/_aws-switch
+#+BEGIN_SRC sh :tangle ../../../.home/.zsh/plugins/aws-switch/_aws-switch
 #compdef aws-switch
 #description Switch the AWS profile
 
@@ -28,7 +28,7 @@ _aws-switch "$@"
 #+END_SRC
 
 #+CAPTION: ~cat ~/.zsh/plugins/aws-switch/aws-switch.plugin.zsh~
-#+BEGIN_SRC sh :tangle ../.home/.zsh/plugins/aws-switch/aws-switch.plugin.zsh
+#+BEGIN_SRC sh :tangle ../../../.home/.zsh/plugins/aws-switch/aws-switch.plugin.zsh
 function aws-switch() {
     case ${1} in
         "")
