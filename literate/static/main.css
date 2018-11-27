@@ -6,13 +6,8 @@ body {
     font-family: 'Muli', sans-serif;
     font-size: 1.2rem;
     line-height: 1.7rem;
-    color: rgba(46, 48, 58, 0.96);
-
     color: #c11c1c;
-/*    background: #f7d2e2;  */
     background: #fdcbc3;
-
-
 }
 
 h1 {
@@ -75,6 +70,12 @@ pre {
     width: 60%;
     max-width: 800px;
     padding: 0px 2em;
+}
+
+@media only screen and (max-width: 1440px) {
+  #content {
+    width: 80%;
+  }
 }
 
 #org-div-home-and-up {
