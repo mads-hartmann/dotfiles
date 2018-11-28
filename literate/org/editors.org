@@ -1,0 +1,6 @@
+#+TITLE: Editors
+#+SETUPFILE: ../etc/options.org
+
+There are a few tools that a editor agnostic that I use:
+
+  + [[http://computer.localhost/editors/editorconfig/][EditorConfig]]

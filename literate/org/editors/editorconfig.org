@@ -1,3 +1,15 @@
+#+TITLE: EditorConfig
+#+SETUPFILE: ../../etc/options.org
+
+[[https://editorconfig.org/][EditorConfig]] is a way to maintain consistent coding styles between
+different editors and IDEs.
+
+Usually you'd have a ~.editorconfig~ file in the root of your project,
+but I don't always bother with my own personal projects so I have this
+file to fall back on.
+
+#+CAPTION: ~~/.editorconfig~
+#+BEGIN_SRC conf :tangle ../../.home/.editorconfig
 # Don't go looking any further
 root = true
 
@@ -39,3 +51,7 @@ indent_size = 2
 
 [*.scss]
 indent_size = 2
+
+[*.tf]
+indent_size = 2
+#+END_SRC

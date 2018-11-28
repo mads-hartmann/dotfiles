@@ -13,6 +13,7 @@ literate programming approach so you won't find everything here just
 yet. Poke around if you're curious.
 
    + [[http://computer.localhost/shell/][Shell]]
+   + [[http://computer.localhost/editors/][Editors]]
    + [[http://computer.localhost/programming-languages/][Programming languages]]
    + [[http://computer.localhost/programs/][Programs]]
 
