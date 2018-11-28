@@ -7,6 +7,7 @@ cheat-sheet.
 
   + [[http://computer.localhost/programs/cheat/][cheat]]
   + [[http://computer.localhost/programs/fzf/][fzf]]
+  + [[http://computer.localhost/programs/git/][git]]
   + [[http://computer.localhost/programs/docker/][docker]]
   + [[http://computer.localhost/programs/ctags/][ctags]]
   + [[http://computer.localhost/programs/ab/][ab]]
