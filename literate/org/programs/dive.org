@@ -1,0 +1,29 @@
+#+TITLE: dep
+#+SETUPFILE: ../../etc/options.org
+
+[[dive][https://github.com/wagoodman/dive]] is a tool for  for exploring a
+docker image, layer contents, and discovering ways to shrink your Docker image
+size.
+
+You could install it using Homebrew but I'd rather run it as a Docker container.
+
+#+CAPTION: ~.zsh/plugins/config-dive/config-dive.plugin.zsh~
+#+BEGIN_SRC sh :tangle ../../.home/.zsh/plugins/config-dive/config-dive.plugin.zsh
+function dive {
+    docker run \
+        --rm -it \
+        -v /var/run/docker.sock:/var/run/docker.sock \
+        wagoodman/dive:latest $@
+}
+#+END_SRC
+
+** Cheat-sheet
+
+#+CAPTION: ~~/.cheat/dive~
+#+BEGIN_SRC sh :tangle ../../.home/.cheat/dive
+# To analyze an image
+dive <your-image-tag>
+# To build and then analyze
+dive build -t <some-tag> .
+#+END_SRC
+

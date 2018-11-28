@@ -122,6 +122,7 @@ plugins+=(
   config-opam
   config-go
   config-php
+  config-dive
 )
 #+END_SRC
 

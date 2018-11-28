@@ -29,3 +29,4 @@ cheat-sheet.
   + [[http://computer.localhost/programs/tshark/][tshark]]
   + [[http://computer.localhost/programs/xargs/][xargs]]
   + [[http://computer.localhost/programs/zsh/][zsh]]
+  + [[http://computer.localhost/programs/dive/][dive]]
