@@ -5,6 +5,7 @@ Here are some of my favorite programs. For each program I generally document how
 to install it, describe how I've configured it to my needs, and sometimes write a
 cheat-sheet.
 
+  + [[http://computer.localhost/programs/ssh/][ssh]]
   + [[http://computer.localhost/programs/cheat/][cheat]]
   + [[http://computer.localhost/programs/fzf/][fzf]]
   + [[http://computer.localhost/programs/git/][git]]

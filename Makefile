@@ -1,11 +1,20 @@
 
-scripts := $(addprefix /usr/local/, $(basename $(wildcard bin/*)))
+illiterate := \
+	$(patsubst illiterate/%,${HOME}/%,$(shell find illiterate -type d -maxdepth 1 -name ".*"))
 
-bin: $(scripts)
+# I strip the file extension.
+scripts := \
+	$(basename $(patsubst illiterate/bin/%,/usr/local/bin/%,$(shell find illiterate/bin -type f)))
 
-/usr/local/bin/%: bin/%*
+link: $(scripts) $(illiterate)
+
+${HOME}/%: illiterate/%
 	$(call print, Linking, $@ -> $<)
-	@ln -s "$(abspath $<)" "$@"
+	@ln -sf "$(abspath $<)" "$@"
+
+/usr/local/bin/%: illiterate/bin/%*
+	$(call print, Linking, $@ -> $<)
+	@ln -sf "$(abspath $<)" "$@"
 
 # `make print-abc` to debug the value of variable abc
 print-%: ; @echo $* is $($*)

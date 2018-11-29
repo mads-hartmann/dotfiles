@@ -550,13 +550,17 @@
   :bind
   (:map org-mode-map
         ("C-," . nil)
+        ("C-<tab>" . nil)
         ("C-c C-j" . helm-org-in-buffer-headings))
   :config
   (progn
-    (define-key 'org-mode-map (kbd "C-<tab>") nil)
     (add-hook 'org-mode-hook 'linum-mode)
     (add-hook 'org-mode-hook 'flyspell-mode)
+    (add-hook 'org-mode-hook 'toc-org-mode)
+    (add-hook 'org-mode-hook 'org-hide-block-all) ; Hide code blocks by default
     (add-hook 'org-mode-hook (lambda () (imenu-add-to-menubar "Imenu")))))
+
+(use-package toc-org)
 
 (use-package flycheck-gometalinter
   :config

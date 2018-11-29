@@ -1,0 +1,20 @@
+#+TITLE: ssh
+#+SETUPFILE: ../../etc/options.org
+
+** Configuration
+
+#+CAPTION: ~~.ssh/config~
+#+BEGIN_SRC conf :tangle ../../.home/.ssh/config
+# There are things I don't want in git.
+Include config.d/*
+
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa
+  IdentitiesOnly yes
+#+END_SRC

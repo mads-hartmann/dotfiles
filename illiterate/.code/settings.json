@@ -3,7 +3,6 @@
   "editor.cursorBlinking": "solid",
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
-  "editor.fontSize": 13,
   "editor.lineHeight": 16,
   "editor.minimap.enabled": false,
   "editor.renderLineHighlight": "none",
@@ -62,7 +61,7 @@
     "**/build/**": true
   },
   "terminal.external.osxExec": "iTerm.app",
-  "window.zoomLevel": 0.4,
+  "window.zoomLevel": 0.1,
   "workbench.fontAliasing": "default",
   "workbench.activityBar.visible": false,
   "workbench.editor.showTabs": false,
@@ -143,14 +142,14 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "bashIde.highlightParsingErrors": false,
   "prettier.disableLanguages": ["yaml"],
-  "breadcrumbs.enabled": true,
-  "github.hosts": [
+  "breadcrumbs.enabled": false,
+  "workbench.statusBar.feedback.visible": false,
+  "terminal.integrated.macOptionIsMeta": true,
+  "githubPullRequests.hosts": [
     {
       "host": "https://github.com",
       "username": "oauth",
       "token": "system"
     }
-  ],
-  "workbench.statusBar.feedback.visible": false,
-  "terminal.integrated.macOptionIsMeta": true
+  ]
 }

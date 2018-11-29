@@ -1,16 +1,20 @@
 [
-  {
+  // {
+  //   "key": "cmd+a",
+  //   "command": "selectAll"
+  // },
+  // {
     // A bit of a hacky way to get backspace to work on a selection as I've been
     // used to in Emacs.
-    "key": "backspace",
-    "command": "emacs.C-w",
-    "when": "editorTextFocus && editorHasSelection && !editorHasMultipleSelections"
-  },
-  {
-    "key": "escape",
-    "command": "emacs.exitMarkMode",
-    "when": "editorHasSelection && editorTextFocus"
-  },
+  //   "key": "backspace",
+  //   "command": "emacs.C-w",
+  //   "when": "editorTextFocus && editorHasSelection && !editorHasMultipleSelections"
+  // },
+  // {
+  //   "key": "escape",
+  //   "command": "emacs.exitMarkMode",
+  //   "when": "editorHasSelection && editorTextFocus"
+  // },
   {
     "key": "alt+tab",
     "command": "editor.action.triggerSuggest",
@@ -81,6 +85,12 @@
   //     "key": "cmd+shift+`",
   //     "command": "workbench.action.switchWindow"
   // },
+  // Kind of like Emacs pop mark except the stack is of size 1 and it
+  // only works for edits ;)
+  {
+    "key": "ctrl+x ctrl+space",
+    "command": "workbench.action.navigateToLastEditLocation"
+  },
   {
     "key": "cmd+ctrl+`",
     "command": "workbench.action.switchWindow"
@@ -124,6 +134,26 @@
     "command": "workbench.action.nextEditorInGroup",
     "when": "editorTextFocus"
   },
+  {
+    "key": "shift+cmd+]",
+    "command": "workbench.action.nextSideBarView",
+    "when": "sideBarFocus"
+  },
+  {
+    "key": "shift+cmd+[",
+    "command": "workbench.action.previousSideBarView",
+    "when": "sideBarFocus"
+  },
+  {
+    "key": "shift+cmd+]",
+    "command": "workbench.action.nextPanelView",
+    "when": "panelFocus"
+  },
+  {
+    "key": "shift+cmd+[",
+    "command": "workbench.action.previousPanelView",
+    "when": "panelFocus"
+  },
   /**
    * Emacs-like view splitting
    */
@@ -140,8 +170,12 @@
     "command": "workbench.action.splitEditorRight"
   },
   {
-    "key": "ctrl+x 0",
+    "key": "ctrl+x 1",
     "command": "workbench.action.closeEditorsInOtherGroups"
+  },
+  {
+    "key": "ctrl+x 0",
+    "command": "workbench.action.closeEditorsAndGroup"
   },
   // Other
   {
@@ -311,5 +345,19 @@
     "key": "shift+cmd+space",
     "command": "-editor.action.triggerParameterHints",
     "when": "editorHasSignatureHelpProvider && editorTextFocus"
+  },
+  {
+    "key": "ctrl+x ctrl+s",
+    "command": "workbench.action.files.save"
+  },
+  {
+    "key": "alt+f",
+    "command": "cursorWordEndRight",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "alt+b",
+    "command": "cursorWordStartLeft",
+    "when": "textInputFocus"
   }
 ]
