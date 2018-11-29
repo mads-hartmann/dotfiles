@@ -1,6 +1,11 @@
 #+TITLE: Editors
 #+SETUPFILE: ../etc/options.org
 
-There are a few tools that a editor agnostic that I use:
+I have a soft spot for editors.
+
+  + [[http://computer.localhost/editors/emacs/][Emacs]]
+  + [[http://computer.localhost/editors/vscode/][VSCode]]
+
+I use a few tools that are editor agnostic.
 
   + [[http://computer.localhost/editors/editorconfig/][EditorConfig]]

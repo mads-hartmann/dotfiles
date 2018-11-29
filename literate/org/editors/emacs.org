@@ -1,0 +1,5 @@
+#+TITLE: Emacs
+#+SETUPFILE: ../../etc/options.org
+
+I haven't ported over my configuration yet. It's going to be quite a
+large undertaking I'm afraid.
