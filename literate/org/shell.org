@@ -83,6 +83,13 @@ the shell is attached to a tty.
 The Zsh community maintains a collection of completion scripts [[https://github.com/zsh-users/zsh-completions][here]]
 that can be installed through /homebrew/.
 
+To make ~compaudit~ happy you have to make sure the group can't write
+to it though
+
+#+BEGIN_SRC sh
+chmod g-w /usr/local/share
+#+END_SRC
+
 #+BEGIN_SRC sh
 brew install zsh-completions
 #+END_SRC
@@ -254,6 +261,14 @@ export ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 I have to load Oh My ZSH! last as it's configured through various
 environment variables and Zsh variables.
+
+I don't want it to ask me for updates. I'll run the update myself
+every once in a while:
+
+#+CAPTION: ~~/.zshrc~
+#+BEGIN_SRC sh :tangle ../.home/.zshrc
+DISABLE_AUTO_UPDATE=true
+#+END_SRC
 
 It needs to know where I've installed it. I just use the default
 location.
