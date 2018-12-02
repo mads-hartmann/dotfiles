@@ -11,8 +11,15 @@ WEAVE_TARGETS := \
 COPY_TARGETS := \
 	$(patsubst static/%,.website/static/%,$(shell find static -name "*"))
 
-# TODO: Hardcoded for now. Later I'll do something smart.
-LINKS := .zsh .zshrc .zshenv .bashrc .ctags.cnf .cheat .gitconfig .editorconfig .ssh/config
+LINKS := \
+	.zsh .zshrc .zshenv \
+	.bashrc \
+	.ctags.cnf \
+	.cheat \
+	.gitconfig \
+	.editorconfig \
+	.ssh/config
+
 LINK_TARGETS := \
 	$(foreach link,$(LINKS),$(HOME)/$(link))
 
@@ -48,13 +55,7 @@ ${HOME}/%: .home/%
 	cp $< $@
 
 .website/%/index.html: org/%.org
-	$(QUIET)docker run \
-		-ti \
-		-v $(shell pwd)/..:/home/babel/dotfiles:rw \
-		mads379/dotfiles-ci:0.0.2 \
-			emacs \
-			--script dotfiles/literate/etc/project.el \
-			--eval "(org-publish-file \"/home/babel/dotfiles/literate/$<\" nil nil)"
+	$(QUIET)./scripts/weave-file.sh "$<"
 # To the best of my knowledge there isn't a good way to have org-mode
 # publish name/index.html instead of name.html so instead I do all
 # this horrible hackery ¯\_(ツ)_/¯
@@ -66,13 +67,7 @@ ${HOME}/%: .home/%
 # so we create this imaginary one instead.
 .build/%.tangled: %.org
 	$(QUIET)mkdir -p $(dir $@)
-	$(QUIET)docker run \
-		-ti \
-		-v $(shell pwd)/..:/home/babel/dotfiles:rw \
-		mads379/dotfiles-ci:0.0.2 \
-			emacs \
-			--script dotfiles/literate/etc/project.el \
-			--eval "(org-babel-tangle-file \"/home/babel/dotfiles/literate/$<\")"
+	$(QUIET)./scripts/tangle-file.sh "$<"
 	$(QUIET)touch $@
 
 #

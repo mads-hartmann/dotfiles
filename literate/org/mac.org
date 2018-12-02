@@ -1,0 +1,14 @@
+#+TITLE: macOS
+#+SETUPFILE: ../etc/options.org
+
+** Keybindings
+
+#+CAPTION: ~~/Library/KeyBindings/DefaultKeyBinding.dict~
+#+BEGIN_SRC json :tangle ../.home/Library/KeyBindings/DefaultKeyBinding.dict
+{
+    "~d" = "deleteWordForward:";
+    "^w" = "deleteWordBackward:";
+    "~f" = "moveWordForward:";
+    "~b" = "moveWordBackward:";
+}
+#+END_SRC

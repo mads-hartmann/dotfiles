@@ -15,20 +15,14 @@
  ;; inside of Docker without a TTY attached - no-one cares.
  make-backup-files nil
  auto-save-default nil
- org-html-link-org-files-as-html
+ org-html-link-org-files-as-html t
 )
 
-(defvar dotfiles-dir "/home/babel/dotfiles"
-  "The absolute path to where the dotfiles project is stored.")
-
-(defvar publishing-directory (concat dotfiles-dir "/literate/.website")
+(defvar publishing-directory (concat default-directory "/.website")
   "The absolute path to where the weaved contents should be published to.")
 
-(defvar base-directory (concat dotfiles-dir "/literate/org")
+(defvar base-directory (concat default-directory "/org")
   "The absolute path to where the org-files are stored.")
-
-(defvar static-directory (concat dotfiles-dir "/literate/static")
-  "The absolute path to where static assets are stoerd.")
 
 (defun format-folder-name (name)
   "Capitalize and remove hyphen from NAME."
@@ -70,10 +64,7 @@ PROJECT is the current project."
          :auto-sitemap nil                      ; I maintain it manually to have full control
          :html-head-include-default-style nil   ; Disable the default css style
          :html-head-include-scripts nil         ; Disable the default javascript snippet
-;         :html-link-home nil                    ; Just the default for this project.
-;         :html-link-up nil                      ; Just the default for this project.
          )
-        ;; TODO: I think we can delete this as we call it from the Makefile
         ("tangle"
          :base-directory ,base-directory
          :base-extension "org"
