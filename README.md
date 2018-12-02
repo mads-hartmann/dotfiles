@@ -27,13 +27,4 @@ ssh-add -K ~/.ssh/id_rsa # add to keychain
 cat ~/.ssh/id_rsa.pub | pbcopy
 ```
 
-Clone my beloved `dotfiles`.
-
-```sh
-mkdir -p ~/dev/personal && cd ~/dev/personal
-git clone git@github.com:mads-hartmann/dotfiles
-cd dotfiles
-./install.sh
-```
-
 [dotfiles]: https://dotfiles.github.io/
