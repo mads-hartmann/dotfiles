@@ -4,7 +4,7 @@
 ** Cheat-sheet
 
 #+CAPTION: ~~/.cheat/mysql~
-#+BEGIN_SRC sh :tangle ../../.home/.cheat/mysql
+#+BEGIN_SRC sh :tangle ../../../.home/.cheat/mysql
 # To connect to a database
 mysql -h localhost -u root -p
 

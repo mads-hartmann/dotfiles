@@ -21,7 +21,7 @@
 (defvar publishing-directory (concat default-directory "/.website")
   "The absolute path to where the weaved contents should be published to.")
 
-(defvar base-directory (concat default-directory "/org")
+(defvar base-directory (concat default-directory "/literate/org")
   "The absolute path to where the org-files are stored.")
 
 (defun format-folder-name (name)

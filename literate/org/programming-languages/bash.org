@@ -6,6 +6,6 @@ I use bash for scripting not as my shell.
 But when I do I still want completions enabled.
 
 #+CAPTION: ~.bashrc~.
-#+BEGIN_SRC sh :tangle ../../.home/.bashrc
+#+BEGIN_SRC sh :tangle ../../../.home/.bashrc
   [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 #+END_SRC

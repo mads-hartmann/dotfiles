@@ -8,7 +8,7 @@ size.
 You could install it using Homebrew but I'd rather run it as a Docker container.
 
 #+CAPTION: ~.zsh/plugins/config-dive/config-dive.plugin.zsh~
-#+BEGIN_SRC sh :tangle ../../.home/.zsh/plugins/config-dive/config-dive.plugin.zsh
+#+BEGIN_SRC sh :tangle ../../../.home/.zsh/plugins/config-dive/config-dive.plugin.zsh
 function dive {
     docker run \
         --rm -it \
@@ -20,7 +20,7 @@ function dive {
 ** Cheat-sheet
 
 #+CAPTION: ~~/.cheat/dive~
-#+BEGIN_SRC sh :tangle ../../.home/.cheat/dive
+#+BEGIN_SRC sh :tangle ../../../.home/.cheat/dive
 # To analyze an image
 dive <your-image-tag>
 # To build and then analyze

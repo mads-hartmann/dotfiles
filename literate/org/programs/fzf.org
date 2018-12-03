@@ -5,7 +5,7 @@
 it even more useful than what the defaults are.
 
 #+CAPTION: ~.zsh/plugins/config-fzf.plugin.zsh~
-#+BEGIN_SRC sh :tangle ../../.home/.zsh/plugins/config-fzf/config-fzf.plugin.zsh
+#+BEGIN_SRC sh :tangle ../../../.home/.zsh/plugins/config-fzf/config-fzf.plugin.zsh
 
 # Nice small convenience key-bindings.
 # CTRL+T to select a file in the current directory and paste it.

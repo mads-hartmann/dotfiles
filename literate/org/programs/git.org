@@ -4,7 +4,7 @@
 ** Configuration
 
 #+CAPTION: ~~/.gitconfig~
-#+BEGIN_SRC conf :tangle ../../.home/.gitconfig
+#+BEGIN_SRC conf :tangle ../../../.home/.gitconfig
 [alias]
   b = branch
   co = checkout

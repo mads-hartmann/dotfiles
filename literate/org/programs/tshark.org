@@ -4,7 +4,7 @@
 ** Cheat-sheet
 
 #+CAPTION: ~~/.cheat/tshark~
-#+BEGIN_SRC sh :tangle ../../.home/.cheat/tshark
+#+BEGIN_SRC sh :tangle ../../../.home/.cheat/tshark
 # Terminal version of Wireshark.
 #
 # See full list of fields to extract or filter on here

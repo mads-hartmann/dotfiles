@@ -6,7 +6,7 @@ you're writing completion functions. e.g. ~reload-function
 _mycompletionfunction~
 
 #+CAPTION: ~cat ~/.zsh/plugins/reload-function/reload-function.plugin.zsh~
-#+BEGIN_SRC sh :tangle ../../../.home/.zsh/plugins/reload-function/reload-function.plugin.zsh
+#+BEGIN_SRC sh :tangle ../../../../.home/.zsh/plugins/reload-function/reload-function.plugin.zsh
 function reload-function {
     local function_name=$1
     unfunction ${function_name}
@@ -15,7 +15,7 @@ function reload-function {
 #+END_SRC
 
 #+CAPTION: ~cat ~/.zsh/plugins/reload-function/_reload-function~
-#+BEGIN_SRC sh :tangle ../../../.home/.zsh/plugins/reload-function/_reload-function
+#+BEGIN_SRC sh :tangle ../../../../.home/.zsh/plugins/reload-function/_reload-function
 #compdef _reload-function reload-function
 #description Reload a ZSH function
 

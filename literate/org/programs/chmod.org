@@ -4,7 +4,7 @@
 ** Cheat-sheet
 
 #+CAPTION: ~~/.cheat/chmod~
-#+BEGIN_SRC sh :tangle ../../.home/.cheat/chmod
+#+BEGIN_SRC sh :tangle ../../../.home/.cheat/chmod
 # Add execute for all (myscript.sh)
 chmod a+x myscript.sh
 

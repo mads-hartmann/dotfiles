@@ -4,7 +4,7 @@
 ** Cheat-sheet
 
 #+CAPTION: ~~/.cheat/docker-machine~
-#+BEGIN_SRC sh :tangle ../../.home/.cheat/docker-machine
+#+BEGIN_SRC sh :tangle ../../../.home/.cheat/docker-machine
 # Create a machine (virtualbox based)
 docker-machine create -d virtualbox my-machine
 

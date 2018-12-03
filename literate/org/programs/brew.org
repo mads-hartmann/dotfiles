@@ -4,7 +4,7 @@
 ** Cheat-sheet
 
 #+CAPTION: ~~/.cheat/brew~
-#+BEGIN_SRC sh :tangle ../../.home/.cheat/brew
+#+BEGIN_SRC sh :tangle ../../../.home/.cheat/brew
 # Use specific version of a package
 brew switch python 2.7.8_1
 #+END_SRC

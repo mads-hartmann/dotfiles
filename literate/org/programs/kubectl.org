@@ -4,7 +4,7 @@
 ** Cheat-sheet
 
 #+CAPTION: ~~/.cheat/kubectl~
-#+BEGIN_SRC sh :tangle ../../.home/.cheat/kubectl
+#+BEGIN_SRC sh :tangle ../../../.home/.cheat/kubectl
 # Start a one-off pod to debug from within cluster
 # Example to debug a kafka cluster
 kubectl --namespace kafka run kafkacat --image=confluentinc/cp-kafkacat:4.0.0 -ti bash

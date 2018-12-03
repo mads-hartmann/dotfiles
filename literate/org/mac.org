@@ -1,10 +1,39 @@
 #+TITLE: macOS
 #+SETUPFILE: ../etc/options.org
 
+** Defaults
+
+You can set quite a few things though macOSs user defaults system.
+I've mostly taken these from various places online, but most notably
+from [[https://mths.be/macos][here]].
+
+Close any open System Preferences panes, to prevent them from
+overriding settings we’re about to change
+
+#+CAPTION: ~installers/macos-defaults.sh~
+#+BEGIN_SRC json :tangle ../../.installers/macos-defaults.sh
+osascript -e 'tell application "System Preferences" to quit'
+#+END_SRC
+
+Ask for the administrator password upfront
+
+#+CAPTION: ~installers/macos.sh~
+#+BEGIN_SRC json :tangle ../../.installers/macos-defaults.sh
+sudo -v
+#+END_SRC
+
+Keep-alive: update existing `sudo` time stamp until `.macos` has
+finished
+
+#+CAPTION: ~installers/macos.sh~
+#+BEGIN_SRC json :tangle ../../.installers/macos-defaults.sh
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+#+END_SRC
+
 ** Keybindings
 
 #+CAPTION: ~~/Library/KeyBindings/DefaultKeyBinding.dict~
-#+BEGIN_SRC json :tangle ../.home/Library/KeyBindings/DefaultKeyBinding.dict
+#+BEGIN_SRC json :tangle ../../.home/Library/KeyBindings/DefaultKeyBinding.dict
 {
     "~d" = "deleteWordForward:";
     "^w" = "deleteWordBackward:";

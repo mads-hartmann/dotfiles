@@ -4,7 +4,7 @@
 ** Cheat-sheet
 
 #+CAPTION: ~~/.cheat/dep~
-#+BEGIN_SRC sh :tangle ../../.home/.cheat/dep
+#+BEGIN_SRC sh :tangle ../../../.home/.cheat/dep
 # Add a dependency
 dep ensure -add URL
 #+END_SRC

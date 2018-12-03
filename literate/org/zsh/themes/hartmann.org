@@ -12,7 +12,7 @@ color-codes of a wide variety of colors. The colors can be accessed
 using ~$FG[COLOR_CODE]~
 
 #+CAPTION: ~$ cat ~/.zsh/themes/hartmann.zsh-theme~
-#+BEGIN_SRC sh :tangle ../../../.home/.zsh/themes/hartmann.zsh-theme
+#+BEGIN_SRC sh :tangle ../../../../.home/.zsh/themes/hartmann.zsh-theme
 ENABLE_K8s_PART=0
 
 function is_in_project {

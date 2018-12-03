@@ -5,7 +5,7 @@ I don't use ~ctags~ anymore really. It's a remnant from my Emacs days.
 I keep the configuration around though just in case.
 
 #+CAPTION: ~~/.ctags.cnf~
-#+BEGIN_SRC txt :tangle ../../.home/.ctags.cnf
+#+BEGIN_SRC txt :tangle ../../../.home/.ctags.cnf
 --exclude=.git
 --exclude=.hg
 --exclude=log

@@ -18,6 +18,6 @@ brew install cheat
 I like syntax highlighting.
 
 #+CAPTION: ~.zsh/plugins/config-cheat.plugin.zsh~
-#+BEGIN_SRC sh :tangle ../../.home/.zsh/plugins/config-cheat/config-cheat.plugin.zsh
+#+BEGIN_SRC sh :tangle ../../../.home/.zsh/plugins/config-cheat/config-cheat.plugin.zsh
 export CHEATCOLORS=true
 #+END_SRC

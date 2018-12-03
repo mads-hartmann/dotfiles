@@ -4,7 +4,7 @@
 ** Cheat-sheet
 
 #+CAPTION: ~~/.cheat/zsh~
-#+BEGIN_SRC sh :tangle ../../.home/.cheat/zsh
+#+BEGIN_SRC sh :tangle ../../../.home/.cheat/zsh
 # Starting an empty zsh shell
 zsh --no-rcs
 

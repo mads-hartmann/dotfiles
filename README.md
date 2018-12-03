@@ -1,30 +1,32 @@
-# My dotfiles
+# Hartmann's dotfiles
 
-These are my [dotfiles][dotfiles]. They are nothing out of the
-extraordinary, but I like them nonetheless.
+Writing files `make tangle`
+Writing the docs `make weave`
 
-## From scratch
+## Might be able to steal some things from these dotfiles as well.
+https://github.com/alexpearce/dotfiles
 
-Install homebrew (will also install Xcode Command Line Tools)
+## Debugging build image
 
-```sh
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+The export it performed by a Docker image that contains Emacs and the relevant
+Emacs packages (see `docker/Dockerfile`).
 
-Get 1Password installed so I can get access to all my secrets and my Github
-account.
-
-```sh
-brew cask install 1password
-```
-
-Generate a SSH key, add it to Github.com and the keychain (my `dotfiles` takes
-care of `~/.ssh/config`)
+Sometimes it can be useful debug the build image. Run the following to start a
+Bash session in the Docker image with the relevant folders mounted.
 
 ```sh
-ssh-keygen -t rsa -b 4096 -C "mads379@gmail.com"
-ssh-add -K ~/.ssh/id_rsa # add to keychain
-cat ~/.ssh/id_rsa.pub | pbcopy
-```
+make shell
 
-[dotfiles]: https://dotfiles.github.io/
+```
+- *TODO*: See if there's more to steal [here](https://github.com/binarin/docker-org-export/blob/master/Dockerfile)
+
+## CI
+
+See `.circleci/config.yml`.
+
+
+## Resources
+
+Org-mode configuration guide:
+https://orgmode.org/manual/Configuration.html
+https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html

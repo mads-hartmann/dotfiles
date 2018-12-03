@@ -4,7 +4,7 @@
 ** Cheat-sheet
 
 #+CAPTION: ~~/.cheat/tmux~
-#+BEGIN_SRC sh :tangle ../../.home/.cheat/tmux
+#+BEGIN_SRC sh :tangle ../../../.home/.cheat/tmux
 # List sessions
 tmux list-sessions
 

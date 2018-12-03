@@ -1,5 +1,11 @@
 .DS_Store
+
+.build
+.home
+.website
+
 .pypirc
+
 illiterate/.vscode
 illiterate/.emacs.d/helm-adaptive-history
 illiterate/.atom/.apm
@@ -19,3 +25,4 @@ illiterate/.sbt/**/zinc
 illiterate/.sbt/boot
 illiterate/.sbt/1.0/templates
 illiterate/.sbt/preloaded
+

@@ -9,7 +9,7 @@ but I don't always bother with my own personal projects so I have this
 file to fall back on.
 
 #+CAPTION: ~~/.editorconfig~
-#+BEGIN_SRC conf :tangle ../../.home/.editorconfig
+#+BEGIN_SRC conf :tangle ../../../.home/.editorconfig
 # Don't go looking any further
 root = true
 

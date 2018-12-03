@@ -4,7 +4,7 @@
 ** Configuration
 
 #+CAPTION: ~~.ssh/config~
-#+BEGIN_SRC conf :tangle ../../.home/.ssh/config
+#+BEGIN_SRC conf :tangle ../../../.home/.ssh/config
 # There are things I don't want in git.
 Include config.d/*
 

@@ -4,7 +4,7 @@
 ** Cheat-sheet
 
 #+CAPTION: ~~/.cheat/socat~
-#+BEGIN_SRC sh :tangle ../../.home/.cheat/socat
+#+BEGIN_SRC sh :tangle ../../../.home/.cheat/socat
 # Send traffic from TCP port to UNIX socket
 socat TCP-LISTEN:4444,bind=0.0.0.0,reuseaddr,fork UNIX-CLIENT:/tmp/selenium-redirect
 

@@ -4,7 +4,7 @@
 ** Cheat-sheet
 
 #+CAPTION: ~~/.cheat/xargs~
-#+BEGIN_SRC sh :tangle ../../.home/.cheat/xargs
+#+BEGIN_SRC sh :tangle ../../../.home/.cheat/xargs
 # xargs -- construct argument list(s) and execute utility
 
 # Pipe stdout into another command

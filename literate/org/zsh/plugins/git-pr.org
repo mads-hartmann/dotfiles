@@ -13,7 +13,7 @@ This will most likely break unless you have very simple branch
 names.
 
 #+CAPTION: ~cat ~/.zsh/plugins/git-pr/git-pr.plugin.zsh~
-#+BEGIN_SRC sh :tangle ../../../.home/.zsh/plugins/git-pr/git-pr.plugin.zsh
+#+BEGIN_SRC sh :tangle ../../../../.home/.zsh/plugins/git-pr/git-pr.plugin.zsh
 function git-pr() {
   DEFAULT_PR_BRANCH=${1:-${DEFAULT_PR_BRANCH:-master}}
 
@@ -47,7 +47,7 @@ function git-pr() {
 #+END_SRC
 
 #+CAPTION: ~cat ~/.zsh/plugins/git-pr/_git-pr~
-#+BEGIN_SRC sh :tangle ../../../.home/.zsh/plugins/git-pr/_git-pr
+#+BEGIN_SRC sh :tangle ../../../../.home/.zsh/plugins/git-pr/_git-pr
 #compdef git-pr
 #description Open the pull request preview view on Github
 
@@ -75,7 +75,7 @@ A little convenience function that helps me jump between the various
 projects I'm working on.
 
 #+CAPTION: ~cat ~/.zsh/plugins/project/project.plugin.zsh~
-#+BEGIN_SRC sh :tangle ../../../.home/.zsh/plugins/project/project.plugin.zsh
+#+BEGIN_SRC sh :tangle ../../../../.home/.zsh/plugins/project/project.plugin.zsh
 function project {
     clear
     paths=($(find ~/dev/*/* -maxdepth 0 -type d)) # all paths

@@ -4,7 +4,7 @@
 ** Cheat-sheet
 
 #+CAPTION: ~~/.cheat/awk~
-#+BEGIN_SRC sh :tangle ../../.home/.cheat/awk
+#+BEGIN_SRC sh :tangle ../../../.home/.cheat/awk
 # Print the 3rd column
 echo "a b c d" | awk '{ print $3 }'
 

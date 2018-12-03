@@ -4,7 +4,7 @@
 ** Cheat-sheet
 
 #+CAPTION: ~~/.cheat/apm~
-#+BEGIN_SRC sh :tangle ../../.home/.cheat/apm
+#+BEGIN_SRC sh :tangle ../../../.home/.cheat/apm
 # Clone an existing package and link it.
 apm develop <package_name>
 

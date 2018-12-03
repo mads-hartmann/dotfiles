@@ -4,7 +4,7 @@
 ** Cheat-sheet
 
 #+CAPTION: ~~/.cheat/docker~
-#+BEGIN_SRC sh :tangle ../../.home/.cheat/docker
+#+BEGIN_SRC sh :tangle ../../../.home/.cheat/docker
 # cleanup
 #
 docker rm -f $(docker ps -aq)
