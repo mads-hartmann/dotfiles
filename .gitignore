@@ -3,6 +3,7 @@
 .build
 .home
 .website
+.installers
 
 .pypirc
 
