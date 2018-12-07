@@ -22,14 +22,14 @@ function os::symlink() {
     local origin="$1"
     local target="$2"
 
-    if [[ -L "${target}" ]]; then
-        echo "✓ Link already exists: ${target} "
-    elif [[ -e "${target}" ]]; then
+    mkdir -p $(dirname "$target")
+
+    if [[ -e "${target}" ]]; then
         local msg="File already exists ${target} and isn't a link. Overwriting it with ${origin}"
         rm -rf ${target} && ln -s "${origin}" "${target}"
     else
         echo "✓ Linking ${origin} -> ${target}"
-        ln -s "${origin}" "${target}"
+        ln -sf "${origin}" "${target}"
     fi
 }
 
@@ -65,7 +65,7 @@ function link() {
         .editorconfig
         .ssh/config"
     for name in ${names}; do
-        os::symlink ".home/${name}" "${HOME}/${name}"
+        os::symlink "$PWD/.home/${name}" "${HOME}/${name}"
     done
 }
 

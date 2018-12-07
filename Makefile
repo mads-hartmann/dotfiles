@@ -43,7 +43,7 @@ COPY_TARGETS := \
 all: weave tangle
 weave: $(WEAVE_TARGETS) $(COPY_TARGETS)
 tangle: $(TANGLE_TARGETS)
-link: tangle $(SCRIPTS) $(ILLITERATE)
+link: $(SCRIPTS) $(ILLITERATE)
 	$(QUIET)./scripts/system.sh link
 
 shell:
