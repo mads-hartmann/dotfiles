@@ -1,6 +1,9 @@
 # TODO
 
-- [ ] my PHP omz plugin is messing up my PATH
+- [ ] Fix my PATH
+    Sooo, mac has a concept of /etc/paths and /etc/paths.d but is used if I use the login shell
+    However if set the shell command in iTerm to be /usr/local/bin/zsh it doesn't read those files
+      which results in a PATH that's correct -- in the other case the /etc/paths are prefixed.
 
 - [ ] There are some bootstraping problems
   - [ ] Can't tangle without having Emacs etc. Probably best to have an initial setup script that downloads the latest tangles from S3

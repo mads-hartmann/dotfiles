@@ -359,5 +359,95 @@
     "key": "alt+b",
     "command": "cursorWordStartLeft",
     "when": "textInputFocus"
+  },
+  {
+    "key": "alt+left",
+    "command": "-org.decrementContext",
+    "when": "editorLangId == 'org'"
+  },
+  {
+    "key": "ctrl+alt+o c",
+    "command": "-org.code",
+    "when": "editorLangId == 'org'"
+  },
+  {
+    "key": "ctrl+alt+o b",
+    "command": "-org.bold",
+    "when": "editorLangId == 'org'"
+  },
+  {
+    "key": "ctrl+alt+o ctrl+i",
+    "command": "-org.clockin",
+    "when": "editorLangId == 'org'"
+  },
+  {
+    "key": "ctrl+alt+o ctrl+o",
+    "command": "-org.clockout",
+    "when": "editorLangId == 'org'"
+  },
+  {
+    "key": "ctrl+alt+o d",
+    "command": "-org.demoteSubtree",
+    "when": "editorLangId == 'org'"
+  },
+  {
+    "key": "ctrl+alt+o shift+d",
+    "command": "-org.doDemote",
+    "when": "editorLangId == 'org'"
+  },
+  {
+    "key": "ctrl+alt+o shift+p",
+    "command": "-org.doPromote",
+    "when": "editorLangId == 'org'"
+  },
+  {
+    "key": "alt+right",
+    "command": "-org.incrementContext",
+    "when": "editorLangId == 'org'"
+  },
+  {
+    "key": "ctrl+alt+o h",
+    "command": "-org.insertHeadingRespectContent",
+    "when": "editorLangId == 'org'"
+  },
+  {
+    "key": "ctrl+alt+o s",
+    "command": "-org.insertSubheading",
+    "when": "editorLangId == 'org'"
+  },
+  {
+    "key": "ctrl+alt+o i",
+    "command": "-org.italic",
+    "when": "editorLangId == 'org'"
+  },
+  {
+    "key": "ctrl+alt+o l",
+    "command": "-org.literal",
+    "when": "editorLangId == 'org'"
+  },
+  {
+    "key": "ctrl+alt+o p",
+    "command": "-org.promoteSubtree",
+    "when": "editorLangId == 'org'"
+  },
+  {
+    "key": "ctrl+alt+o t",
+    "command": "-org.timestamp",
+    "when": "editorLangId == 'org'"
+  },
+  {
+    "key": "ctrl+alt+o u",
+    "command": "-org.underline",
+    "when": "editorLangId == 'org'"
+  },
+  {
+    "key": "ctrl+alt+o ctrl+u",
+    "command": "-org.updateclock",
+    "when": "editorLangId == 'org'"
+  },
+  {
+    "key": "ctrl+alt+o v",
+    "command": "-org.verbose",
+    "when": "editorLangId == 'org'"
   }
 ]

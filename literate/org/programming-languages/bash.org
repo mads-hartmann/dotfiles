@@ -1,11 +1,21 @@
 #+TITLE: Bash
 #+SETUPFILE: ../../etc/options.org
 
-I use bash for scripting not as my shell.
+I use bash for scripting and not as my [[http://computer.localhost/shell/][shell]] so
+my configuraiton is very basis.
 
-But when I do I still want completions enabled.
+There are things that will complain if you don't have a ~~./bash_profile~ so
+I usually add one just in case.
+
+#+CAPTION: ~~.bash_profile~.
+#+BEGIN_SRC sh :tangle ../../../.home/.bash_profile
+test -f $HOME/.bashrc && source $HOME/.bashrc
+#+END_SRC
+
+In case I do end up using it as my shell for a little bit I want code
+completions though 😉
 
 #+CAPTION: ~.bashrc~.
 #+BEGIN_SRC sh :tangle ../../../.home/.bashrc
-  [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 #+END_SRC

@@ -59,6 +59,7 @@ function link() {
         .zshrc
         .zshenv
         .bashrc
+        .bash_profile
         .ctags.cnf
         .cheat
         .gitconfig

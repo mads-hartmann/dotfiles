@@ -8,7 +8,7 @@ A little utility function to switch quickly between projects. It's bound to
 #+BEGIN_SRC sh :tangle ../../../../.home/.zsh/plugins/switch-project/switch-project.plugin.zsh
 function switch-project {
     clear
-    paths=($(find ~/dev/*/* -maxdepth 0 -type d)) # all paths
+    paths=($(find ~/dev/* -maxdepth 0 -type d)) # all paths
     names=${paths##~/dev/} # remove longest match of ~/dev/ from paths
     selection=$(echo ${names:gs/ /\\n/} | fzf --reverse) # substitution adds newlines
 

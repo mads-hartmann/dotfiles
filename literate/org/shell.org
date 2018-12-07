@@ -55,8 +55,8 @@ Finally, set up the ~$PATH~ so it can find all my programs.
 
 #+CAPTION: ~~/.zshenv~
 #+BEGIN_SRC sh :tangle ../../.home/.zshenv
-# Coming from bash, I expect these to be in the PATH.
-export PATH=/usr/local/bin:$HOME/bin:$PATH
+# Soo... something is going on here.
+export PATH=/usr/local/bin:$PATH
 
 # Homebrew somtimes puts things here.
 export PATH="/usr/local/sbin:$PATH"
@@ -68,6 +68,11 @@ export PATH="/usr/local/opt/emacs/bin:$PATH"
 # I mostly use sed in CI scripts so might as well use the version that
 # the CI servers are going to use
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+# Ruby
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/lib/ruby/gems/2.5.0/bin:$PATH"
+
 #+END_SRC
 
 *** Background
@@ -112,6 +117,7 @@ plugins+=(
   hub
   aws
   npm
+  nvm
   docker
   zsh_reload # provides a src function to reload .zshrc
 )

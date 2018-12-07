@@ -5,5 +5,5 @@
 
 #+CAPTION: ~.zsh/plugins/config-php/config-php.plugin.zsh~
 #+BEGIN_SRC sh :tangle ../../../.home/.zsh/plugins/config-php/config-php.plugin.zsh
-export PATH="/usr/local/opt/php71:$PATH"
+# export PATH="/usr/local/opt/php71:$PATH"
 #+END_SRC
