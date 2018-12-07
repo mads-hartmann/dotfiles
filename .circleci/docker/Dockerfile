@@ -5,9 +5,9 @@ FROM debian:jessie
 # Install system dependencies
 RUN apt-get update && \
     apt-get -y install \
-        # For building
+        zip \
+        git \
         emacs24 \
-        # For aws-cli
         python python-pip && \
     pip install awscli
 

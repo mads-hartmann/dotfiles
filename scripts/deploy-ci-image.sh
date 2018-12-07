@@ -2,11 +2,11 @@
 
 set -euo pipefail
 
-VERSION=0.0.2
+VERSION=0.0.3
 TAG=mads379/dotfiles-ci:${VERSION}
 
 function main {
-    docker build -t ${TAG} --file docker/Dockerfile docker
+    docker build -t ${TAG} .circleci/docker
     docker push ${TAG}
 }
 
