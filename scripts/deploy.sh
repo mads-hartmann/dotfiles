@@ -24,7 +24,7 @@ function deploy-home-to-s3() {
   echo "Creating zip file."
   zip -r home.zip .home
 
-  aws s3 sync \
+  aws s3 cp \
     --region eu-central-1 \
     home.zip \
     s3://${bucket}/.bootstrap/home.zip \
