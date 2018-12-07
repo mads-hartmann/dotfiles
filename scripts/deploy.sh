@@ -26,7 +26,7 @@ function deploy-home-to-s3() {
 
   aws s3 sync \
     --region eu-central-1 \
-    .home/ \
+    home.zip \
     s3://${bucket}/.bootstrap/home.zip \
       --acl public-read \
       --cache-control "max-age=0, no-cache, no-store" \
