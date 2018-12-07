@@ -21,13 +21,18 @@ function deploy-website-to-s3() {
 }
 
 function deploy-home-to-s3() {
+  echo "Creating zip file."
+  zip -r home.zip .home
+
   aws s3 sync \
     --region eu-central-1 \
     .home/ \
-    s3://${website-bucket}/.home \
+    s3://${website-bucket}/.bootstrap/home.zip \
       --acl public-read \
       --cache-control "max-age=0, no-cache, no-store" \
       --expires "Thu, 01 Jan 1970 00:00:00 GMT"
+
+    rm home.zip
 }
 
 function invlidate-cache() {
