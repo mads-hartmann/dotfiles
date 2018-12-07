@@ -9,8 +9,7 @@ jobs:
       - checkout
       - run:
           name: Build
-          command:
-            cd literate && emacs --batch --script etc/project.el --eval "(org-publish-project \"everything\" t)"
+          command: make all
       - run:
           name: Deploy
           command: |
