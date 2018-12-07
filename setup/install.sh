@@ -123,8 +123,8 @@ function create_vscode_symlinks {
 }
 
 function install_all {
-    install_oh_my_zsh
-    create_symlinks
+#    install_oh_my_zsh
+#    create_symlinks
     create_vscode_symlinks
 }
 

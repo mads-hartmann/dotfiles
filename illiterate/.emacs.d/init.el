@@ -171,7 +171,8 @@
       (add-to-list 'default-frame-alist '(width . 150))
       (add-to-list 'default-frame-alist '(height . 50))
       (load-theme 'base16-ocean-dark-hartmann t)
-      (set-face-attribute 'default nil :font "Fira Code-14:antialias=subpixel"))
+      ; (set-face-attribute 'default nil :font "Fira Code-14:antialias=subpixel")
+)
   (progn
     ;; Defines to interact with the osx clipbord.
     ;; This is only relevant when I'm using Emacs from the terminal (right now)

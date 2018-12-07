@@ -63,7 +63,6 @@
   "terminal.external.osxExec": "iTerm.app",
   "window.zoomLevel": 0.1,
   "workbench.fontAliasing": "default",
-  "workbench.activityBar.visible": false,
   "workbench.editor.showTabs": false,
   "workbench.editor.tabCloseButton": "off",
   "workbench.editor.enablePreview": false,
