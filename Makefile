@@ -6,6 +6,9 @@
 # use QUIET= make xyz to get command output
 QUIET ?= @
 
+# Use Bash in make
+SHELL := bash
+
 # All the files that I want to have linked into ~ from .home
 LINKS := \
 	.zsh .zshrc .zshenv \
