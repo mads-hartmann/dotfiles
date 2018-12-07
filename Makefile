@@ -9,16 +9,6 @@ QUIET ?= @
 # Use Bash in make
 SHELL := bash
 
-# All the files that I want to have linked into ~ from .home
-LINKS := \
-	.zsh .zshrc .zshenv \
-	.bashrc \
-	.ctags.cnf \
-	.cheat \
-	.gitconfig \
-	.editorconfig \
-	.ssh/config
-
 ILLITERATE := \
 	$(patsubst \
 		illiterate/%,\
@@ -50,13 +40,11 @@ COPY_TARGETS := \
 		.website/static/%,\
 		$(shell find literate/static -name "*"))
 
-LINK_TARGETS := \
-	$(foreach link,$(LINKS),$(HOME)/$(link))
-
 all: weave tangle
 weave: $(WEAVE_TARGETS) $(COPY_TARGETS)
 tangle: $(TANGLE_TARGETS)
-link: tangle $(LINK_TARGETS) $(SCRIPTS) $(ILLITERATE)
+link: tangle $(SCRIPTS) $(ILLITERATE)
+	$(QUIET)./scripts/system.sh link
 
 shell:
 	$(QUIET)docker run \
@@ -74,10 +62,6 @@ serve: weave
 #
 # rules
 #
-
-${HOME}/%: .home/%
-	$(call print, Linking, $@ -> $<)
-	$(QUIET)ln -s $(abspath $<) $@
 
 ${HOME}/%: illiterate/%
 	$(call print, Linking, $@ -> $<)
