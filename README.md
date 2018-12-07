@@ -1,10 +1,10 @@
 # Hartmann's dotfiles
 
-Writing files `make tangle`
-Writing the docs `make weave`
+## Bootstrapping a new Mac
 
-## Might be able to steal some things from these dotfiles as well.
-https://github.com/alexpearce/dotfiles
+```sh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/mads-hartmann/dotfiles/master/scripts/bootstrap.sh)"
+```
 
 ## Debugging build image
 
@@ -23,7 +23,6 @@ make shell
 ## CI
 
 See `.circleci/config.yml`.
-
 
 ## Resources
 
