@@ -95,9 +95,12 @@
   "markdown.preview.scrollEditorWithPreview": false,
   "[markdown]": {
     "editor.formatOnSave": false,
-    "editor.wordWrap": "on",
+    "editor.wordWrap": "wordWrapColumn",
     "editor.quickSuggestions": false,
     "editor.renderWhitespace": "boundary",
+    "editor.rulers": [
+      80
+    ],
     "files.trimTrailingWhitespace": false
   },
   "[makefile]": {
