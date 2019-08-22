@@ -1,4 +1,0 @@
-pylint
-virtualenv
-virtualenvwrapper
-twine

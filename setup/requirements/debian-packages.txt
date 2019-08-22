@@ -1,4 +1,0 @@
-build-essential
-nodejs
-npm
-zsh
