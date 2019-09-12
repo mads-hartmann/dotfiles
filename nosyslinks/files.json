@@ -1,0 +1,7 @@
+[
+    {
+        "type": "file",
+        "path": "~/.bashrc",
+        "comment": "File that is read by bash when initializing sessions"
+    }
+]
