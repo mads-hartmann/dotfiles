@@ -3,5 +3,30 @@
         "type": "file",
         "path": "~/.bashrc",
         "comment": "File that is read by bash when initializing sessions"
+    },
+    {
+        "type": "file",
+        "path": "~/.gitconfig",
+        "comment": "Configuration of Git"
+    },
+    {
+        "type": "file",
+        "path": "~/Library/KeyBindings/DefaultKeyBinding.dict",
+        "comment": "System wide customization of keybindings. See https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/EventOverview/TextDefaultsBindings/TextDefaultsBindings.html for more information."
+    },
+    {
+        "type": "folder",
+        "path": "~/.cheat",
+        "comment": "This is where cheat stores its cheat-sheets."
+    },
+    {
+        "type": "file",
+        "path": "~/Library/Application Support/Code/User/keybindings.json",
+        "comment": "User keybindings for Visual Studio Code"
+    },
+    {
+        "type": "file",
+        "path": "~/Library/Application Support/Code/User/settings.json",
+        "comment": "User settings for Visual Studio Code"
     }
 ]
