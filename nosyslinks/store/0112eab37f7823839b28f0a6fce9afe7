@@ -1,0 +1,21 @@
+{
+    "window.zoomLevel": 0,
+    "files.insertFinalNewline": true,
+    "editor.minimap.enabled": false,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.scrollBeyondLastLine": false,
+    "editor.formatOnSave": true,
+    "editor.gotoLocation.multiple": "goto",
+    "workbench.list.openMode": "doubleClick",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.useExperimentalGridLayout": true,
+    "workbench.editor.enablePreview": false,
+    "cSpell.userWords": [
+        "Opencensus",
+        "datadog"
+    ],
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "Fira Mono for Powerline"
+}
