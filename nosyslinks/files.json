@@ -21,6 +21,11 @@
     },
     {
         "type": "file",
+        "path": "~/.editorconfig",
+        "comment": "Personal editorconfig configuration."
+    },
+    {
+        "type": "file",
         "path": "~/Library/Application Support/Code/User/keybindings.json",
         "comment": "User keybindings for Visual Studio Code"
     },
