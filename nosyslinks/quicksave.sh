@@ -51,7 +51,8 @@ quicksave::restore_file() {
     path=$(quicksave::expand_tilde "$path")
     hash="$(echo -n "$path" | md5sum | awk '{print $1}')"
 
-    echo "Copying file: $path"
+    echo "Copying file: $BACKUP_LOCATION/$hash -> $path"
+    mkdir -p "$(dirname "$path")"
     cp "$BACKUP_LOCATION/$hash" "$path"
 }
 
@@ -62,7 +63,12 @@ quicksave::restore_folder() {
     path=$(quicksave::expand_tilde "$path")
     hash="$(echo -n "$path" | md5sum | awk '{print $1}')"
 
-    echo "Copying folder: $path"
+    if [ ! -d "$BACKUP_LOCATION/$hash" ]; then
+        echo "Folder doens't exit: $BACKUP_LOCATION/$hash. Skipping"
+        return
+    fi
+
+    echo "Copying folder: $BACKUP_LOCATION/$hash -> $path"
     mkdir -p "$path"
     cp -R "$BACKUP_LOCATION/$hash" "$path/"
 }
