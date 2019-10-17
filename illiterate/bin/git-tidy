@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-# Handly little script that removes all branches that have been merged
-# into the current branch, but aren't named 'master' or 'staging'
-git branch --merged \
-    | grep -E -v "(master|staging)" \
-    | grep -E -v "^\*" \
-    | xargs git branch -d
