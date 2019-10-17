@@ -1,7 +1,0 @@
-# -*- mode: snippet; -*-
-# name: Function
-# key: fun
-# --
-function ${1:my_function} {
-    $0
-}

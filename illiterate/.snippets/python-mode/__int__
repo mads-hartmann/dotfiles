@@ -1,6 +1,0 @@
-# -*- mode: snippet; -*-
-# name: __init__
-# key: __init__
-# --
-def __init__(self):
-    $0
